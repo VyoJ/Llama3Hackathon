@@ -3,14 +3,11 @@ import requests
 import csv
 
 # Function to make GET request and save response to a markdown file
-headers = {
-    'Authorization': 'Bearer jina_3276469df3874318afb820a704c916a2PRckD7giZxCtQx4FQeM0KTBLR_FL'
-}
 def get_and_save(url):
     try:
         response = requests.get(f'https://r.jina.ai/{url}', headers=headers)
         if response.status_code == 200:
-            filename = f'./outputFiles/{url.replace("/", "_")}.md'  # Create a filename based on URL
+            filename = f'./l2/{url.replace("/", "_")}.md'  # Create a filename based on URL
             with open(filename, 'w', encoding='utf-8') as f:
                 f.write(response.text)
                 print(f'Successfully saved response for {url}')
@@ -38,7 +35,7 @@ print('All URLs processed.')
 import os
 
 # Path to the directory containing files
-directory = '/Users/subhashinichirunomula/MSS/PythonProjects/B.TechProjects/Llama3Hackathon/outputFiles'
+directory = '/Users/subhashinichirunomula/MSS/PythonProjects/B.TechProjects/Llama3Hackathon/l2_redundancy'
 
 # Function to rename files in a directory
 def rename_files(directory):
@@ -63,8 +60,8 @@ import re
 import os
 
 # Define the source and destination folders
-source_folder = '/Users/subhashinichirunomula/MSS/PythonProjects/B.TechProjects/Llama3Hackathon/outputFiles'
-destination_folder = '/Users/subhashinichirunomula/MSS/PythonProjects/B.TechProjects/Llama3Hackathon/finalOutputFiles'
+source_folder = '/Users/subhashinichirunomula/MSS/PythonProjects/B.TechProjects/Llama3Hackathon/l2'
+destination_folder = '/Users/subhashinichirunomula/MSS/PythonProjects/B.TechProjects/Llama3Hackathon/l2'
 
 # Ensure the destination folder exists
 if not os.path.exists(destination_folder):
@@ -88,4 +85,3 @@ for source_file_name in os.listdir(source_folder):
         # Save the cleaned content to the destination file
         with open(destination_file_path, 'w') as file:
             file.write(cleaned_content)
-
