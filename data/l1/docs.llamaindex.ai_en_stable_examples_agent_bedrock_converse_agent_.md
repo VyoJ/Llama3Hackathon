@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/agent/bedrock_converse
 Markdown Content:
 Function Calling AWS Bedrock Converse Agent - LlamaIndex
 ===============
-             
+                    
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/agent/bedrock_converse_agent/#function-calling-aws-bedrock-converse-agent)
 
@@ -2171,3 +2173,7 @@ print(str(response))
 Back to top
 
 [Previous Function Calling Anthropic Agent](https://docs.llamaindex.ai/en/stable/examples/agent/anthropic_agent/)[Next Chain-of-Abstraction LlamaPack](https://docs.llamaindex.ai/en/stable/examples/agent/coa_agent/)
+
+Hi, how can I help you?
+
+🦙

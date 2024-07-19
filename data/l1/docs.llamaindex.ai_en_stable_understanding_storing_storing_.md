@@ -5,7 +5,7 @@ URL Source: https://docs.llamaindex.ai/en/stable/understanding/storing/storing/
 Markdown Content:
 Storing - LlamaIndex
 ===============
-             
+              
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/understanding/storing/storing/#storing)
 
@@ -2089,3 +2089,7 @@ See the [document management how-to](https://docs.llamaindex.ai/en/stable/module
 Back to top
 
 [Previous Indexing & Embedding](https://docs.llamaindex.ai/en/stable/understanding/indexing/indexing/)[Next Querying](https://docs.llamaindex.ai/en/stable/understanding/querying/querying/)
+
+Hi, how can I help you?
+
+🦙

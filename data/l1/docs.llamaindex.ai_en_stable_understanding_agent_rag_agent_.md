@@ -5,7 +5,7 @@ URL Source: https://docs.llamaindex.ai/en/stable/understanding/agent/rag_agent/
 Markdown Content:
 Adding RAG to an agent - LlamaIndex
 ===============
-             
+              
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/understanding/agent/rag_agent/#adding-rag-to-an-agent)
 
@@ -2058,3 +2058,7 @@ Excellent! Your agent can now use any arbitrarily advanced query engine to help 
 Back to top
 
 [Previous Agents with local models](https://docs.llamaindex.ai/en/stable/understanding/agent/local_models/)[Next Enhancing with LlamaParse](https://docs.llamaindex.ai/en/stable/understanding/agent/llamaparse/)
+
+Hi, how can I help you?
+
+🦙

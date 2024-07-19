@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/agent/memory/composabl
 Markdown Content:
 Simple Composable Memory - LlamaIndex
 ===============
-             
+                    
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/agent/memory/composable_memory/#simple-composable-memory)
 
@@ -2540,3 +2542,7 @@ This is the end of the retrieved message dialogues.
 Back to top
 
 [Previous LLM Compiler Agent Cookbook](https://docs.llamaindex.ai/en/stable/examples/agent/llm_compiler/)[Next Vector Memory](https://docs.llamaindex.ai/en/stable/examples/agent/memory/vector_memory/)
+
+Hi, how can I help you?
+
+🦙

@@ -5,7 +5,7 @@ URL Source: https://docs.llamaindex.ai/en/stable/understanding/agent/basic_agent
 Markdown Content:
 Building a basic agent - LlamaIndex
 ===============
-             
+              
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/understanding/agent/basic_agent/#building-a-basic-agent)
 
@@ -2075,3 +2075,7 @@ Congratulations! You've built the most basic kind of agent. Next you can find ou
 Back to top
 
 [Previous Querying](https://docs.llamaindex.ai/en/stable/understanding/querying/querying/)[Next Agents with local models](https://docs.llamaindex.ai/en/stable/understanding/agent/local_models/)
+
+Hi, how can I help you?
+
+🦙

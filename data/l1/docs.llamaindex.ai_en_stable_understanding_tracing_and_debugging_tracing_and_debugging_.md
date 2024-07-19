@@ -5,7 +5,7 @@ URL Source: https://docs.llamaindex.ai/en/stable/understanding/tracing_and_debug
 Markdown Content:
 Tracing and Debugging - LlamaIndex
 ===============
-             
+              
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/understanding/tracing_and_debugging/tracing_and_debugging/#tracing-and-debugging)
 
@@ -1993,3 +1993,7 @@ To learn more, check out our [observability docs](https://docs.llamaindex.ai/en/
 Back to top
 
 [Previous Adding other tools](https://docs.llamaindex.ai/en/stable/understanding/agent/tools/)[Next Evaluating](https://docs.llamaindex.ai/en/stable/understanding/evaluating/evaluating/)
+
+Hi, how can I help you?
+
+🦙

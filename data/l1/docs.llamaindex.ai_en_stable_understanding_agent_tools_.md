@@ -5,7 +5,7 @@ URL Source: https://docs.llamaindex.ai/en/stable/understanding/agent/tools/
 Markdown Content:
 Adding other tools - LlamaIndex
 ===============
-             
+              
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/understanding/agent/tools/#adding-other-tools)
 
@@ -2041,3 +2041,7 @@ Congratulations! You've completed our guide to building agents with LlamaIndex. 
 Back to top
 
 [Previous Memory](https://docs.llamaindex.ai/en/stable/understanding/agent/memory/)[Next Tracing and Debugging](https://docs.llamaindex.ai/en/stable/understanding/tracing_and_debugging/tracing_and_debugging/)
+
+Hi, how can I help you?
+
+🦙

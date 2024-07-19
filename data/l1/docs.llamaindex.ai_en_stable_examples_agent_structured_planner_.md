@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/agent/structured_plann
 Markdown Content:
 Structured Planning Agent - LlamaIndex
 ===============
-             
+                    
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/agent/structured_planner/#structured-planning-agent)
 
@@ -2679,3 +2681,7 @@ Both companies operate in dynamic and rapidly evolving environments, facing sign
 Back to top
 
 [Previous Controlling Agent Reasoning Loop with Return Direct Tools](https://docs.llamaindex.ai/en/stable/examples/agent/return_direct_agent/)[Next Aim Callback](https://docs.llamaindex.ai/en/stable/examples/callbacks/AimCallback/)
+
+Hi, how can I help you?
+
+🦙

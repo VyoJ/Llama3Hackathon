@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/agent/agentic_rag_with
 Markdown Content:
 Agentic rag with llamaindex and vertexai managed index - LlamaIndex
 ===============
-             
+                    
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/agent/agentic_rag_with_llamaindex_and_vertexai_managed_index/#build-agentic-rag-using-vertex-ai-managed-index)
 
@@ -2798,3 +2800,5 @@ response = agent.query( "Compare and contrast the LoRA papers (LongLoRA, LoftQ) 
 Back to top
 
 [Previous Agentic rag using vertex ai](https://docs.llamaindex.ai/en/stable/examples/agent/agentic_rag_using_vertex_ai/)[Next Function Calling Anthropic Agent](https://docs.llamaindex.ai/en/stable/examples/agent/anthropic_agent/)
+
+🦙

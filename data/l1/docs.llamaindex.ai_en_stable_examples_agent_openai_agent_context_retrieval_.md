@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_con
 Markdown Content:
 Context-Augmented OpenAI Agent - LlamaIndex
 ===============
-             
+                    
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_context_retrieval/#context-augmented-openai-agent)
 
@@ -2413,3 +2415,7 @@ The result of running MAGIC\_FORMULA on Uber's revenue and cost is -1690.
 Back to top
 
 [Previous Build your own OpenAI Agent](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent/)[Next OpenAI Agent Workarounds for Lengthy Tool Descriptions](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_lengthy_tools/)
+
+Hi, how can I help you?
+
+🦙

@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/agent/mistral_agent/
 Markdown Content:
 Function Calling Mistral Agent - LlamaIndex
 ===============
-             
+                    
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/agent/mistral_agent/#function-calling-mistral-agent)
 
@@ -2232,3 +2234,7 @@ On the other hand, here are some tailwinds for Uber in 2021:
 Back to top
 
 [Previous Vector Memory](https://docs.llamaindex.ai/en/stable/examples/agent/memory/vector_memory/)[Next Multi-Document Agents (V1)](https://docs.llamaindex.ai/en/stable/examples/agent/multi_document_agents-v1/)
+
+Hi, how can I help you?
+
+🦙

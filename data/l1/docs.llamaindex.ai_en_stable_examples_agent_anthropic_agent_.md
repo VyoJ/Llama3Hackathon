@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/agent/anthropic_agent/
 Markdown Content:
 Function Calling Anthropic Agent - LlamaIndex
 ===============
-             
+                    
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/agent/anthropic_agent/#function-calling-anthropic-agent)
 
@@ -2207,3 +2209,7 @@ assistant: In summary, some of the key risk factors Uber faced in 2021 included 
 Back to top
 
 [Previous Agentic rag with llamaindex and vertexai managed index](https://docs.llamaindex.ai/en/stable/examples/agent/agentic_rag_with_llamaindex_and_vertexai_managed_index/)[Next Function Calling AWS Bedrock Converse Agent](https://docs.llamaindex.ai/en/stable/examples/agent/bedrock_converse_agent/)
+
+Hi, how can I help you?
+
+🦙
