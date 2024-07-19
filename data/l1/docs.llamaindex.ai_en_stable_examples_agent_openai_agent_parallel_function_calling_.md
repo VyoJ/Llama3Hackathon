@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_par
 Markdown Content:
 Single-Turn Multi-Function Calling OpenAI Agents - LlamaIndex
 ===============
-             
+                    
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_parallel_function_calling/#single-turn-multi-function-calling-openai-agents)
 
@@ -2249,3 +2251,7 @@ And so, as you can see the `llama_index` library can handle multiple function ca
 Back to top
 
 [Previous OpenAI Agent Workarounds for Lengthy Tool Descriptions](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_lengthy_tools/)[Next OpenAI Agent + Query Engine Experimental Cookbook](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_query_cookbook/)
+
+Hi, how can I help you?
+
+🦙

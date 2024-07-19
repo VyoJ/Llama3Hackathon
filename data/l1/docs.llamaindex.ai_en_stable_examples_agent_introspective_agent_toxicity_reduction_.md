@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/agent/introspective_ag
 Markdown Content:
 Introspective Agents: Performing Tasks With Reflection - LlamaIndex
 ===============
-             
+                    
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/agent/introspective_agent_toxicity_reduction/#introspective-agents-performing-tasks-with-reflection)
 
@@ -1953,7 +1955,7 @@ Table of contents
     *   [2a IntrospectiveAgent that uses a ToolInteractiveReflectionAgent](https://docs.llamaindex.ai/en/stable/examples/agent/introspective_agent_toxicity_reduction/#2a-introspectiveagent-that-uses-a-toolinteractivereflectionagent)
         
         *   [Build PerspectiveTool](https://docs.llamaindex.ai/en/stable/examples/agent/introspective_agent_toxicity_reduction/#build-perspectivetool)
-        *   [Build IntrospectiveAgent & ToolInteractiveReflectionAgent](https://docs.llamaindex.ai/en/stable/examples/agent/introspective_agent_toxicity_reduction/#build-introspectiveagent-toolinteractivereflectionagent)
+        *   [Build IntrospectiveAgent & ToolInteractiveReflectionAgent](https://docs.llamaindex.ai/en/stable/examples/agent/introspective_agent_toxicity_reduction/#build-introspectiveagent-toolinteractivereflectionagent "Build IntrospectiveAgent & ToolInteractiveReflectionAgent")
         
     *   [2b IntrospectiveAgent that uses a SelfReflectionAgentWorker](https://docs.llamaindex.ai/en/stable/examples/agent/introspective_agent_toxicity_reduction/#2b-introspectiveagent-that-uses-a-selfreflectionagentworker)
         
@@ -2601,3 +2603,7 @@ As we can see, the `tool_interactive_reflection` method yields lower toxicity sc
 Back to top
 
 [Previous DashScope Agent Tutorial](https://docs.llamaindex.ai/en/stable/examples/agent/dashscope_agent/)[Next Language Agent Tree Search](https://docs.llamaindex.ai/en/stable/examples/agent/lats_agent/)
+
+Hi, how can I help you?
+
+🦙

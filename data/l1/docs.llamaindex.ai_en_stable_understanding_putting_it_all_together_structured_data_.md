@@ -5,7 +5,7 @@ URL Source: https://docs.llamaindex.ai/en/stable/understanding/putting_it_all_to
 Markdown Content:
 Structured Data - LlamaIndex
 ===============
-             
+              
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/understanding/putting_it_all_together/structured_data/#structured-data)
 
@@ -2099,3 +2099,7 @@ Relevant Resources:
 Back to top
 
 [Previous How to Build a Chatbot](https://docs.llamaindex.ai/en/stable/understanding/putting_it_all_together/chatbots/building_a_chatbot/)[Next Agents](https://docs.llamaindex.ai/en/stable/understanding/putting_it_all_together/agents/)
+
+Hi, how can I help you?
+
+🦙

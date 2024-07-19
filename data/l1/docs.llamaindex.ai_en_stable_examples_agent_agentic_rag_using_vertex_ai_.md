@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/agent/agentic_rag_usin
 Markdown Content:
 Agentic rag using vertex ai - LlamaIndex
 ===============
-             
+                    
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/agent/agentic_rag_using_vertex_ai/#build-agentic-rag-with-llamaindex-for-vertex-ai)
 
@@ -2895,3 +2897,7 @@ response = agent.query( "Compare and contrast the LoRA papers (LongLoRA, LoftQ).
 Back to top
 
 [Previous Building an Agent around a Query Pipeline](https://docs.llamaindex.ai/en/stable/examples/agent/agent_runner/query_pipeline_agent/)[Next Agentic rag with llamaindex and vertexai managed index](https://docs.llamaindex.ai/en/stable/examples/agent/agentic_rag_with_llamaindex_and_vertexai_managed_index/)
+
+Hi, how can I help you?
+
+🦙

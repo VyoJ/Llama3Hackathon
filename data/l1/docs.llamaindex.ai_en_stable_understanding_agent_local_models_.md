@@ -5,7 +5,7 @@ URL Source: https://docs.llamaindex.ai/en/stable/understanding/agent/local_model
 Markdown Content:
 Agents with local models - LlamaIndex
 ===============
-             
+              
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/understanding/agent/local_models/#agents-with-local-models)
 
@@ -2014,3 +2014,7 @@ You can now continue the rest of the tutorial with a local model if you prefer. 
 Back to top
 
 [Previous Building a basic agent](https://docs.llamaindex.ai/en/stable/understanding/agent/basic_agent/)[Next Adding RAG to an agent](https://docs.llamaindex.ai/en/stable/understanding/agent/rag_agent/)
+
+Hi, how can I help you?
+
+🦙

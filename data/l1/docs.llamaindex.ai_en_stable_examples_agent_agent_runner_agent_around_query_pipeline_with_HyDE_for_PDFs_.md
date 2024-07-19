@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/agent/agent_runner/age
 Markdown Content:
 Building a Multi-PDF Agent using Query Pipelines and HyDE - LlamaIndex
 ===============
-             
+                    
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/agent/agent_runner/agent_around_query_pipeline_with_HyDE_for_PDFs/#building-a-multi-pdf-agent-using-query-pipelines-and-hyde)
 
@@ -2757,3 +2759,7 @@ Uber's Management's Report on Internal Control over Financial Reporting for the 
 Back to top
 
 [Previous GPT Builder Demo](https://docs.llamaindex.ai/en/stable/examples/agent/agent_builder/)[Next Step-wise, Controllable Agents](https://docs.llamaindex.ai/en/stable/examples/agent/agent_runner/agent_runner/)
+
+Hi, how can I help you?
+
+🦙

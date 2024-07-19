@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/agent/openai_assistant
 Markdown Content:
 OpenAI Assistant Agent - LlamaIndex
 ===============
-             
+                    
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/agent/openai_assistant_agent/#openai-assistant-agent)
 
@@ -2427,3 +2429,7 @@ These initiatives reflect Lyft's calculated approach to navigating the operation
 Back to top
 
 [Previous OpenAI Agent with Query Engine Tools](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_with_query_engine/)[Next OpenAI Assistant Advanced Retrieval Cookbook](https://docs.llamaindex.ai/en/stable/examples/agent/openai_assistant_query_cookbook/)
+
+Hi, how can I help you?
+
+🦙

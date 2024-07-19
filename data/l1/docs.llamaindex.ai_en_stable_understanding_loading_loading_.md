@@ -5,7 +5,7 @@ URL Source: https://docs.llamaindex.ai/en/stable/understanding/loading/loading/
 Markdown Content:
 Loading Data (Ingestion) - LlamaIndex
 ===============
-             
+              
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/understanding/loading/loading/#loading-data-ingestion)
 
@@ -2133,3 +2133,7 @@ index = VectorStoreIndex([node1, node2])
 Back to top
 
 [Previous Using LLMs](https://docs.llamaindex.ai/en/stable/understanding/using_llms/using_llms/)[Next LlamaHub](https://docs.llamaindex.ai/en/stable/understanding/loading/llamahub/)
+
+Hi, how can I help you?
+
+🦙

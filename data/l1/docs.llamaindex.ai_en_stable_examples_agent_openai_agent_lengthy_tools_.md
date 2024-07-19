@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_len
 Markdown Content:
 OpenAI Agent Workarounds for Lengthy Tool Descriptions - LlamaIndex
 ===============
-             
+                    
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_lengthy_tools/#openai-agent-workarounds-for-lengthy-tool-descriptions)
 
@@ -2356,3 +2358,7 @@ Response(response="The risk factors for Uber in September 2022 included:\\n\\n1.
 Back to top
 
 [Previous Context-Augmented OpenAI Agent](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_context_retrieval/)[Next Single-Turn Multi-Function Calling OpenAI Agents](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_parallel_function_calling/)
+
+Hi, how can I help you?
+
+🦙

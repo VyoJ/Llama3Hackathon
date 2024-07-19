@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/agent/react_agent_with
 Markdown Content:
 ReAct Agent with Query Engine (RAG) Tools - LlamaIndex
 ===============
-             
+                    
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/agent/react_agent_with_query_engine/#react-agent-with-query-engine-rag-tools)
 
@@ -2313,3 +2315,7 @@ The risk factors for the company with the higher revenue include competition, re
 Back to top
 
 [Previous ReAct Agent - A Simple Intro with Calculator Tools](https://docs.llamaindex.ai/en/stable/examples/agent/react_agent/)[Next Controlling Agent Reasoning Loop with Return Direct Tools](https://docs.llamaindex.ai/en/stable/examples/agent/return_direct_agent/)
+
+Hi, how can I help you?
+
+🦙

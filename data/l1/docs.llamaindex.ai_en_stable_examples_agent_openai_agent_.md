@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent/
 Markdown Content:
 Build your own OpenAI Agent - LlamaIndex
 ===============
-             
+                    
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent/#build-your-own-openai-agent)
 
@@ -2445,3 +2447,7 @@ And so, the tale of Sir William and Lady Rosalind serves as a reminder that true
 Back to top
 
 [Previous Multi-Document Agents](https://docs.llamaindex.ai/en/stable/examples/agent/multi_document_agents/)[Next Context-Augmented OpenAI Agent](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_context_retrieval/)
+
+Hi, how can I help you?
+
+🦙

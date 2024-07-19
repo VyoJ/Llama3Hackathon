@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_too
 Markdown Content:
 OpenAI Agent with Tool Call Parser - LlamaIndex
 ===============
-             
+                    
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_tool_call_parser/#openai-agent-with-tool-call-parser)
 
@@ -2148,3 +2150,7 @@ print(response.sources)
 Back to top
 
 [Previous Retrieval-Augmented OpenAI Agent](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_retrieval/)[Next OpenAI Agent with Query Engine Tools](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_with_query_engine/)
+
+Hi, how can I help you?
+
+🦙

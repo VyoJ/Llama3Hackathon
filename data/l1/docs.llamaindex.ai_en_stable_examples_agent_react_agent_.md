@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/agent/react_agent/
 Markdown Content:
 ReAct Agent - A Simple Intro with Calculator Tools - LlamaIndex
 ===============
-             
+                   
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/agent/react_agent/#react-agent-a-simple-intro-with-calculator-tools)
 
@@ -2304,3 +2306,7 @@ The result of 5+3+2 is 10.
 Back to top
 
 [Previous Benchmarking OpenAI Retrieval API (through Assistant Agent)](https://docs.llamaindex.ai/en/stable/examples/agent/openai_retrieval_benchmark/)[Next ReAct Agent with Query Engine (RAG) Tools](https://docs.llamaindex.ai/en/stable/examples/agent/react_agent_with_query_engine/)
+
+Hi, how can I help you?
+
+🦙

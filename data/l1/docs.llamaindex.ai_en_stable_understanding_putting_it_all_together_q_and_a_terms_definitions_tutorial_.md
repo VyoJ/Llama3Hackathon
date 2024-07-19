@@ -5,7 +5,7 @@ URL Source: https://docs.llamaindex.ai/en/stable/understanding/putting_it_all_to
 Markdown Content:
 A Guide to Extracting Terms and Definitions - LlamaIndex
 ===============
-             
+              
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/understanding/putting_it_all_together/q_and_a/terms_definitions_tutorial/#a-guide-to-extracting-terms-and-definitions)
 
@@ -2503,3 +2503,7 @@ The final version of this tutorial can be found [here](https://github.com/abdula
 Back to top
 
 [Previous Q&A patterns](https://docs.llamaindex.ai/en/stable/understanding/putting_it_all_together/q_and_a/)[Next How to Build a Chatbot](https://docs.llamaindex.ai/en/stable/understanding/putting_it_all_together/chatbots/building_a_chatbot/)
+
+Hi, how can I help you?
+
+🦙
