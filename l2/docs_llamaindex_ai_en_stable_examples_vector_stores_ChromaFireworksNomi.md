@@ -1,0 +1,2193 @@
+Title: Chroma + Fireworks + Nomic with Matryoshka embedding
+
+URL Source: https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaFireworksNomic/
+
+Markdown Content:
+Chroma + Fireworks + Nomic with Matryoshka embedding - LlamaIndex
+===============
+             
+
+[Skip to content](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaFireworksNomic/#chroma-fireworks-nomic-with-matryoshka-embedding)
+
+[![Image 1: logo](https://docs.llamaindex.ai/en/stable/_static/assets/LlamaSquareBlack.svg)](https://docs.llamaindex.ai/en/stable/ "LlamaIndex")
+
+LlamaIndex
+
+Chroma + Fireworks + Nomic with Matryoshka embedding
+
+  
+
+Initializing search
+
+*   [Home](https://docs.llamaindex.ai/en/stable/)
+*   [Learn](https://docs.llamaindex.ai/en/stable/understanding/)
+*   [Use Cases](https://docs.llamaindex.ai/en/stable/use_cases/)
+*   [Examples](https://docs.llamaindex.ai/en/stable/examples/)
+*   [Component Guides](https://docs.llamaindex.ai/en/stable/module_guides/)
+*   [Advanced Topics](https://docs.llamaindex.ai/en/stable/optimizing/production_rag/)
+*   [API Reference](https://docs.llamaindex.ai/en/stable/api_reference/)
+*   [Open-Source Community](https://docs.llamaindex.ai/en/stable/community/integrations/)
+*   [LlamaCloud](https://docs.llamaindex.ai/en/stable/llama_cloud/)
+
+ [![Image 2: logo](https://docs.llamaindex.ai/en/stable/_static/assets/LlamaSquareBlack.svg)](https://docs.llamaindex.ai/en/stable/ "LlamaIndex")LlamaIndex
+
+*   [Home](https://docs.llamaindex.ai/en/stable/)
+    
+    Home
+    
+    *   [High-Level Concepts](https://docs.llamaindex.ai/en/stable/getting_started/concepts/)
+    *   [Installation and Setup](https://docs.llamaindex.ai/en/stable/getting_started/installation/)
+    *   [How to read these docs](https://docs.llamaindex.ai/en/stable/getting_started/reading/)
+    *    Starter Examples
+        
+        Starter Examples
+        
+        *   [Starter Tutorial (OpenAI)](https://docs.llamaindex.ai/en/stable/getting_started/starter_example/)
+        *   [Starter Tutorial (Local Models)](https://docs.llamaindex.ai/en/stable/getting_started/starter_example_local/)
+        
+    *   [Discover LlamaIndex Video Series](https://docs.llamaindex.ai/en/stable/getting_started/discover_llamaindex/)
+    *   [Frequently Asked Questions (FAQ)](https://docs.llamaindex.ai/en/stable/getting_started/customization/)
+    *   [Starter Tools](https://docs.llamaindex.ai/en/stable/getting_started/starter_tools/)
+        
+        Starter Tools
+        
+        *   [RAG CLI](https://docs.llamaindex.ai/en/stable/getting_started/starter_tools/rag_cli/)
+        
+    
+*   [Learn](https://docs.llamaindex.ai/en/stable/understanding/)
+    
+    Learn
+    
+    *   [Using LLMs](https://docs.llamaindex.ai/en/stable/understanding/using_llms/using_llms/)
+    *    Building a RAG pipeline
+        
+        Building a RAG pipeline
+        
+        *    Loading & Ingestion
+            
+            Loading & Ingestion
+            
+            *   [Loading Data (Ingestion)](https://docs.llamaindex.ai/en/stable/understanding/loading/loading/)
+            *   [LlamaHub](https://docs.llamaindex.ai/en/stable/understanding/loading/llamahub/)
+            
+        *   [Indexing & Embedding](https://docs.llamaindex.ai/en/stable/understanding/indexing/indexing/)
+        *   [Storing](https://docs.llamaindex.ai/en/stable/understanding/storing/storing/)
+        *   [Querying](https://docs.llamaindex.ai/en/stable/understanding/querying/querying/)
+        
+    *    Building an agent
+        
+        Building an agent
+        
+        *   [Building a basic agent](https://docs.llamaindex.ai/en/stable/understanding/agent/basic_agent/)
+        *   [Agents with local models](https://docs.llamaindex.ai/en/stable/understanding/agent/local_models/)
+        *   [Adding RAG to an agent](https://docs.llamaindex.ai/en/stable/understanding/agent/rag_agent/)
+        *   [Enhancing with LlamaParse](https://docs.llamaindex.ai/en/stable/understanding/agent/llamaparse/)
+        *   [Memory](https://docs.llamaindex.ai/en/stable/understanding/agent/memory/)
+        *   [Adding other tools](https://docs.llamaindex.ai/en/stable/understanding/agent/tools/)
+        
+    *   [Tracing and Debugging](https://docs.llamaindex.ai/en/stable/understanding/tracing_and_debugging/tracing_and_debugging/)
+    *    Evaluating
+        
+        Evaluating
+        
+        *   [Evaluating](https://docs.llamaindex.ai/en/stable/understanding/evaluating/evaluating/)
+        *   [Cost Analysis](https://docs.llamaindex.ai/en/stable/understanding/evaluating/cost_analysis/)
+            
+            Cost Analysis
+            
+            *   [Usage Pattern](https://docs.llamaindex.ai/en/stable/understanding/evaluating/cost_analysis/usage_pattern/)
+            
+        
+    *   [Putting it all Together](https://docs.llamaindex.ai/en/stable/understanding/putting_it_all_together/)
+        
+        Putting it all Together
+        
+        *   [Full-stack web application](https://docs.llamaindex.ai/en/stable/understanding/putting_it_all_together/apps/)
+            
+            Full-stack web application
+            
+            *   [A Guide to Building a Full-Stack Web App with LLamaIndex](https://docs.llamaindex.ai/en/stable/understanding/putting_it_all_together/apps/fullstack_app_guide/)
+            *   [A Guide to Building a Full-Stack LlamaIndex Web App with Delphic](https://docs.llamaindex.ai/en/stable/understanding/putting_it_all_together/apps/fullstack_with_delphic/)
+            
+        *   [Q&A Patterns](https://docs.llamaindex.ai/en/stable/understanding/putting_it_all_together/q_and_a/)
+            
+            Q&A Patterns
+            
+            *   [A Guide to Extracting Terms and Definitions](https://docs.llamaindex.ai/en/stable/understanding/putting_it_all_together/q_and_a/terms_definitions_tutorial/)
+            
+        *    Chatbots
+            
+            Chatbots
+            
+            *   [How to Build a Chatbot](https://docs.llamaindex.ai/en/stable/understanding/putting_it_all_together/chatbots/building_a_chatbot/)
+            
+        *   [Structured data](https://docs.llamaindex.ai/en/stable/understanding/putting_it_all_together/structured_data/)
+            
+            Structured data
+            
+        *   [Agents](https://docs.llamaindex.ai/en/stable/understanding/putting_it_all_together/agents/)
+        
+    
+*   [Use Cases](https://docs.llamaindex.ai/en/stable/use_cases/)
+    
+    Use Cases
+    
+    *   [Prompting](https://docs.llamaindex.ai/en/stable/use_cases/prompting/)
+    *   [Question-Answering (RAG)](https://docs.llamaindex.ai/en/stable/use_cases/q_and_a/)
+    *   [Chatbots](https://docs.llamaindex.ai/en/stable/use_cases/chatbots/)
+    *   [Structured Data Extraction](https://docs.llamaindex.ai/en/stable/use_cases/extraction/)
+    *   [Agents](https://docs.llamaindex.ai/en/stable/use_cases/agents/)
+    *   [Multi-Modal Applications](https://docs.llamaindex.ai/en/stable/use_cases/multimodal/)
+    *   [Fine-Tuning](https://docs.llamaindex.ai/en/stable/use_cases/fine_tuning/)
+    
+*   [Examples](https://docs.llamaindex.ai/en/stable/examples/)
+    
+    Examples
+    
+    *    Agents
+        
+        Agents
+        
+        *   [💬🤖 How to Build a Chatbot](https://docs.llamaindex.ai/en/stable/examples/agent/Chatbot_SEC/)
+        *   [GPT Builder Demo](https://docs.llamaindex.ai/en/stable/examples/agent/agent_builder/)
+        *   [Building a Multi-PDF Agent using Query Pipelines and HyDE](https://docs.llamaindex.ai/en/stable/examples/agent/agent_runner/agent_around_query_pipeline_with_HyDE_for_PDFs/)
+        *   [Step-wise, Controllable Agents](https://docs.llamaindex.ai/en/stable/examples/agent/agent_runner/agent_runner/)
+        *   [Controllable Agents for RAG](https://docs.llamaindex.ai/en/stable/examples/agent/agent_runner/agent_runner_rag_controllable/)
+        *   [Building an Agent around a Query Pipeline](https://docs.llamaindex.ai/en/stable/examples/agent/agent_runner/query_pipeline_agent/)
+        *   [Agentic rag using vertex ai](https://docs.llamaindex.ai/en/stable/examples/agent/agentic_rag_using_vertex_ai/)
+        *   [Agentic rag with llamaindex and vertexai managed index](https://docs.llamaindex.ai/en/stable/examples/agent/agentic_rag_with_llamaindex_and_vertexai_managed_index/)
+        *   [Function Calling Anthropic Agent](https://docs.llamaindex.ai/en/stable/examples/agent/anthropic_agent/)
+        *   [Function Calling AWS Bedrock Converse Agent](https://docs.llamaindex.ai/en/stable/examples/agent/bedrock_converse_agent/)
+        *   [Chain-of-Abstraction LlamaPack](https://docs.llamaindex.ai/en/stable/examples/agent/coa_agent/)
+        *   [Building a Custom Agent](https://docs.llamaindex.ai/en/stable/examples/agent/custom_agent/)
+        *   [DashScope Agent Tutorial](https://docs.llamaindex.ai/en/stable/examples/agent/dashscope_agent/)
+        *   [Introspective Agents: Performing Tasks With Reflection](https://docs.llamaindex.ai/en/stable/examples/agent/introspective_agent_toxicity_reduction/)
+        *   [Language Agent Tree Search](https://docs.llamaindex.ai/en/stable/examples/agent/lats_agent/)
+        *   [LLM Compiler Agent Cookbook](https://docs.llamaindex.ai/en/stable/examples/agent/llm_compiler/)
+        *   [Simple Composable Memory](https://docs.llamaindex.ai/en/stable/examples/agent/memory/composable_memory/)
+        *   [Vector Memory](https://docs.llamaindex.ai/en/stable/examples/agent/memory/vector_memory/)
+        *   [Function Calling Mistral Agent](https://docs.llamaindex.ai/en/stable/examples/agent/mistral_agent/)
+        *   [Multi-Document Agents (V1)](https://docs.llamaindex.ai/en/stable/examples/agent/multi_document_agents-v1/)
+        *   [Multi-Document Agents](https://docs.llamaindex.ai/en/stable/examples/agent/multi_document_agents/)
+        *   [Build your own OpenAI Agent](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent/)
+        *   [Context-Augmented OpenAI Agent](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_context_retrieval/)
+        *   [OpenAI Agent Workarounds for Lengthy Tool Descriptions](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_lengthy_tools/)
+        *   [Single-Turn Multi-Function Calling OpenAI Agents](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_parallel_function_calling/)
+        *   [OpenAI Agent + Query Engine Experimental Cookbook](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_query_cookbook/)
+        *   [OpenAI Agent Query Planning](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_query_plan/)
+        *   [Retrieval-Augmented OpenAI Agent](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_retrieval/)
+        *   [OpenAI Agent with Tool Call Parser](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_tool_call_parser/)
+        *   [OpenAI Agent with Query Engine Tools](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_with_query_engine/)
+        *   [OpenAI Assistant Agent](https://docs.llamaindex.ai/en/stable/examples/agent/openai_assistant_agent/)
+        *   [OpenAI Assistant Advanced Retrieval Cookbook](https://docs.llamaindex.ai/en/stable/examples/agent/openai_assistant_query_cookbook/)
+        *   [OpenAI agent: specifying a forced function call](https://docs.llamaindex.ai/en/stable/examples/agent/openai_forced_function_call/)
+        *   [Benchmarking OpenAI Retrieval API (through Assistant Agent)](https://docs.llamaindex.ai/en/stable/examples/agent/openai_retrieval_benchmark/)
+        *   [ReAct Agent - A Simple Intro with Calculator Tools](https://docs.llamaindex.ai/en/stable/examples/agent/react_agent/)
+        *   [ReAct Agent with Query Engine (RAG) Tools](https://docs.llamaindex.ai/en/stable/examples/agent/react_agent_with_query_engine/)
+        *   [Controlling Agent Reasoning Loop with Return Direct Tools](https://docs.llamaindex.ai/en/stable/examples/agent/return_direct_agent/)
+        *   [Structured Planning Agent](https://docs.llamaindex.ai/en/stable/examples/agent/structured_planner/)
+        
+    *    Callbacks
+        
+        Callbacks
+        
+        *   [Aim Callback](https://docs.llamaindex.ai/en/stable/examples/callbacks/AimCallback/)
+        *   [HoneyHive LlamaIndex Tracer](https://docs.llamaindex.ai/en/stable/examples/callbacks/HoneyHiveLlamaIndexTracer/)
+        *   [Langfuse Callback Handler](https://docs.llamaindex.ai/en/stable/examples/callbacks/LangfuseCallbackHandler/)
+        *   [Llama Debug Handler](https://docs.llamaindex.ai/en/stable/examples/callbacks/LlamaDebugHandler/)
+        *   [OpenInference Callback Handler + Arize Phoenix](https://docs.llamaindex.ai/en/stable/examples/callbacks/OpenInferenceCallback/)
+        *   [Observability with OpenLLMetry](https://docs.llamaindex.ai/en/stable/examples/callbacks/OpenLLMetry/)
+        *   [PromptLayer Handler](https://docs.llamaindex.ai/en/stable/examples/callbacks/PromptLayerHandler/)
+        *   [Token Counting Handler](https://docs.llamaindex.ai/en/stable/examples/callbacks/TokenCountingHandler/)
+        *   [UpTrain Callback Handler](https://docs.llamaindex.ai/en/stable/examples/callbacks/UpTrainCallback/)
+        *   [Wandb Callback Handler](https://docs.llamaindex.ai/en/stable/examples/callbacks/WandbCallbackHandler/)
+        
+    *    Chat Engines
+        
+        Chat Engines
+        
+        *   [Chat Engine - Best Mode](https://docs.llamaindex.ai/en/stable/examples/chat_engine/chat_engine_best/)
+        *   [Chat Engine - Condense Plus Context Mode](https://docs.llamaindex.ai/en/stable/examples/chat_engine/chat_engine_condense_plus_context/)
+        *   [Chat Engine - Condense Question Mode](https://docs.llamaindex.ai/en/stable/examples/chat_engine/chat_engine_condense_question/)
+        *   [Chat Engine - Context Mode](https://docs.llamaindex.ai/en/stable/examples/chat_engine/chat_engine_context/)
+        *   [Chat Engine - OpenAI Agent Mode](https://docs.llamaindex.ai/en/stable/examples/chat_engine/chat_engine_openai/)
+        *   [Chat Engine with a Personality ✨](https://docs.llamaindex.ai/en/stable/examples/chat_engine/chat_engine_personality/)
+        *   [Chat Engine - ReAct Agent Mode](https://docs.llamaindex.ai/en/stable/examples/chat_engine/chat_engine_react/)
+        *   [Chat Engine - Simple Mode REPL](https://docs.llamaindex.ai/en/stable/examples/chat_engine/chat_engine_repl/)
+        
+    *    Cookbooks
+        
+        Cookbooks
+        
+        *   [Anthropic Haiku Cookbook](https://docs.llamaindex.ai/en/stable/examples/cookbooks/anthropic_haiku/)
+        *   [Codestral from MistralAI Cookbook](https://docs.llamaindex.ai/en/stable/examples/cookbooks/codestral/)
+        *   [Cohere init8 and binary Embeddings Retrieval Evaluation](https://docs.llamaindex.ai/en/stable/examples/cookbooks/cohere_retriever_eval/)
+        *   [CrewAI + LlamaIndex Cookbook](https://docs.llamaindex.ai/en/stable/examples/cookbooks/crewai_llamaindex/)
+        *   [Llama3 Cookbook](https://docs.llamaindex.ai/en/stable/examples/cookbooks/llama3_cookbook/)
+        *   [Llama3 Cookbook with Groq](https://docs.llamaindex.ai/en/stable/examples/cookbooks/llama3_cookbook_groq/)
+        *   [Llama3 Cookbook with Ollama and Replicate](https://docs.llamaindex.ai/en/stable/examples/cookbooks/llama3_cookbook_ollama_replicate/)
+        *   [MistralAI Cookbook](https://docs.llamaindex.ai/en/stable/examples/cookbooks/mistralai/)
+        *   [mixedbread Rerank Cookbook](https://docs.llamaindex.ai/en/stable/examples/cookbooks/mixedbread_reranker/)
+        *   [Prometheus-2 Cookbook](https://docs.llamaindex.ai/en/stable/examples/cookbooks/prometheus2_cookbook/)
+        
+    *    Customization
+        
+        Customization
+        
+        *   [Azure OpenAI](https://docs.llamaindex.ai/en/stable/examples/customization/llms/AzureOpenAI/)
+        *   [ChatGPT](https://docs.llamaindex.ai/en/stable/examples/customization/llms/SimpleIndexDemo-ChatGPT/)
+        *   [HuggingFace LLM - Camel-5b](https://docs.llamaindex.ai/en/stable/examples/customization/llms/SimpleIndexDemo-Huggingface_camel/)
+        *   [HuggingFace LLM - StableLM](https://docs.llamaindex.ai/en/stable/examples/customization/llms/SimpleIndexDemo-Huggingface_stablelm/)
+        *   [Chat Prompts Customization](https://docs.llamaindex.ai/en/stable/examples/customization/prompts/chat_prompts/)
+        *   [Completion Prompts Customization](https://docs.llamaindex.ai/en/stable/examples/customization/prompts/completion_prompts/)
+        *   [Streaming](https://docs.llamaindex.ai/en/stable/examples/customization/streaming/SimpleIndexDemo-streaming/)
+        *   [Streaming for Chat Engine - Condense Question Mode](https://docs.llamaindex.ai/en/stable/examples/customization/streaming/chat_engine_condense_question_stream_response/)
+        
+    *    Data Connectors
+        
+        Data Connectors
+        
+        *   [Chroma Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/ChromaDemo/)
+        *   [DashVector Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/DashvectorReaderDemo/)
+        *   [Database Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/DatabaseReaderDemo/)
+        *   [DeepLake Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/DeepLakeReader/)
+        *   [Discord Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/DiscordDemo/)
+        *   [Faiss Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/FaissDemo/)
+        *   [Github Repo Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/GithubRepositoryReaderDemo/)
+        *   [Google Chat Reader Test](https://docs.llamaindex.ai/en/stable/examples/data_connectors/GoogleChatDemo/)
+        *   [Google Docs Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/GoogleDocsDemo/)
+        *   [Google Drive Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/GoogleDriveDemo/)
+        *   [Google Maps Text Search Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/GoogleMapsTextSearchReaderDemo/)
+        *   [Google Sheets Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/GoogleSheetsDemo/)
+        *   [Make Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/MakeDemo/)
+        *   [Mbox Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/MboxReaderDemo/)
+        *   [MilvusReader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/MilvusReaderDemo/)
+        *   [MongoDB Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/MongoDemo/)
+        *   [MyScale Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/MyScaleReaderDemo/)
+        *   [Notion Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/NotionDemo/)
+        *   [Obsidian Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/ObsidianReaderDemo/)
+        *   [Pathway Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/PathwayReaderDemo/)
+        *   [Pinecone Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/PineconeDemo/)
+        *   [Psychic Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/PsychicDemo/)
+        *   [Qdrant Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/QdrantDemo/)
+        *   [Slack Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/SlackDemo/)
+        *   [Twitter Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/TwitterDemo/)
+        *   [Weaviate Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/WeaviateDemo/)
+        *   [Web Page Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/WebPageDemo/)
+        *   [Deplot Reader Demo](https://docs.llamaindex.ai/en/stable/examples/data_connectors/deplot/DeplotReader/)
+        *   [HTML Tag Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/html_tag_reader/)
+        *   [Simple Directory Reader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/simple_directory_reader/)
+        *   [Parallel Processing SimpleDirectoryReader](https://docs.llamaindex.ai/en/stable/examples/data_connectors/simple_directory_reader_parallel/)
+        *   [Simple Directory Reader over a Remote FileSystem](https://docs.llamaindex.ai/en/stable/examples/data_connectors/simple_directory_reader_remote_fs/)
+        
+    *    Discover LlamaIndex
+        
+        Discover LlamaIndex
+        
+        *   [Discord Thread Management](https://docs.llamaindex.ai/en/stable/examples/discover_llamaindex/document_management/Discord_Thread_Management/)
+        
+    *    Docstores
+        
+        Docstores
+        
+        *   [Demo: Azure Table Storage as a Docstore](https://docs.llamaindex.ai/en/stable/examples/docstore/AzureDocstoreDemo/)
+        *   [Docstore Demo](https://docs.llamaindex.ai/en/stable/examples/docstore/DocstoreDemo/)
+        *   [Dynamo DB Docstore Demo](https://docs.llamaindex.ai/en/stable/examples/docstore/DynamoDBDocstoreDemo/)
+        *   [Firestore Demo](https://docs.llamaindex.ai/en/stable/examples/docstore/FirestoreDemo/)
+        *   [MongoDB Demo](https://docs.llamaindex.ai/en/stable/examples/docstore/MongoDocstoreDemo/)
+        *   [Redis Docstore+Index Store Demo](https://docs.llamaindex.ai/en/stable/examples/docstore/RedisDocstoreIndexStoreDemo/)
+        
+    *    Embeddings
+        
+        Embeddings
+        
+        *   [Anyscale Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/Anyscale/)
+        *   [LangChain Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/Langchain/)
+        *   [OpenAI Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/OpenAI/)
+        *   [Aleph Alpha Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/alephalpha/)
+        *   [Bedrock Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/bedrock/)
+        *   [Embeddings with Clarifai](https://docs.llamaindex.ai/en/stable/examples/embeddings/clarifai/)
+        *   [Cloudflare Workers AI Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/cloudflare_workersai/)
+        *   [CohereAI Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/cohereai/)
+        *   [Custom Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/custom_embeddings/)
+        *   [Dashscope embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/dashscope_embeddings/)
+        *   [Databricks Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/databricks/)
+        *   [Deepinfra](https://docs.llamaindex.ai/en/stable/examples/embeddings/deepinfra/)
+        *   [Elasticsearch Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/elasticsearch/)
+        *   [Qdrant FastEmbed Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/fastembed/)
+        *   [Fireworks Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/fireworks/)
+        *   [Google Gemini Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/gemini/)
+        *   [Google PaLM Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/google_palm/)
+        *   [Gradient Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/gradient/)
+        *   [Local Embeddings with HuggingFace](https://docs.llamaindex.ai/en/stable/examples/embeddings/huggingface/)
+        *   [IBM watsonx.ai](https://docs.llamaindex.ai/en/stable/examples/embeddings/ibm_watsonx/)
+        *   [Local Embeddings with IPEX-LLM on Intel CPU](https://docs.llamaindex.ai/en/stable/examples/embeddings/ipex_llm/)
+        *   [Local Embeddings with IPEX-LLM on Intel GPU](https://docs.llamaindex.ai/en/stable/examples/embeddings/ipex_llm_gpu/)
+        *   [Optimized BGE Embedding Model using Intel® Extension for Transformers](https://docs.llamaindex.ai/en/stable/examples/embeddings/itrex/)
+        *   [Jina 8K Context Window Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/jina_embeddings/)
+        *   [Jina Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/jinaai_embeddings/)
+        *   [Llamafile Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/llamafile/)
+        *   [LLMRails Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/llm_rails/)
+        *   [MistralAI Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/mistralai/)
+        *   [Mixedbread AI Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/mixedbreadai/)
+        *   [Nomic Embedding](https://docs.llamaindex.ai/en/stable/examples/embeddings/nomic/)
+        *   [NVIDIA NIMs](https://docs.llamaindex.ai/en/stable/examples/embeddings/nvidia/)
+        *   [Oracle Cloud Infrastructure Generative AI](https://docs.llamaindex.ai/en/stable/examples/embeddings/oci_genai/)
+        *   [OctoAI Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/octoai/)
+        *   [Ollama Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/ollama_embedding/)
+        *   [Local Embeddings with OpenVINO](https://docs.llamaindex.ai/en/stable/examples/embeddings/openvino/)
+        *   [Optimized Embedding Model using Optimum-Intel](https://docs.llamaindex.ai/en/stable/examples/embeddings/optimum_intel/)
+        *   [PremAI Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/premai/)
+        *   [Interacting with Embeddings deployed in Amazon SageMaker Endpoint with LlamaIndex](https://docs.llamaindex.ai/en/stable/examples/embeddings/sagemaker_embedding_endpoint/)
+        *   [Text Embedding Inference](https://docs.llamaindex.ai/en/stable/examples/embeddings/text_embedding_inference/)
+        *   [Together AI Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/together/)
+        *   [Upstage Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/upstage/)
+        *   [Voyage Embeddings](https://docs.llamaindex.ai/en/stable/examples/embeddings/voyageai/)
+        
+    *    Evaluation
+        
+        Evaluation
+        
+        *   [BEIR Out of Domain Benchmark](https://docs.llamaindex.ai/en/stable/examples/evaluation/BeirEvaluation/)
+        *   [🚀 RAG/LLM Evaluators - DeepEval](https://docs.llamaindex.ai/en/stable/examples/evaluation/Deepeval/)
+        *   [HotpotQADistractor Demo](https://docs.llamaindex.ai/en/stable/examples/evaluation/HotpotQADistractor/)
+        *   [QuestionGeneration](https://docs.llamaindex.ai/en/stable/examples/evaluation/QuestionGeneration/)
+        *   [Self Correcting Query Engines - Evaluation & Retry](https://docs.llamaindex.ai/en/stable/examples/evaluation/RetryQuery/)
+        *   [Tonic Validate Evaluators](https://docs.llamaindex.ai/en/stable/examples/evaluation/TonicValidateEvaluators/)
+        *   [How to use UpTrain with LlamaIndex](https://docs.llamaindex.ai/en/stable/examples/evaluation/UpTrain/)
+        *   [Answer Relevancy and Context Relevancy Evaluations](https://docs.llamaindex.ai/en/stable/examples/evaluation/answer_and_context_relevancy/)
+        *   [BatchEvalRunner - Running Multiple Evaluations](https://docs.llamaindex.ai/en/stable/examples/evaluation/batch_eval/)
+        *   [Correctness Evaluator](https://docs.llamaindex.ai/en/stable/examples/evaluation/correctness_eval/)
+        *   [Faithfulness Evaluator](https://docs.llamaindex.ai/en/stable/examples/evaluation/faithfulness_eval/)
+        *   [Guideline Evaluator](https://docs.llamaindex.ai/en/stable/examples/evaluation/guideline_eval/)
+        *   [Benchmarking LLM Evaluators On The MT-Bench Human Judgement LabelledPairwiseEvaluatorDataset](https://docs.llamaindex.ai/en/stable/examples/evaluation/mt_bench_human_judgement/)
+        *   [Benchmarking LLM Evaluators On A Mini MT-Bench (Single Grading) LabelledEvaluatorDataset](https://docs.llamaindex.ai/en/stable/examples/evaluation/mt_bench_single_grading/)
+        *   [Evaluating Multi-Modal RAG](https://docs.llamaindex.ai/en/stable/examples/evaluation/multi_modal/multi_modal_rag_evaluation/)
+        *   [Pairwise Evaluator](https://docs.llamaindex.ai/en/stable/examples/evaluation/pairwise_eval/)
+        *   [Evaluation using Prometheus model](https://docs.llamaindex.ai/en/stable/examples/evaluation/prometheus_evaluation/)
+        *   [Relevancy Evaluator](https://docs.llamaindex.ai/en/stable/examples/evaluation/relevancy_eval/)
+        *   [Retrieval Evaluation](https://docs.llamaindex.ai/en/stable/examples/evaluation/retrieval/retriever_eval/)
+        *   [Embedding Similarity Evaluator](https://docs.llamaindex.ai/en/stable/examples/evaluation/semantic_similarity_eval/)
+        
+    *    Finetuning
+        
+        Finetuning
+        
+        *   [How to Finetune a cross-encoder using LLamaIndex](https://docs.llamaindex.ai/en/stable/examples/finetuning/cross_encoder_finetuning/cross_encoder_finetuning/)
+        *   [Finetune Embeddings](https://docs.llamaindex.ai/en/stable/examples/finetuning/embeddings/finetune_embedding/)
+        *   [Finetuning an Adapter on Top of any Black-Box Embedding Model](https://docs.llamaindex.ai/en/stable/examples/finetuning/embeddings/finetune_embedding_adapter/)
+        *   [Fine Tuning Nous-Hermes-2 With Gradient and LlamaIndex](https://docs.llamaindex.ai/en/stable/examples/finetuning/gradient/gradient_fine_tuning/)
+        *   [Fine Tuning Llama2 for Better Structured Outputs With Gradient and LlamaIndex](https://docs.llamaindex.ai/en/stable/examples/finetuning/gradient/gradient_structured/)
+        *   [Fine Tuning for Text-to-SQL With Gradient and LlamaIndex](https://docs.llamaindex.ai/en/stable/examples/finetuning/gradient/gradient_text2sql/)
+        *   [Knowledge Distillation For Fine-Tuning A GPT-3.5 Judge (Correctness)](https://docs.llamaindex.ai/en/stable/examples/finetuning/llm_judge/correctness/finetune_llm_judge_single_grading_correctness/)
+        *   [Knowledge Distillation For Fine-Tuning A GPT-3.5 Judge (Pairwise)](https://docs.llamaindex.ai/en/stable/examples/finetuning/llm_judge/pairwise/finetune_llm_judge/)
+        *   [Fine Tuning MistralAI models using Finetuning API](https://docs.llamaindex.ai/en/stable/examples/finetuning/mistralai_fine_tuning/)
+        *   [Fine Tuning GPT-3.5-Turbo](https://docs.llamaindex.ai/en/stable/examples/finetuning/openai_fine_tuning/)
+        *   [Fine Tuning with Function Calling](https://docs.llamaindex.ai/en/stable/examples/finetuning/openai_fine_tuning_functions/)
+        *   [Fine-tuning a gpt-3.5 ReAct Agent on Better Chain of Thought](https://docs.llamaindex.ai/en/stable/examples/finetuning/react_agent/react_agent_finetune/)
+        *   [Custom Cohere Reranker](https://docs.llamaindex.ai/en/stable/examples/finetuning/rerankers/cohere_custom_reranker/)
+        *   [Router Fine-tuning](https://docs.llamaindex.ai/en/stable/examples/finetuning/router/router_finetune/)
+        
+    *    Ingestion
+        
+        Ingestion
+        
+        *   [Advanced Ingestion Pipeline](https://docs.llamaindex.ai/en/stable/examples/ingestion/advanced_ingestion_pipeline/)
+        *   [Async Ingestion Pipeline + Metadata Extraction](https://docs.llamaindex.ai/en/stable/examples/ingestion/async_ingestion_pipeline/)
+        *   [Ingestion Pipeline + Document Management](https://docs.llamaindex.ai/en/stable/examples/ingestion/document_management_pipeline/)
+        *   [Building a Live RAG Pipeline over Google Drive Files](https://docs.llamaindex.ai/en/stable/examples/ingestion/ingestion_gdrive/)
+        *   [Parallelizing Ingestion Pipeline](https://docs.llamaindex.ai/en/stable/examples/ingestion/parallel_execution_ingestion_pipeline/)
+        *   [Redis Ingestion Pipeline](https://docs.llamaindex.ai/en/stable/examples/ingestion/redis_ingestion_pipeline/)
+        
+    *    LLMs
+        
+        LLMs
+        
+        *   [AI21](https://docs.llamaindex.ai/en/stable/examples/llm/ai21/)
+        *   [Aleph Alpha](https://docs.llamaindex.ai/en/stable/examples/llm/alephalpha/)
+        *   [Anthropic](https://docs.llamaindex.ai/en/stable/examples/llm/anthropic/)
+        *   [Anyscale](https://docs.llamaindex.ai/en/stable/examples/llm/anyscale/)
+        *   [Azure OpenAI](https://docs.llamaindex.ai/en/stable/examples/llm/azure_openai/)
+        *   [Bedrock](https://docs.llamaindex.ai/en/stable/examples/llm/bedrock/)
+        *   [Bedrock Converse](https://docs.llamaindex.ai/en/stable/examples/llm/bedrock_converse/)
+        *   [Clarifai LLM](https://docs.llamaindex.ai/en/stable/examples/llm/clarifai/)
+        *   [Cleanlab Trustworthy Language Model](https://docs.llamaindex.ai/en/stable/examples/llm/cleanlab/)
+        *   [Cohere](https://docs.llamaindex.ai/en/stable/examples/llm/cohere/)
+        *   [DashScope LLMS](https://docs.llamaindex.ai/en/stable/examples/llm/dashscope/)
+        *   [DataBricks](https://docs.llamaindex.ai/en/stable/examples/llm/databricks/)
+        *   [DeepInfra](https://docs.llamaindex.ai/en/stable/examples/llm/deepinfra/)
+        *   [EverlyAI](https://docs.llamaindex.ai/en/stable/examples/llm/everlyai/)
+        *   [Fireworks](https://docs.llamaindex.ai/en/stable/examples/llm/fireworks/)
+        *   [Fireworks Function Calling Cookbook](https://docs.llamaindex.ai/en/stable/examples/llm/fireworks_cookbook/)
+        *   [Friendli](https://docs.llamaindex.ai/en/stable/examples/llm/friendli/)
+        *   [Gemini](https://docs.llamaindex.ai/en/stable/examples/llm/gemini/)
+        *   [Gradient Base Model](https://docs.llamaindex.ai/en/stable/examples/llm/gradient_base_model/)
+        *   [Gradient Model Adapter](https://docs.llamaindex.ai/en/stable/examples/llm/gradient_model_adapter/)
+        *   [Groq](https://docs.llamaindex.ai/en/stable/examples/llm/groq/)
+        *   [Hugging Face LLMs](https://docs.llamaindex.ai/en/stable/examples/llm/huggingface/)
+        *   [IBM watsonx.ai](https://docs.llamaindex.ai/en/stable/examples/llm/ibm_watsonx/)
+        *   [IPEX-LLM on Intel CPU](https://docs.llamaindex.ai/en/stable/examples/llm/ipex_llm/)
+        *   [IPEX-LLM on Intel GPU](https://docs.llamaindex.ai/en/stable/examples/llm/ipex_llm_gpu/)
+        *   [Konko](https://docs.llamaindex.ai/en/stable/examples/llm/konko/)
+        *   [Langchain](https://docs.llamaindex.ai/en/stable/examples/llm/langchain/)
+        *   [LiteLLM](https://docs.llamaindex.ai/en/stable/examples/llm/litellm/)
+        *   [Replicate - Llama 2 13B](https://docs.llamaindex.ai/en/stable/examples/llm/llama_2/)
+        *   [LlamaCPP](https://docs.llamaindex.ai/en/stable/examples/llm/llama_2_llama_cpp/)
+        *   [🦙 x 🦙 Rap Battle](https://docs.llamaindex.ai/en/stable/examples/llm/llama_2_rap_battle/)
+        *   [Llama API](https://docs.llamaindex.ai/en/stable/examples/llm/llama_api/)
+        *   [llamafile](https://docs.llamaindex.ai/en/stable/examples/llm/llamafile/)
+        *   [LLM Predictor](https://docs.llamaindex.ai/en/stable/examples/llm/llm_predictor/)
+        *   [LM Studio](https://docs.llamaindex.ai/en/stable/examples/llm/lmstudio/)
+        *   [LocalAI](https://docs.llamaindex.ai/en/stable/examples/llm/localai/)
+        *   [Maritalk](https://docs.llamaindex.ai/en/stable/examples/llm/maritalk/)
+        *   [MistralRS LLM](https://docs.llamaindex.ai/en/stable/examples/llm/mistral_rs/)
+        *   [MistralAI](https://docs.llamaindex.ai/en/stable/examples/llm/mistralai/)
+        *   [None](https://docs.llamaindex.ai/en/stable/examples/llm/mlx.ipynb)
+        *   [ModelScope LLMS](https://docs.llamaindex.ai/en/stable/examples/llm/modelscope/)
+        *   [Monster API <> LLamaIndex](https://docs.llamaindex.ai/en/stable/examples/llm/monsterapi/)
+        *   [MyMagic AI LLM](https://docs.llamaindex.ai/en/stable/examples/llm/mymagic/)
+        *   [Neutrino AI](https://docs.llamaindex.ai/en/stable/examples/llm/neutrino/)
+        *   [NVIDIA NIMs](https://docs.llamaindex.ai/en/stable/examples/llm/nvidia/)
+        *   [NVIDIA NIMs](https://docs.llamaindex.ai/en/stable/examples/llm/nvidia_nim/)
+        *   [Nvidia TensorRT-LLM](https://docs.llamaindex.ai/en/stable/examples/llm/nvidia_tensorrt/)
+        *   [Nvidia Triton](https://docs.llamaindex.ai/en/stable/examples/llm/nvidia_triton/)
+        *   [Oracle Cloud Infrastructure Generative AI](https://docs.llamaindex.ai/en/stable/examples/llm/oci_genai/)
+        *   [OctoAI](https://docs.llamaindex.ai/en/stable/examples/llm/octoai/)
+        *   [Ollama - Llama 3](https://docs.llamaindex.ai/en/stable/examples/llm/ollama/)
+        *   [Ollama - Gemma](https://docs.llamaindex.ai/en/stable/examples/llm/ollama_gemma/)
+        *   [OpenAI](https://docs.llamaindex.ai/en/stable/examples/llm/openai/)
+        *   [OpenAI JSON Mode vs. Function Calling for Data Extraction](https://docs.llamaindex.ai/en/stable/examples/llm/openai_json_vs_function_calling/)
+        *   [OpenLLM](https://docs.llamaindex.ai/en/stable/examples/llm/openllm/)
+        *   [OpenRouter](https://docs.llamaindex.ai/en/stable/examples/llm/openrouter/)
+        *   [OpenVINO LLMs](https://docs.llamaindex.ai/en/stable/examples/llm/openvino/)
+        *   [Optimum Intel LLMs optimized with IPEX backend](https://docs.llamaindex.ai/en/stable/examples/llm/optimum_intel/)
+        *   [PaLM](https://docs.llamaindex.ai/en/stable/examples/llm/palm/)
+        *   [Perplexity](https://docs.llamaindex.ai/en/stable/examples/llm/perplexity/)
+        *   [Portkey](https://docs.llamaindex.ai/en/stable/examples/llm/portkey/)
+        *   [Predibase](https://docs.llamaindex.ai/en/stable/examples/llm/predibase/)
+        *   [PremAI LlamaIndex](https://docs.llamaindex.ai/en/stable/examples/llm/premai/)
+        *   [Client of Baidu Intelligent Cloud's Qianfan LLM Platform](https://docs.llamaindex.ai/en/stable/examples/llm/qianfan/)
+        *   [RunGPT](https://docs.llamaindex.ai/en/stable/examples/llm/rungpt/)
+        *   [Interacting with LLM deployed in Amazon SageMaker Endpoint with LlamaIndex](https://docs.llamaindex.ai/en/stable/examples/llm/sagemaker_endpoint_llm/)
+        *   [Solar LLM](https://docs.llamaindex.ai/en/stable/examples/llm/solar/)
+        *   [Together AI LLM](https://docs.llamaindex.ai/en/stable/examples/llm/together/)
+        *   [Unify](https://docs.llamaindex.ai/en/stable/examples/llm/unify/)
+        *   [Upstage](https://docs.llamaindex.ai/en/stable/examples/llm/upstage/)
+        *   [Vertex AI](https://docs.llamaindex.ai/en/stable/examples/llm/vertex/)
+        *   [Replicate - Vicuna 13B](https://docs.llamaindex.ai/en/stable/examples/llm/vicuna/)
+        *   [vLLM](https://docs.llamaindex.ai/en/stable/examples/llm/vllm/)
+        *   [Xorbits Inference](https://docs.llamaindex.ai/en/stable/examples/llm/xinference_local_deployment/)
+        *   [Yi](https://docs.llamaindex.ai/en/stable/examples/llm/yi/)
+        
+    *    Llama Datasets
+        
+        Llama Datasets
+        
+        *   [Downloading a LlamaDataset from LlamaHub](https://docs.llamaindex.ai/en/stable/examples/llama_dataset/downloading_llama_datasets/)
+        *   [Benchmarking RAG Pipelines With A LabelledRagDatatset](https://docs.llamaindex.ai/en/stable/examples/llama_dataset/labelled-rag-datasets/)
+        *   [LlamaDataset Submission Template Notebook](https://docs.llamaindex.ai/en/stable/examples/llama_dataset/ragdataset_submission_template/)
+        *   [Contributing a LlamaDataset To LlamaHub](https://docs.llamaindex.ai/en/stable/examples/llama_dataset/uploading_llama_dataset/)
+        
+    *    Llama Hub
+        
+        Llama Hub
+        
+        *   [LlamaHub Demostration](https://docs.llamaindex.ai/en/stable/examples/llama_hub/llama_hub/)
+        *   [Ollama Llama Pack Example](https://docs.llamaindex.ai/en/stable/examples/llama_hub/llama_pack_ollama/)
+        *   [Llama Pack - Resume Screener 📄](https://docs.llamaindex.ai/en/stable/examples/llama_hub/llama_pack_resume/)
+        *   [Llama Packs Example](https://docs.llamaindex.ai/en/stable/examples/llama_hub/llama_packs_example/)
+        
+    *    Low Level
+        
+        Low Level
+        
+        *   [Building Evaluation from Scratch](https://docs.llamaindex.ai/en/stable/examples/low_level/evaluation/)
+        *   [Building an Advanced Fusion Retriever from Scratch](https://docs.llamaindex.ai/en/stable/examples/low_level/fusion_retriever/)
+        *   [Building Data Ingestion from Scratch](https://docs.llamaindex.ai/en/stable/examples/low_level/ingestion/)
+        *   [Building RAG from Scratch (Open-source only!)](https://docs.llamaindex.ai/en/stable/examples/low_level/oss_ingestion_retrieval/)
+        *   [Building Response Synthesis from Scratch](https://docs.llamaindex.ai/en/stable/examples/low_level/response_synthesis/)
+        *   [Building Retrieval from Scratch](https://docs.llamaindex.ai/en/stable/examples/low_level/retrieval/)
+        *   [Building a Router from Scratch](https://docs.llamaindex.ai/en/stable/examples/low_level/router/)
+        *   [Building a (Very Simple) Vector Store from Scratch](https://docs.llamaindex.ai/en/stable/examples/low_level/vector_store/)
+        
+    *    Managed Indexes
+        
+        Managed Indexes
+        
+        *   [Google Generative Language Semantic Retriever](https://docs.llamaindex.ai/en/stable/examples/managed/GoogleDemo/)
+        *   [PostgresML Managed Index](https://docs.llamaindex.ai/en/stable/examples/managed/PostgresMLDemo/)
+        *   [Google Cloud LlamaIndex on Vertex AI for RAG](https://docs.llamaindex.ai/en/stable/examples/managed/VertexAIDemo/)
+        *   [Semantic Retriever Benchmark](https://docs.llamaindex.ai/en/stable/examples/managed/manage_retrieval_benchmark/)
+        *   [Vectara Managed Index](https://docs.llamaindex.ai/en/stable/examples/managed/vectaraDemo/)
+        *   [Managed Index with Zilliz Cloud Pipelines](https://docs.llamaindex.ai/en/stable/examples/managed/zcpDemo/)
+        
+    *    Metadata Extractors
+        
+        Metadata Extractors
+        
+        *   [Entity Metadata Extraction](https://docs.llamaindex.ai/en/stable/examples/metadata_extraction/EntityExtractionClimate/)
+        *   [Metadata Extraction and Augmentation w/ Marvin](https://docs.llamaindex.ai/en/stable/examples/metadata_extraction/MarvinMetadataExtractorDemo/)
+        *   [Extracting Metadata for Better Document Indexing and Understanding](https://docs.llamaindex.ai/en/stable/examples/metadata_extraction/MetadataExtractionSEC/)
+        *   [Automated Metadata Extraction for Better Retrieval + Synthesis](https://docs.llamaindex.ai/en/stable/examples/metadata_extraction/MetadataExtraction_LLMSurvey/)
+        *   [Pydantic Extractor](https://docs.llamaindex.ai/en/stable/examples/metadata_extraction/PydanticExtractor/)
+        
+    *    Multi-Modal
+        
+        Multi-Modal
+        
+        *   [Chroma Multi-Modal Demo with LlamaIndex](https://docs.llamaindex.ai/en/stable/examples/multi_modal/ChromaMultiModalDemo/)
+        *   [Multi-Modal LLM using Anthropic model for image reasoning](https://docs.llamaindex.ai/en/stable/examples/multi_modal/anthropic_multi_modal/)
+        *   [Multi-Modal LLM using Azure OpenAI GPT-4V model for image reasoning](https://docs.llamaindex.ai/en/stable/examples/multi_modal/azure_openai_multi_modal/)
+        *   [Multi-Modal LLM using DashScope qwen-vl model for image reasoning](https://docs.llamaindex.ai/en/stable/examples/multi_modal/dashscope_multi_modal/)
+        *   [Multi-Modal LLM using Google's Gemini model for image understanding and build Retrieval Augmented Generation with LlamaIndex](https://docs.llamaindex.ai/en/stable/examples/multi_modal/gemini/)
+        *   [Multimodal Structured Outputs: GPT-4o vs. Other GPT-4 Variants](https://docs.llamaindex.ai/en/stable/examples/multi_modal/gpt4o_mm_structured_outputs/)
+        *   [GPT4-V Experiments with General, Specific questions and Chain Of Thought (COT) Prompting Technique.](https://docs.llamaindex.ai/en/stable/examples/multi_modal/gpt4v_experiments_cot/)
+        *   [Advanced Multi-Modal Retrieval using GPT4V and Multi-Modal Index/Retriever](https://docs.llamaindex.ai/en/stable/examples/multi_modal/gpt4v_multi_modal_retrieval/)
+        *   [Image to Image Retrieval using CLIP embedding and image correlation reasoning using GPT4V](https://docs.llamaindex.ai/en/stable/examples/multi_modal/image_to_image_retrieval/)
+        *   [LlaVa Demo with LlamaIndex](https://docs.llamaindex.ai/en/stable/examples/multi_modal/llava_demo/)
+        *   [Retrieval-Augmented Image Captioning](https://docs.llamaindex.ai/en/stable/examples/multi_modal/llava_multi_modal_tesla_10q/)
+        *   [\[Beta\] Multi-modal ReAct Agent](https://docs.llamaindex.ai/en/stable/examples/multi_modal/mm_agent/)
+        *   [Multi-Modal GPT4V Pydantic Program](https://docs.llamaindex.ai/en/stable/examples/multi_modal/multi_modal_pydantic/)
+        *   [Multi-Modal RAG using Nomic Embed and Anthropic.](https://docs.llamaindex.ai/en/stable/examples/multi_modal/multi_modal_rag_nomic/)
+        *   [Multi-Modal Retrieval using GPT text embedding and CLIP image embedding for Wikipedia Articles](https://docs.llamaindex.ai/en/stable/examples/multi_modal/multi_modal_retrieval/)
+        *   [Multimodal RAG for processing videos using OpenAI GPT4V and LanceDB vectorstore](https://docs.llamaindex.ai/en/stable/examples/multi_modal/multi_modal_video_RAG/)
+        *   [Multimodal Ollama Cookbook](https://docs.llamaindex.ai/en/stable/examples/multi_modal/ollama_cookbook/)
+        *   [Multi-Modal LLM using OpenAI GPT-4V model for image reasoning](https://docs.llamaindex.ai/en/stable/examples/multi_modal/openai_multi_modal/)
+        *   [Multi-Modal LLM using Replicate LlaVa, Fuyu 8B, MiniGPT4 models for image reasoning](https://docs.llamaindex.ai/en/stable/examples/multi_modal/replicate_multi_modal/)
+        *   [Semi-structured Image Retrieval](https://docs.llamaindex.ai/en/stable/examples/multi_modal/structured_image_retrieval/)
+        
+    *    Multi-Tenancy
+        
+        Multi-Tenancy
+        
+        *   [Multi-Tenancy RAG with LlamaIndex](https://docs.llamaindex.ai/en/stable/examples/multi_tenancy/multi_tenancy_rag/)
+        
+    *    Node Parsers & Text Splitters
+        
+        Node Parsers & Text Splitters
+        
+        *   [Semantic Chunker](https://docs.llamaindex.ai/en/stable/examples/node_parsers/semantic_chunking/)
+        *   [Semantic double merging chunking](https://docs.llamaindex.ai/en/stable/examples/node_parsers/semantic_double_merging_chunking/)
+        
+    *    Node Postprocessors
+        
+        Node Postprocessors
+        
+        *   [Cohere Rerank](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/CohereRerank/)
+        *   [Colbert Rerank](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/ColbertRerank/)
+        *   [File Based Node Parsers](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/FileNodeProcessors/)
+        *   [FlagEmbeddingReranker](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/FlagEmbeddingReranker/)
+        *   [Jina Rerank](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/JinaRerank/)
+        *   [LLM Reranker Demonstration (Great Gatsby)](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/LLMReranker-Gatsby/)
+        *   [LLM Reranker Demonstration (2021 Lyft 10-k)](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/LLMReranker-Lyft-10k/)
+        *   [LongContextReorder](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/LongContextReorder/)
+        *   [Metadata Replacement + Node Sentence Window](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/MetadataReplacementDemo/)
+        *   [Mixedbread AI Rerank](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/MixedbreadAIRerank/)
+        *   [NVIDIA NIMs](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/NVIDIARerank/)
+        *   [Sentence Embedding OptimizerThis postprocessor optimizes token usage by removing sentences that are not relevant to the query (this is done using embeddings).The percentile cutoff is a measure for using the top percentage of relevant sentences. The threshold cutoff can be specified instead, which uses a raw similarity cutoff for picking which sentences to keep.](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/OptimizerDemo/)
+        *   [PII Masking](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/PII/)
+        *   [Forward/Backward Augmentation](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/PrevNextPostprocessorDemo/)
+        *   [Recency Filtering](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/RecencyPostprocessorDemo/)
+        *   [SentenceTransformerRerank](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/SentenceTransformerRerank/)
+        *   [Time-Weighted Rerank](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/TimeWeightedPostprocessorDemo/)
+        *   [VoyageAI Rerank](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/VoyageAIRerank/)
+        *   [OpenVINO Rerank](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/openvino_rerank/)
+        *   [RankGPT Reranker Demonstration (Van Gogh Wiki)](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/rankGPT/)
+        *   [RankLLM Reranker Demonstration (Van Gogh Wiki)](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/rankLLM/)
+        
+    *    Object Stores
+        
+        Object Stores
+        
+        *   [The ObjectIndex Class](https://docs.llamaindex.ai/en/stable/examples/objects/object_index/)
+        
+    *    Output Parsers
+        
+        Output Parsers
+        
+        *   [Guardrails Output Parsing](https://docs.llamaindex.ai/en/stable/examples/output_parsing/GuardrailsDemo/)
+        *   [Langchain Output Parsing](https://docs.llamaindex.ai/en/stable/examples/output_parsing/LangchainOutputParserDemo/)
+        *   [DataFrame Structured Data Extraction](https://docs.llamaindex.ai/en/stable/examples/output_parsing/df_program/)
+        *   [Evaporate Demo](https://docs.llamaindex.ai/en/stable/examples/output_parsing/evaporate_program/)
+        *   [Function Calling Program for Structured Extraction](https://docs.llamaindex.ai/en/stable/examples/output_parsing/function_program/)
+        *   [Guidance Pydantic Program](https://docs.llamaindex.ai/en/stable/examples/output_parsing/guidance_pydantic_program/)
+        *   [Guidance for Sub-Question Query Engine](https://docs.llamaindex.ai/en/stable/examples/output_parsing/guidance_sub_question/)
+        *   [LLM Pydantic Program](https://docs.llamaindex.ai/en/stable/examples/output_parsing/llm_program/)
+        *   [LM Format Enforcer Pydantic Program](https://docs.llamaindex.ai/en/stable/examples/output_parsing/lmformatenforcer_pydantic_program/)
+        *   [LM Format Enforcer Regular Expression Generation](https://docs.llamaindex.ai/en/stable/examples/output_parsing/lmformatenforcer_regular_expressions/)
+        *   [OpenAI Pydantic Program](https://docs.llamaindex.ai/en/stable/examples/output_parsing/openai_pydantic_program/)
+        *   [OpenAI function calling for Sub-Question Query Engine](https://docs.llamaindex.ai/en/stable/examples/output_parsing/openai_sub_question/)
+        
+    *    Param Optimizer
+        
+        Param Optimizer
+        
+        *   [\[WIP\] Hyperparameter Optimization for RAG](https://docs.llamaindex.ai/en/stable/examples/param_optimizer/param_optimizer/)
+        
+    *    Prompts
+        
+        Prompts
+        
+        *   [Advanced Prompt Techniques (Variable Mappings, Functions)](https://docs.llamaindex.ai/en/stable/examples/prompts/advanced_prompts/)
+        *   [EmotionPrompt in RAG](https://docs.llamaindex.ai/en/stable/examples/prompts/emotion_prompt/)
+        *   [Accessing/Customizing Prompts within Higher-Level Modules](https://docs.llamaindex.ai/en/stable/examples/prompts/prompt_mixin/)
+        *   ["Optimization by Prompting" for RAG](https://docs.llamaindex.ai/en/stable/examples/prompts/prompt_optimization/)
+        *   [Prompt Engineering for RAG](https://docs.llamaindex.ai/en/stable/examples/prompts/prompts_rag/)
+        
+    *    Property Graph
+        
+        Property Graph
+        
+        *   [Using a Property Graph Store](https://docs.llamaindex.ai/en/stable/examples/property_graph/graph_store/)
+        *   [Property Graph Construction with Predefined Schemas](https://docs.llamaindex.ai/en/stable/examples/property_graph/property_graph_advanced/)
+        *   [Property Graph Index](https://docs.llamaindex.ai/en/stable/examples/property_graph/property_graph_basic/)
+        *   [Defining a Custom Property Graph Retriever](https://docs.llamaindex.ai/en/stable/examples/property_graph/property_graph_custom_retriever/)
+        *   [Neo4j Property Graph Index](https://docs.llamaindex.ai/en/stable/examples/property_graph/property_graph_neo4j/)
+        
+    *    Query Engines
+        
+        Query Engines
+        
+        *   [Retriever Query Engine with Custom Retrievers - Simple Hybrid Search](https://docs.llamaindex.ai/en/stable/examples/query_engine/CustomRetrievers/)
+        *   [JSONalyze Query Engine](https://docs.llamaindex.ai/en/stable/examples/query_engine/JSONalyze_query_engine/)
+        *   [Joint QA Summary Query Engine](https://docs.llamaindex.ai/en/stable/examples/query_engine/JointQASummary/)
+        *   [Retriever Router Query Engine](https://docs.llamaindex.ai/en/stable/examples/query_engine/RetrieverRouterQueryEngine/)
+        *   [Router Query Engine](https://docs.llamaindex.ai/en/stable/examples/query_engine/RouterQueryEngine/)
+        *   [SQL Auto Vector Query Engine](https://docs.llamaindex.ai/en/stable/examples/query_engine/SQLAutoVectorQueryEngine/)
+        *   [SQL Join Query Engine](https://docs.llamaindex.ai/en/stable/examples/query_engine/SQLJoinQueryEngine/)
+        *   [SQL Router Query Engine](https://docs.llamaindex.ai/en/stable/examples/query_engine/SQLRouterQueryEngine/)
+        *   [CitationQueryEngine](https://docs.llamaindex.ai/en/stable/examples/query_engine/citation_query_engine/)
+        *   [Cogniswitch query engine](https://docs.llamaindex.ai/en/stable/examples/query_engine/cogniswitch_query_engine/)
+        *   [Defining a Custom Query Engine](https://docs.llamaindex.ai/en/stable/examples/query_engine/custom_query_engine/)
+        *   [Ensemble Query Engine Guide](https://docs.llamaindex.ai/en/stable/examples/query_engine/ensemble_query_engine/)
+        *   [FLARE Query Engine](https://docs.llamaindex.ai/en/stable/examples/query_engine/flare_query_engine/)
+        *   [JSON Query Engine](https://docs.llamaindex.ai/en/stable/examples/query_engine/json_query_engine/)
+        *   [Knowledge Graph Query Engine](https://docs.llamaindex.ai/en/stable/examples/query_engine/knowledge_graph_query_engine/)
+        *   [Knowledge Graph RAG Query Engine](https://docs.llamaindex.ai/en/stable/examples/query_engine/knowledge_graph_rag_query_engine/)
+        *   [Structured Hierarchical Retrieval](https://docs.llamaindex.ai/en/stable/examples/query_engine/multi_doc_auto_retrieval/multi_doc_auto_retrieval/)
+        *   [Pandas Query Engine](https://docs.llamaindex.ai/en/stable/examples/query_engine/pandas_query_engine/)
+        *   [Recursive Retriever + Query Engine Demo](https://docs.llamaindex.ai/en/stable/examples/query_engine/pdf_tables/recursive_retriever/)
+        *   [\[Beta\] Text-to-SQL with PGVector](https://docs.llamaindex.ai/en/stable/examples/query_engine/pgvector_sql_query_engine/)
+        *   [Query Engine with Pydantic Outputs](https://docs.llamaindex.ai/en/stable/examples/query_engine/pydantic_query_engine/)
+        *   [Recursive Retriever + Document Agents](https://docs.llamaindex.ai/en/stable/examples/query_engine/recursive_retriever_agents/)
+        *   [Joint Tabular/Semantic QA over Tesla 10K](https://docs.llamaindex.ai/en/stable/examples/query_engine/sec_tables/tesla_10q_table/)
+        *   [Sub Question Query Engine](https://docs.llamaindex.ai/en/stable/examples/query_engine/sub_question_query_engine/)
+        
+    *    Query Pipeline
+        
+        Query Pipeline
+        
+        *   [An Introduction to LlamaIndex Query Pipelines](https://docs.llamaindex.ai/en/stable/examples/pipeline/query_pipeline/)
+        *   [Query Pipeline with Async/Parallel Execution](https://docs.llamaindex.ai/en/stable/examples/pipeline/query_pipeline_async/)
+        *   [Query Pipeline Chat Engine](https://docs.llamaindex.ai/en/stable/examples/pipeline/query_pipeline_memory/)
+        *   [Query Pipeline over Pandas DataFrames](https://docs.llamaindex.ai/en/stable/examples/pipeline/query_pipeline_pandas/)
+        *   [Query Pipeline with Routing](https://docs.llamaindex.ai/en/stable/examples/pipeline/query_pipeline_routing/)
+        *   [Query Pipeline for Advanced Text-to-SQL](https://docs.llamaindex.ai/en/stable/examples/pipeline/query_pipeline_sql/)
+        
+    *    Query Transformations
+        
+        Query Transformations
+        
+        *   [HyDE Query Transform](https://docs.llamaindex.ai/en/stable/examples/query_transformations/HyDEQueryTransformDemo/)
+        *   [Multi-Step Query Engine](https://docs.llamaindex.ai/en/stable/examples/query_transformations/SimpleIndexDemo-multistep/)
+        *   [Query Transform Cookbook](https://docs.llamaindex.ai/en/stable/examples/query_transformations/query_transform_cookbook/)
+        
+    *    Response Synthesizers
+        
+        Response Synthesizers
+        
+        *   [Pydantic Tree Summarize](https://docs.llamaindex.ai/en/stable/examples/response_synthesizers/custom_prompt_synthesizer/)
+        *   [Stress-Testing Long Context LLMs with a Recall Task](https://docs.llamaindex.ai/en/stable/examples/response_synthesizers/long_context_test/)
+        *   [Pydantic Tree Summarize](https://docs.llamaindex.ai/en/stable/examples/response_synthesizers/pydantic_tree_summarize/)
+        *   [Refine](https://docs.llamaindex.ai/en/stable/examples/response_synthesizers/refine/)
+        *   [Refine with Structured Answer Filtering](https://docs.llamaindex.ai/en/stable/examples/response_synthesizers/structured_refine/)
+        *   [Tree Summarize](https://docs.llamaindex.ai/en/stable/examples/response_synthesizers/tree_summarize/)
+        
+    *    Retrievers
+        
+        Retrievers
+        
+        *   [Auto Merging Retriever](https://docs.llamaindex.ai/en/stable/examples/retrievers/auto_merging_retriever/)
+        *   [Comparing Methods for Structured Retrieval (Auto-Retrieval vs. Recursive Retrieval)](https://docs.llamaindex.ai/en/stable/examples/retrievers/auto_vs_recursive_retriever/)
+        *   [Bedrock (Knowledge Bases)](https://docs.llamaindex.ai/en/stable/examples/retrievers/bedrock_retriever/)
+        *   [BM25 Retriever](https://docs.llamaindex.ai/en/stable/examples/retrievers/bm25_retriever/)
+        *   [Composable Objects](https://docs.llamaindex.ai/en/stable/examples/retrievers/composable_retrievers/)
+        *   [Activeloop Deep Memory](https://docs.llamaindex.ai/en/stable/examples/retrievers/deep_memory/)
+        *   [Ensemble Retrieval Guide](https://docs.llamaindex.ai/en/stable/examples/retrievers/ensemble_retrieval/)
+        *   [Chunk + Document Hybrid Retrieval with Long-Context Embeddings (Together.ai)](https://docs.llamaindex.ai/en/stable/examples/retrievers/multi_doc_together_hybrid/)
+        *   [Pathway Retriever](https://docs.llamaindex.ai/en/stable/examples/retrievers/pathway_retriever/)
+        *   [Reciprocal Rerank Fusion Retriever](https://docs.llamaindex.ai/en/stable/examples/retrievers/reciprocal_rerank_fusion/)
+        *   [Recursive Retriever + Node References + Braintrust](https://docs.llamaindex.ai/en/stable/examples/retrievers/recurisve_retriever_nodes_braintrust/)
+        *   [Recursive Retriever + Node References](https://docs.llamaindex.ai/en/stable/examples/retrievers/recursive_retriever_nodes/)
+        *   [Relative Score Fusion and Distribution-Based Score Fusion](https://docs.llamaindex.ai/en/stable/examples/retrievers/relative_score_dist_fusion/)
+        *   [Router Retriever](https://docs.llamaindex.ai/en/stable/examples/retrievers/router_retriever/)
+        *   [Simple Fusion Retriever](https://docs.llamaindex.ai/en/stable/examples/retrievers/simple_fusion/)
+        *   [Auto-Retrieval from a Vectara Index](https://docs.llamaindex.ai/en/stable/examples/retrievers/vectara_auto_retriever/)
+        *   [VideoDB Retriever](https://docs.llamaindex.ai/en/stable/examples/retrievers/videodb_retriever/)
+        *   [You.com Retriever](https://docs.llamaindex.ai/en/stable/examples/retrievers/you_retriever/)
+        
+    *    Tools
+        
+        Tools
+        
+        *   [OnDemandLoaderTool Tutorial](https://docs.llamaindex.ai/en/stable/examples/tools/OnDemandLoaderTool/)
+        *   [Azure Code Interpreter Tool Spec](https://docs.llamaindex.ai/en/stable/examples/tools/azure_code_interpreter/)
+        *   [Cassandra Database Tools](https://docs.llamaindex.ai/en/stable/examples/tools/cassandra/)
+        *   [Evaluation Query Engine Tool](https://docs.llamaindex.ai/en/stable/examples/tools/eval_query_engine_tool/)
+        
+    *    Transforms
+        
+        Transforms
+        
+        *   [Transforms Evaluation](https://docs.llamaindex.ai/en/stable/examples/transforms/TransformsEval/)
+        
+    *    Use Cases
+        
+        Use Cases
+        
+        *   [10K Analysis](https://docs.llamaindex.ai/en/stable/examples/usecases/10k_sub_question/)
+        *   [10Q Analysis](https://docs.llamaindex.ai/en/stable/examples/usecases/10q_sub_question/)
+        *   [Email Data Extraction](https://docs.llamaindex.ai/en/stable/examples/usecases/email_data_extraction/)
+        *   [Github Issue Analysis](https://docs.llamaindex.ai/en/stable/examples/usecases/github_issue_analysis/)
+        
+    *    Vector Stores
+        
+        Vector Stores
+        
+        *   [AWSDocDBDemo](https://docs.llamaindex.ai/en/stable/examples/vector_stores/AWSDocDBDemo/)
+        *   [Alibaba Cloud OpenSearch Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/AlibabaCloudOpenSearchIndexDemo/)
+        *   [Amazon Neptune - Neptune Analytics vector store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/AmazonNeptuneVectorDemo/)
+        *   [AnalyticDB](https://docs.llamaindex.ai/en/stable/examples/vector_stores/AnalyticDBDemo/)
+        *   [Astra DB](https://docs.llamaindex.ai/en/stable/examples/vector_stores/AstraDBIndexDemo/)
+        *   [Simple Vector Store - Async Index Creation](https://docs.llamaindex.ai/en/stable/examples/vector_stores/AsyncIndexCreationDemo/)
+        *   [Awadb Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/AwadbDemo/)
+        *   [Azure AI Search](https://docs.llamaindex.ai/en/stable/examples/vector_stores/AzureAISearchIndexDemo/)
+        *   [Azure CosmosDB MongoDB Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/AzureCosmosDBMongoDBvCoreDemo/)
+        *   [Bagel Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/BagelAutoRetriever/)
+        *   [Bagel Network](https://docs.llamaindex.ai/en/stable/examples/vector_stores/BagelIndexDemo/)
+        *   [Baidu VectorDB](https://docs.llamaindex.ai/en/stable/examples/vector_stores/BaiduVectorDBIndexDemo/)
+        *   [Cassandra Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/CassandraIndexDemo/)
+        *    Chroma + Fireworks + Nomic with Matryoshka embedding [Chroma + Fireworks + Nomic with Matryoshka embedding](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaFireworksNomic/)
+            
+            Table of contents
+            
+            *   [Chroma](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaFireworksNomic/#chroma)
+            *   [Nomic](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaFireworksNomic/#nomic)
+            *   [Fireworks.ai](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaFireworksNomic/#fireworksai)
+            *   [Basic Example](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaFireworksNomic/#basic-example)
+                
+                *   [Creating a Chroma Index](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaFireworksNomic/#creating-a-chroma-index)
+                
+            *   [Basic Example (including saving to disk) and resizable embeddings](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaFireworksNomic/#basic-example-including-saving-to-disk-and-resizable-embeddings)
+            
+        *   [Chroma](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaIndexDemo/)
+        *   [ClickHouse Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ClickHouseIndexDemo/)
+        *   [CouchbaseVectorStoreDemo](https://docs.llamaindex.ai/en/stable/examples/vector_stores/CouchbaseVectorStoreDemo/)
+        *   [DashVector Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/DashvectorIndexDemo/)
+        *   [Databricks Vector Search](https://docs.llamaindex.ai/en/stable/examples/vector_stores/DatabricksVectorSearchDemo/)
+        *   [Deep Lake Vector Store Quickstart](https://docs.llamaindex.ai/en/stable/examples/vector_stores/DeepLakeIndexDemo/)
+        *   [DocArray Hnsw Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/DocArrayHnswIndexDemo/)
+        *   [DocArray InMemory Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/DocArrayInMemoryIndexDemo/)
+        *   [DuckDB](https://docs.llamaindex.ai/en/stable/examples/vector_stores/DuckDBDemo/)
+        *   [Elasticsearch Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ElasticsearchIndexDemo/)
+        *   [Elasticsearch](https://docs.llamaindex.ai/en/stable/examples/vector_stores/Elasticsearch_demo/)
+        *   [Epsilla Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/EpsillaIndexDemo/)
+        *   [Faiss Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/FaissIndexDemo/)
+        *   [Firestore Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/FirestoreVectorStore/)
+        *   [Hologres](https://docs.llamaindex.ai/en/stable/examples/vector_stores/HologresDemo/)
+        *   [Jaguar Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/JaguarIndexDemo/)
+        *   [Advanced RAG with temporal filters using LlamaIndex and KDB.AI vector store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/KDBAI_Advanced_RAG_Demo/)
+        *   [LanceDB Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/LanceDBIndexDemo/)
+        *   [Lantern Vector Store (auto-retriever)](https://docs.llamaindex.ai/en/stable/examples/vector_stores/LanternAutoRetriever/)
+        *   [Lantern Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/LanternIndexDemo/)
+        *   [Metal Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/MetalIndexDemo/)
+        *   [Milvus Vector Store With Hybrid Retrieval](https://docs.llamaindex.ai/en/stable/examples/vector_stores/MilvusHybridIndexDemo/)
+        *   [Milvus Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/MilvusIndexDemo/)
+        *   [MilvusOperatorFunctionDemo](https://docs.llamaindex.ai/en/stable/examples/vector_stores/MilvusOperatorFunctionDemo/)
+        *   [MongoDBAtlasVectorSearch](https://docs.llamaindex.ai/en/stable/examples/vector_stores/MongoDBAtlasVectorSearch/)
+        *   [now make sure you create the search index with the right name here](https://docs.llamaindex.ai/en/stable/examples/vector_stores/MongoDBAtlasVectorSearchRAGFireworks/)
+        *   [MongoDBAtlasVectorSearchRAGOpenAI](https://docs.llamaindex.ai/en/stable/examples/vector_stores/MongoDBAtlasVectorSearchRAGOpenAI/)
+        *   [MyScale Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/MyScaleIndexDemo/)
+        *   [Neo4j vector store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/Neo4jVectorDemo/)
+        *   [Opensearch Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/OpensearchDemo/)
+        *   [pgvecto.rs](https://docs.llamaindex.ai/en/stable/examples/vector_stores/PGVectoRsDemo/)
+        *   [Pinecone Vector Store - Hybrid Search](https://docs.llamaindex.ai/en/stable/examples/vector_stores/PineconeIndexDemo-Hybrid/)
+        *   [Pinecone Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/PineconeIndexDemo/)
+        *   [Qdrant Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/QdrantIndexDemo/)
+        *   [Qdrant Vector Store - Metadata Filter](https://docs.llamaindex.ai/en/stable/examples/vector_stores/Qdrant_metadata_filter/)
+        *   [Qdrant Vector Store - Default Qdrant Filters](https://docs.llamaindex.ai/en/stable/examples/vector_stores/Qdrant_using_qdrant_filters/)
+        *   [Redis Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/RedisIndexDemo/)
+        *   [Relyt](https://docs.llamaindex.ai/en/stable/examples/vector_stores/RelytDemo/)
+        *   [Rockset Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/RocksetIndexDemo/)
+        *   [Simple Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/SimpleIndexDemo/)
+        *   [Local Llama2 + VectorStoreIndex](https://docs.llamaindex.ai/en/stable/examples/vector_stores/SimpleIndexDemoLlama-Local/)
+        *   [Llama2 + VectorStoreIndex](https://docs.llamaindex.ai/en/stable/examples/vector_stores/SimpleIndexDemoLlama2/)
+        *   [Simple Vector Stores - Maximum Marginal Relevance Retrieval](https://docs.llamaindex.ai/en/stable/examples/vector_stores/SimpleIndexDemoMMR/)
+        *   [S3/R2 Storage](https://docs.llamaindex.ai/en/stable/examples/vector_stores/SimpleIndexOnS3/)
+        *   [Supabase Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/SupabaseVectorIndexDemo/)
+        *   [Tair Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/TairIndexDemo/)
+        *   [Tencent Cloud VectorDB](https://docs.llamaindex.ai/en/stable/examples/vector_stores/TencentVectorDBIndexDemo/)
+        *   [TiDB Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/TiDBVector/)
+        *   [Timescale Vector Store (PostgreSQL)](https://docs.llamaindex.ai/en/stable/examples/vector_stores/Timescalevector/)
+        *   [txtai Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/TxtaiIndexDemo/)
+        *   [Typesense Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/TypesenseDemo/)
+        *   [Upstash Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/UpstashVectorDemo/)
+        *   [VearchDemo](https://docs.llamaindex.ai/en/stable/examples/vector_stores/VearchDemo/)
+        *   [Google Vertex AI Vector Search](https://docs.llamaindex.ai/en/stable/examples/vector_stores/VertexAIVectorSearchDemo/)
+        *   [Vespa Vector Store demo](https://docs.llamaindex.ai/en/stable/examples/vector_stores/VespaIndexDemo/)
+        *   [Weaviate Vector Store - Hybrid Search](https://docs.llamaindex.ai/en/stable/examples/vector_stores/WeaviateIndexDemo-Hybrid/)
+        *   [Weaviate Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/WeaviateIndexDemo/)
+        *   [Auto-Retrieval from a Weaviate Vector Database](https://docs.llamaindex.ai/en/stable/examples/vector_stores/WeaviateIndex_auto_retriever/)
+        *   [Weaviate Vector Store Metadata Filter](https://docs.llamaindex.ai/en/stable/examples/vector_stores/WeaviateIndex_metadata_filter/)
+        *   [Zep Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ZepIndexDemo/)
+        *   [Auto-Retrieval from a Vector Database](https://docs.llamaindex.ai/en/stable/examples/vector_stores/chroma_auto_retriever/)
+        *   [Chroma Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/chroma_metadata_filter/)
+        *   [Auto-Retrieval from a Vector Database](https://docs.llamaindex.ai/en/stable/examples/vector_stores/elasticsearch_auto_retriever/)
+        *   [Guide: Using Vector Store Index with Existing Pinecone Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/existing_data/pinecone_existing_data/)
+        *   [Guide: Using Vector Store Index with Existing Weaviate Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/existing_data/weaviate_existing_data/)
+        *   [Neo4j Vector Store - Metadata Filter](https://docs.llamaindex.ai/en/stable/examples/vector_stores/neo4j_metadata_filter/)
+        *   [A Simple to Advanced Guide with Auto-Retrieval (with Pinecone + Arize Phoenix)](https://docs.llamaindex.ai/en/stable/examples/vector_stores/pinecone_auto_retriever/)
+        *   [Pinecone Vector Store - Metadata Filter](https://docs.llamaindex.ai/en/stable/examples/vector_stores/pinecone_metadata_filter/)
+        *   [Postgres Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/postgres/)
+        *   [Hybrid Search with Qdrant BM42](https://docs.llamaindex.ai/en/stable/examples/vector_stores/qdrant_bm42/)
+        *   [Qdrant Hybrid Search](https://docs.llamaindex.ai/en/stable/examples/vector_stores/qdrant_hybrid/)
+        
+    
+*   [Component Guides](https://docs.llamaindex.ai/en/stable/module_guides/)
+    
+    Component Guides
+    
+    *   [Models](https://docs.llamaindex.ai/en/stable/module_guides/models/)
+        
+        Models
+        
+        *    LLMs
+            
+            LLMs
+            
+            *   [Using LLMs](https://docs.llamaindex.ai/en/stable/module_guides/models/llms/)
+            *   [Standalone Usage](https://docs.llamaindex.ai/en/stable/module_guides/models/llms/usage_standalone/)
+            *   [Customizing LLMs](https://docs.llamaindex.ai/en/stable/module_guides/models/llms/usage_custom/)
+            *   [Available LLM Integrations](https://docs.llamaindex.ai/en/stable/module_guides/models/llms/modules/)
+            
+        *   [Embeddings](https://docs.llamaindex.ai/en/stable/module_guides/models/embeddings/)
+        *   [Multi Modal](https://docs.llamaindex.ai/en/stable/module_guides/models/multi_modal/)
+        
+    *   [Prompts](https://docs.llamaindex.ai/en/stable/module_guides/models/prompts/)
+        
+        Prompts
+        
+        *   [Usage pattern](https://docs.llamaindex.ai/en/stable/module_guides/models/prompts/usage_pattern/)
+        
+    *   [Loading](https://docs.llamaindex.ai/en/stable/module_guides/loading/)
+        
+        Loading
+        
+        *   [Documents and Nodes](https://docs.llamaindex.ai/en/stable/module_guides/loading/documents_and_nodes/)
+            
+            Documents and Nodes
+            
+            *   [Using Documents](https://docs.llamaindex.ai/en/stable/module_guides/loading/documents_and_nodes/usage_documents/)
+            *   [Using Nodes](https://docs.llamaindex.ai/en/stable/module_guides/loading/documents_and_nodes/usage_nodes/)
+            *   [Metadata Extraction](https://docs.llamaindex.ai/en/stable/module_guides/loading/documents_and_nodes/usage_metadata_extractor/)
+            
+        *   [SimpleDirectoryReader](https://docs.llamaindex.ai/en/stable/module_guides/loading/simpledirectoryreader/)
+        *   [Data Connectors](https://docs.llamaindex.ai/en/stable/module_guides/loading/connector/)
+            
+            Data Connectors
+            
+            *   [Usage Pattern](https://docs.llamaindex.ai/en/stable/module_guides/loading/connector/usage_pattern/)
+            *   [LlamaParse](https://docs.llamaindex.ai/en/stable/module_guides/loading/connector/llama_parse/)
+            *   [Module Guides](https://docs.llamaindex.ai/en/stable/module_guides/loading/connector/modules/)
+            
+        *   [Node Parsers / Text Splitters](https://docs.llamaindex.ai/en/stable/module_guides/loading/node_parsers/)
+            
+            Node Parsers / Text Splitters
+            
+            *   [Node Parser Modules](https://docs.llamaindex.ai/en/stable/module_guides/loading/node_parsers/modules/)
+            
+        *   [Ingestion Pipeline](https://docs.llamaindex.ai/en/stable/module_guides/loading/ingestion_pipeline/)
+            
+            Ingestion Pipeline
+            
+            *   [Transformations](https://docs.llamaindex.ai/en/stable/module_guides/loading/ingestion_pipeline/transformations/)
+            
+        
+    *   [Indexing](https://docs.llamaindex.ai/en/stable/module_guides/indexing/)
+        
+        Indexing
+        
+        *   [Index Guide](https://docs.llamaindex.ai/en/stable/module_guides/indexing/index_guide/)
+        *   [Vector Store Index](https://docs.llamaindex.ai/en/stable/module_guides/indexing/vector_store_index/)
+        *   [Property Graph Index](https://docs.llamaindex.ai/en/stable/module_guides/indexing/lpg_index_guide/)
+        *   [Document Management](https://docs.llamaindex.ai/en/stable/module_guides/indexing/document_management/)
+        *   [LlamaCloud](https://docs.llamaindex.ai/en/stable/module_guides/indexing/llama_cloud_index/)
+        *   [Metadata Extraction](https://docs.llamaindex.ai/en/stable/module_guides/indexing/metadata_extraction/)
+        *   [Modules](https://docs.llamaindex.ai/en/stable/module_guides/indexing/modules/)
+        
+    *   [Storing](https://docs.llamaindex.ai/en/stable/module_guides/storing/)
+        
+        Storing
+        
+        *   [Vector Stores](https://docs.llamaindex.ai/en/stable/module_guides/storing/vector_stores/)
+        *   [Document Stores](https://docs.llamaindex.ai/en/stable/module_guides/storing/docstores/)
+        *   [Index Stores](https://docs.llamaindex.ai/en/stable/module_guides/storing/index_stores/)
+        *   [Chat Stores](https://docs.llamaindex.ai/en/stable/module_guides/storing/chat_stores/)
+        *   [Key-Value Stores](https://docs.llamaindex.ai/en/stable/module_guides/storing/kv_stores/)
+        *   [Persisting & Loading Data](https://docs.llamaindex.ai/en/stable/module_guides/storing/save_load/)
+        *   [Customizing Storage](https://docs.llamaindex.ai/en/stable/module_guides/storing/customization/)
+        
+    *   [Querying](https://docs.llamaindex.ai/en/stable/module_guides/querying/)
+        
+        Querying
+        
+        *   [Query Engines](https://docs.llamaindex.ai/en/stable/module_guides/deploying/query_engine/)
+            
+            Query Engines
+            
+            *   [Usage Pattern](https://docs.llamaindex.ai/en/stable/module_guides/deploying/query_engine/usage_pattern/)
+            *   [Response Modes](https://docs.llamaindex.ai/en/stable/module_guides/deploying/query_engine/response_modes/)
+            *   [Streaming](https://docs.llamaindex.ai/en/stable/module_guides/deploying/query_engine/streaming/)
+            *   [Module Guides](https://docs.llamaindex.ai/en/stable/module_guides/deploying/query_engine/modules/)
+            *   [Supporting Modules](https://docs.llamaindex.ai/en/stable/module_guides/deploying/query_engine/supporting_modules/)
+            
+        *   [Chat Engines](https://docs.llamaindex.ai/en/stable/module_guides/deploying/chat_engines/)
+            
+            Chat Engines
+            
+            *   [Usage Pattern](https://docs.llamaindex.ai/en/stable/module_guides/deploying/chat_engines/usage_pattern/)
+            *   [Module Guides](https://docs.llamaindex.ai/en/stable/module_guides/deploying/chat_engines/modules/)
+            
+        *   [Retrieval](https://docs.llamaindex.ai/en/stable/module_guides/querying/retriever/)
+            
+            Retrieval
+            
+            *   [Retriever Modules](https://docs.llamaindex.ai/en/stable/module_guides/querying/retriever/retrievers/)
+            *   [Retriever Modes](https://docs.llamaindex.ai/en/stable/module_guides/querying/retriever/retriever_modes/)
+            
+        *   [Node Postprocessors](https://docs.llamaindex.ai/en/stable/module_guides/querying/node_postprocessors/)
+            
+            Node Postprocessors
+            
+            *   [Node Postprocessor Modules](https://docs.llamaindex.ai/en/stable/module_guides/querying/node_postprocessors/node_postprocessors/)
+            
+        *   [Response Synthesis](https://docs.llamaindex.ai/en/stable/module_guides/querying/response_synthesizers/)
+            
+            Response Synthesis
+            
+            *   [Response Synthesis Modules](https://docs.llamaindex.ai/en/stable/module_guides/querying/response_synthesizers/response_synthesizers/)
+            
+        *   [Routing](https://docs.llamaindex.ai/en/stable/module_guides/querying/router/)
+        *   [Query Pipelines](https://docs.llamaindex.ai/en/stable/module_guides/querying/pipeline/)
+            
+            Query Pipelines
+            
+            *   [Usage Pattern](https://docs.llamaindex.ai/en/stable/module_guides/querying/pipeline/usage_pattern/)
+            *   [Module Guides](https://docs.llamaindex.ai/en/stable/module_guides/querying/pipeline/modules/)
+            *   [Module Usage](https://docs.llamaindex.ai/en/stable/module_guides/querying/pipeline/module_usage/)
+            
+        *   [Structured Outputs](https://docs.llamaindex.ai/en/stable/module_guides/querying/structured_outputs/)
+            
+            Structured Outputs
+            
+            *   [Output Parsing Modules](https://docs.llamaindex.ai/en/stable/module_guides/querying/structured_outputs/output_parser/)
+            *   [Query Engines + Pydantic Outputs](https://docs.llamaindex.ai/en/stable/module_guides/querying/structured_outputs/query_engine/)
+            *   [Pydantic Program](https://docs.llamaindex.ai/en/stable/module_guides/querying/structured_outputs/pydantic_program/)
+            
+        
+    *   [Agents](https://docs.llamaindex.ai/en/stable/module_guides/deploying/agents/)
+        
+        Agents
+        
+        *   [Usage Pattern](https://docs.llamaindex.ai/en/stable/module_guides/deploying/agents/usage_pattern/)
+        *   [Lower-Level Agent API](https://docs.llamaindex.ai/en/stable/module_guides/deploying/agents/agent_runner/)
+        *   [Module Guides](https://docs.llamaindex.ai/en/stable/module_guides/deploying/agents/modules/)
+        *   [Tools](https://docs.llamaindex.ai/en/stable/module_guides/deploying/agents/tools/)
+        
+    *   [Evaluation](https://docs.llamaindex.ai/en/stable/module_guides/evaluating/)
+        
+        Evaluation
+        
+        *   [Usage Pattern (Response Evaluation)](https://docs.llamaindex.ai/en/stable/module_guides/evaluating/usage_pattern/)
+        *   [Usage Pattern (Retrieval)](https://docs.llamaindex.ai/en/stable/module_guides/evaluating/usage_pattern_retrieval/)
+        *   [Modules](https://docs.llamaindex.ai/en/stable/module_guides/evaluating/modules/)
+        *    LlamaDatasets
+            
+            LlamaDatasets
+            
+            *   [Contributing A LabelledRagDataset](https://docs.llamaindex.ai/en/stable/module_guides/evaluating/contributing_llamadatasets/)
+            *   [Evaluating With LabelledRagDataset's](https://docs.llamaindex.ai/en/stable/module_guides/evaluating/evaluating_with_llamadatasets/)
+            *   [Evaluating Evaluators with LabelledEvaluatorDataset's](https://docs.llamaindex.ai/en/stable/module_guides/evaluating/evaluating_evaluators_with_llamadatasets/)
+            
+        
+    *   [Observability](https://docs.llamaindex.ai/en/stable/module_guides/observability/)
+        
+        Observability
+        
+        *   [Instrumentation](https://docs.llamaindex.ai/en/stable/module_guides/observability/instrumentation/)
+        
+    *   [Settings](https://docs.llamaindex.ai/en/stable/module_guides/supporting_modules/settings/)
+    
+*    Advanced Topics
+    
+    Advanced Topics
+    
+    *   [Building Performant RAG Applications for Production](https://docs.llamaindex.ai/en/stable/optimizing/production_rag/)
+    *   [Basic Strategies](https://docs.llamaindex.ai/en/stable/optimizing/basic_strategies/basic_strategies/)
+    *   [Agentic strategies](https://docs.llamaindex.ai/en/stable/optimizing/agentic_strategies/agentic_strategies/)
+    *    Retrieval
+        
+        Retrieval
+        
+        *   [Advanced Retrieval Strategies](https://docs.llamaindex.ai/en/stable/optimizing/advanced_retrieval/advanced_retrieval/)
+        *   [Query Transformations](https://docs.llamaindex.ai/en/stable/optimizing/advanced_retrieval/query_transformations/)
+        
+    *    Evaluation
+        
+        Evaluation
+        
+        *   [Component Wise Evaluation](https://docs.llamaindex.ai/en/stable/optimizing/evaluation/component_wise_evaluation/)
+        *   [End-to-End Evaluation](https://docs.llamaindex.ai/en/stable/optimizing/evaluation/e2e_evaluation/)
+        *   [Evaluation](https://docs.llamaindex.ai/en/stable/optimizing/evaluation/evaluation/)
+        
+    *   [Fine-Tuning](https://docs.llamaindex.ai/en/stable/optimizing/fine-tuning/fine-tuning/)
+    *   [Writing Custom Modules](https://docs.llamaindex.ai/en/stable/optimizing/custom_modules/)
+    *   [Building RAG from Scratch (Lower-Level)](https://docs.llamaindex.ai/en/stable/optimizing/building_rag_from_scratch/)
+    
+*   [API Reference](https://docs.llamaindex.ai/en/stable/api_reference/)
+    
+    API Reference
+    
+    *   [Agents](https://docs.llamaindex.ai/en/stable/api_reference/agent/)
+        
+        Agents
+        
+        *   [Coa](https://docs.llamaindex.ai/en/stable/api_reference/agent/coa/)
+        *   [Dashscope](https://docs.llamaindex.ai/en/stable/api_reference/agent/dashscope/)
+        *   [Introspective](https://docs.llamaindex.ai/en/stable/api_reference/agent/introspective/)
+        *   [Lats](https://docs.llamaindex.ai/en/stable/api_reference/agent/lats/)
+        *   [Llm compiler](https://docs.llamaindex.ai/en/stable/api_reference/agent/llm_compiler/)
+        *   [Openai](https://docs.llamaindex.ai/en/stable/api_reference/agent/openai/)
+        *   [Openai legacy](https://docs.llamaindex.ai/en/stable/api_reference/agent/openai_legacy/)
+        *   [React](https://docs.llamaindex.ai/en/stable/api_reference/agent/react/)
+        
+    *   [Callbacks](https://docs.llamaindex.ai/en/stable/api_reference/callbacks/)
+        
+        Callbacks
+        
+        *   [Agentops](https://docs.llamaindex.ai/en/stable/api_reference/callbacks/agentops/)
+        *   [Aim](https://docs.llamaindex.ai/en/stable/api_reference/callbacks/aim/)
+        *   [Argilla](https://docs.llamaindex.ai/en/stable/api_reference/callbacks/argilla/)
+        *   [Arize phoenix](https://docs.llamaindex.ai/en/stable/api_reference/callbacks/arize_phoenix/)
+        *   [Deepeval](https://docs.llamaindex.ai/en/stable/api_reference/callbacks/deepeval/)
+        *   [Honeyhive](https://docs.llamaindex.ai/en/stable/api_reference/callbacks/honeyhive/)
+        *   [Langfuse](https://docs.llamaindex.ai/en/stable/api_reference/callbacks/langfuse/)
+        *   [Llama debug](https://docs.llamaindex.ai/en/stable/api_reference/callbacks/llama_debug/)
+        *   [Openinference](https://docs.llamaindex.ai/en/stable/api_reference/callbacks/openinference/)
+        *   [Promptlayer](https://docs.llamaindex.ai/en/stable/api_reference/callbacks/promptlayer/)
+        *   [Token counter](https://docs.llamaindex.ai/en/stable/api_reference/callbacks/token_counter/)
+        *   [Uptrain](https://docs.llamaindex.ai/en/stable/api_reference/callbacks/uptrain/)
+        *   [Wandb](https://docs.llamaindex.ai/en/stable/api_reference/callbacks/wandb/)
+        
+    *   [Chat Engines](https://docs.llamaindex.ai/en/stable/api_reference/chat_engines/)
+        
+        Chat Engines
+        
+        *   [Condense plus context](https://docs.llamaindex.ai/en/stable/api_reference/chat_engines/condense_plus_context/)
+        *   [Condense question](https://docs.llamaindex.ai/en/stable/api_reference/chat_engines/condense_question/)
+        *   [Context](https://docs.llamaindex.ai/en/stable/api_reference/chat_engines/context/)
+        *   [Simple](https://docs.llamaindex.ai/en/stable/api_reference/chat_engines/simple/)
+        
+    *   [Embeddings](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/)
+        
+        Embeddings
+        
+        *   [Adapter](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/adapter/)
+        *   [Alephalpha](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/alephalpha/)
+        *   [Anyscale](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/anyscale/)
+        *   [Azure openai](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/azure_openai/)
+        *   [Bedrock](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/bedrock/)
+        *   [Clarifai](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/clarifai/)
+        *   [Clip](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/clip/)
+        *   [Cloudflare workersai](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/cloudflare_workersai/)
+        *   [Cohere](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/cohere/)
+        *   [Dashscope](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/dashscope/)
+        *   [Databricks](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/databricks/)
+        *   [Deepinfra](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/deepinfra/)
+        *   [Elasticsearch](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/elasticsearch/)
+        *   [Fastembed](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/fastembed/)
+        *   [Fireworks](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/fireworks/)
+        *   [Gemini](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/gemini/)
+        *   [Google](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/google/)
+        *   [Gradient](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/gradient/)
+        *   [Huggingface](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/huggingface/)
+        *   [Huggingface api](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/huggingface_api/)
+        *   [Huggingface itrex](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/huggingface_itrex/)
+        *   [Huggingface openvino](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/huggingface_openvino/)
+        *   [Huggingface optimum](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/huggingface_optimum/)
+        *   [Huggingface optimum intel](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/huggingface_optimum_intel/)
+        *   [Ibm](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/ibm/)
+        *   [Instructor](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/instructor/)
+        *   [Ipex llm](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/ipex_llm/)
+        *   [Jinaai](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/jinaai/)
+        *   [Langchain](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/langchain/)
+        *   [Litellm](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/litellm/)
+        *   [Llamafile](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/llamafile/)
+        *   [Llm rails](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/llm_rails/)
+        *   [Mistralai](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/mistralai/)
+        *   [Mixedbreadai](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/mixedbreadai/)
+        *   [Nomic](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/nomic/)
+        *   [Nvidia](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/nvidia/)
+        *   [Oci genai](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/oci_genai/)
+        *   [Octoai](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/octoai/)
+        *   [Ollama](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/ollama/)
+        *   [Openai](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/openai/)
+        *   [Premai](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/premai/)
+        *   [Sagemaker endpoint](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/sagemaker_endpoint/)
+        *   [Text embeddings inference](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/text_embeddings_inference/)
+        *   [Together](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/together/)
+        *   [Upstage](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/upstage/)
+        *   [Vertex](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/vertex/)
+        *   [Voyageai](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/voyageai/)
+        
+    *   [Evaluation](https://docs.llamaindex.ai/en/stable/api_reference/evaluation/)
+        
+        Evaluation
+        
+        *   [Answer relevancy](https://docs.llamaindex.ai/en/stable/api_reference/evaluation/answer_relevancy/)
+        *   [Context relevancy](https://docs.llamaindex.ai/en/stable/api_reference/evaluation/context_relevancy/)
+        *   [Correctness](https://docs.llamaindex.ai/en/stable/api_reference/evaluation/correctness/)
+        *   [Dataset generation](https://docs.llamaindex.ai/en/stable/api_reference/evaluation/dataset_generation/)
+        *   [Faithfullness](https://docs.llamaindex.ai/en/stable/api_reference/evaluation/faithfullness/)
+        *   [Guideline](https://docs.llamaindex.ai/en/stable/api_reference/evaluation/guideline/)
+        *   [Metrics](https://docs.llamaindex.ai/en/stable/api_reference/evaluation/metrics/)
+        *   [Multi modal](https://docs.llamaindex.ai/en/stable/api_reference/evaluation/multi_modal/)
+        *   [Pairwise comparison](https://docs.llamaindex.ai/en/stable/api_reference/evaluation/pairwise_comparison/)
+        *   [Query response](https://docs.llamaindex.ai/en/stable/api_reference/evaluation/query_response/)
+        *   [Response](https://docs.llamaindex.ai/en/stable/api_reference/evaluation/response/)
+        *   [Retrieval](https://docs.llamaindex.ai/en/stable/api_reference/evaluation/retrieval/)
+        *   [Semantic similarity](https://docs.llamaindex.ai/en/stable/api_reference/evaluation/semantic_similarity/)
+        *   [Tonic validate](https://docs.llamaindex.ai/en/stable/api_reference/evaluation/tonic_validate/)
+        
+    *   [Indexes](https://docs.llamaindex.ai/en/stable/api_reference/indices/)
+        
+        Indexes
+        
+        *   [Colbert](https://docs.llamaindex.ai/en/stable/api_reference/indices/colbert/)
+        *   [Dashscope](https://docs.llamaindex.ai/en/stable/api_reference/indices/dashscope/)
+        *   [Document summary](https://docs.llamaindex.ai/en/stable/api_reference/indices/document_summary/)
+        *   [Google](https://docs.llamaindex.ai/en/stable/api_reference/indices/google/)
+        *   [Keyword](https://docs.llamaindex.ai/en/stable/api_reference/indices/keyword/)
+        *   [Knowledge graph](https://docs.llamaindex.ai/en/stable/api_reference/indices/knowledge_graph/)
+        *   [Llama cloud](https://docs.llamaindex.ai/en/stable/api_reference/indices/llama_cloud/)
+        *   [Postgresml](https://docs.llamaindex.ai/en/stable/api_reference/indices/postgresml/)
+        *   [Property graph](https://docs.llamaindex.ai/en/stable/api_reference/indices/property_graph/)
+        *   [Summary](https://docs.llamaindex.ai/en/stable/api_reference/indices/summary/)
+        *   [Tree](https://docs.llamaindex.ai/en/stable/api_reference/indices/tree/)
+        *   [Vectara](https://docs.llamaindex.ai/en/stable/api_reference/indices/vectara/)
+        *   [Vector](https://docs.llamaindex.ai/en/stable/api_reference/indices/vector/)
+        *   [Vertexai](https://docs.llamaindex.ai/en/stable/api_reference/indices/vertexai/)
+        *   [Zilliz](https://docs.llamaindex.ai/en/stable/api_reference/indices/zilliz/)
+        
+    *   [Ingestion](https://docs.llamaindex.ai/en/stable/api_reference/ingestion/)
+        
+        Ingestion
+        
+    *   [Instrumentation](https://docs.llamaindex.ai/en/stable/api_reference/instrumentation/)
+        
+        Instrumentation
+        
+        *   [Event handlers](https://docs.llamaindex.ai/en/stable/api_reference/instrumentation/event_handlers/)
+        *   [Event types](https://docs.llamaindex.ai/en/stable/api_reference/instrumentation/event_types/)
+        *   [Span handlers](https://docs.llamaindex.ai/en/stable/api_reference/instrumentation/span_handlers/)
+        *   [Span types](https://docs.llamaindex.ai/en/stable/api_reference/instrumentation/span_types/)
+        
+    *   [LLMs](https://docs.llamaindex.ai/en/stable/api_reference/llms/)
+        
+        LLMs
+        
+        *   [None](https://docs.llamaindex.ai/en/stable/api_reference/llms/OptimumIntelLLM.md)
+        *   [Ai21](https://docs.llamaindex.ai/en/stable/api_reference/llms/ai21/)
+        *   [Alephalpha](https://docs.llamaindex.ai/en/stable/api_reference/llms/alephalpha/)
+        *   [Anthropic](https://docs.llamaindex.ai/en/stable/api_reference/llms/anthropic/)
+        *   [Anyscale](https://docs.llamaindex.ai/en/stable/api_reference/llms/anyscale/)
+        *   [Azure openai](https://docs.llamaindex.ai/en/stable/api_reference/llms/azure_openai/)
+        *   [Bedrock](https://docs.llamaindex.ai/en/stable/api_reference/llms/bedrock/)
+        *   [Bedrock converse](https://docs.llamaindex.ai/en/stable/api_reference/llms/bedrock_converse/)
+        *   [Clarifai](https://docs.llamaindex.ai/en/stable/api_reference/llms/clarifai/)
+        *   [Cleanlab](https://docs.llamaindex.ai/en/stable/api_reference/llms/cleanlab/)
+        *   [Cohere](https://docs.llamaindex.ai/en/stable/api_reference/llms/cohere/)
+        *   [Custom llm](https://docs.llamaindex.ai/en/stable/api_reference/llms/custom_llm/)
+        *   [Dashscope](https://docs.llamaindex.ai/en/stable/api_reference/llms/dashscope/)
+        *   [Databricks](https://docs.llamaindex.ai/en/stable/api_reference/llms/databricks/)
+        *   [Deepinfra](https://docs.llamaindex.ai/en/stable/api_reference/llms/deepinfra/)
+        *   [Everlyai](https://docs.llamaindex.ai/en/stable/api_reference/llms/everlyai/)
+        *   [Fireworks](https://docs.llamaindex.ai/en/stable/api_reference/llms/fireworks/)
+        *   [Friendli](https://docs.llamaindex.ai/en/stable/api_reference/llms/friendli/)
+        *   [Gemini](https://docs.llamaindex.ai/en/stable/api_reference/llms/gemini/)
+        *   [Gradient](https://docs.llamaindex.ai/en/stable/api_reference/llms/gradient/)
+        *   [Groq](https://docs.llamaindex.ai/en/stable/api_reference/llms/groq/)
+        *   [Huggingface](https://docs.llamaindex.ai/en/stable/api_reference/llms/huggingface/)
+        *   [Huggingface api](https://docs.llamaindex.ai/en/stable/api_reference/llms/huggingface_api/)
+        *   [Ibm](https://docs.llamaindex.ai/en/stable/api_reference/llms/ibm/)
+        *   [Ipex llm](https://docs.llamaindex.ai/en/stable/api_reference/llms/ipex_llm/)
+        *   [Konko](https://docs.llamaindex.ai/en/stable/api_reference/llms/konko/)
+        *   [Langchain](https://docs.llamaindex.ai/en/stable/api_reference/llms/langchain/)
+        *   [Litellm](https://docs.llamaindex.ai/en/stable/api_reference/llms/litellm/)
+        *   [Llama api](https://docs.llamaindex.ai/en/stable/api_reference/llms/llama_api/)
+        *   [Llama cpp](https://docs.llamaindex.ai/en/stable/api_reference/llms/llama_cpp/)
+        *   [Llamafile](https://docs.llamaindex.ai/en/stable/api_reference/llms/llamafile/)
+        *   [Lmstudio](https://docs.llamaindex.ai/en/stable/api_reference/llms/lmstudio/)
+        *   [Localai](https://docs.llamaindex.ai/en/stable/api_reference/llms/localai/)
+        *   [Maritalk](https://docs.llamaindex.ai/en/stable/api_reference/llms/maritalk/)
+        *   [Mistral rs](https://docs.llamaindex.ai/en/stable/api_reference/llms/mistral_rs/)
+        *   [Mistralai](https://docs.llamaindex.ai/en/stable/api_reference/llms/mistralai/)
+        *   [Mlx](https://docs.llamaindex.ai/en/stable/api_reference/llms/mlx/)
+        *   [Modelscope](https://docs.llamaindex.ai/en/stable/api_reference/llms/modelscope/)
+        *   [Monsterapi](https://docs.llamaindex.ai/en/stable/api_reference/llms/monsterapi/)
+        *   [Mymagic](https://docs.llamaindex.ai/en/stable/api_reference/llms/mymagic/)
+        *   [Neutrino](https://docs.llamaindex.ai/en/stable/api_reference/llms/neutrino/)
+        *   [Nvidia](https://docs.llamaindex.ai/en/stable/api_reference/llms/nvidia/)
+        *   [Nvidia tensorrt](https://docs.llamaindex.ai/en/stable/api_reference/llms/nvidia_tensorrt/)
+        *   [Nvidia triton](https://docs.llamaindex.ai/en/stable/api_reference/llms/nvidia_triton/)
+        *   [Oci genai](https://docs.llamaindex.ai/en/stable/api_reference/llms/oci_genai/)
+        *   [Octoai](https://docs.llamaindex.ai/en/stable/api_reference/llms/octoai/)
+        *   [Ollama](https://docs.llamaindex.ai/en/stable/api_reference/llms/ollama/)
+        *   [Openai](https://docs.llamaindex.ai/en/stable/api_reference/llms/openai/)
+        *   [Openai like](https://docs.llamaindex.ai/en/stable/api_reference/llms/openai_like/)
+        *   [Openllm](https://docs.llamaindex.ai/en/stable/api_reference/llms/openllm/)
+        *   [Openrouter](https://docs.llamaindex.ai/en/stable/api_reference/llms/openrouter/)
+        *   [Openvino](https://docs.llamaindex.ai/en/stable/api_reference/llms/openvino/)
+        *   [Optimum intel](https://docs.llamaindex.ai/en/stable/api_reference/llms/optimum_intel/)
+        *   [Palm](https://docs.llamaindex.ai/en/stable/api_reference/llms/palm/)
+        *   [Perplexity](https://docs.llamaindex.ai/en/stable/api_reference/llms/perplexity/)
+        *   [Portkey](https://docs.llamaindex.ai/en/stable/api_reference/llms/portkey/)
+        *   [Predibase](https://docs.llamaindex.ai/en/stable/api_reference/llms/predibase/)
+        *   [Premai](https://docs.llamaindex.ai/en/stable/api_reference/llms/premai/)
+        *   [Qianfan](https://docs.llamaindex.ai/en/stable/api_reference/llms/qianfan/)
+        *   [Replicate](https://docs.llamaindex.ai/en/stable/api_reference/llms/replicate/)
+        *   [Rungpt](https://docs.llamaindex.ai/en/stable/api_reference/llms/rungpt/)
+        *   [Sagemaker endpoint](https://docs.llamaindex.ai/en/stable/api_reference/llms/sagemaker_endpoint/)
+        *   [Solar](https://docs.llamaindex.ai/en/stable/api_reference/llms/solar/)
+        *   [Text generation inference](https://docs.llamaindex.ai/en/stable/api_reference/llms/text_generation_inference/)
+        *   [Together](https://docs.llamaindex.ai/en/stable/api_reference/llms/together/)
+        *   [Unify](https://docs.llamaindex.ai/en/stable/api_reference/llms/unify/)
+        *   [Upstage](https://docs.llamaindex.ai/en/stable/api_reference/llms/upstage/)
+        *   [Vertex](https://docs.llamaindex.ai/en/stable/api_reference/llms/vertex/)
+        *   [Vllm](https://docs.llamaindex.ai/en/stable/api_reference/llms/vllm/)
+        *   [Xinference](https://docs.llamaindex.ai/en/stable/api_reference/llms/xinference/)
+        *   [Yi](https://docs.llamaindex.ai/en/stable/api_reference/llms/yi/)
+        *   [You](https://docs.llamaindex.ai/en/stable/api_reference/llms/you/)
+        
+    *   [Llama Datasets](https://docs.llamaindex.ai/en/stable/api_reference/llama_dataset/)
+        
+        Llama Datasets
+        
+    *   [Llama Packs](https://docs.llamaindex.ai/en/stable/api_reference/packs/)
+        
+        Llama Packs
+        
+        *   [Agent search retriever](https://docs.llamaindex.ai/en/stable/api_reference/packs/agent_search_retriever/)
+        *   [Agents coa](https://docs.llamaindex.ai/en/stable/api_reference/packs/agents_coa/)
+        *   [Agents lats](https://docs.llamaindex.ai/en/stable/api_reference/packs/agents_lats/)
+        *   [Agents llm compiler](https://docs.llamaindex.ai/en/stable/api_reference/packs/agents_llm_compiler/)
+        *   [Amazon product extraction](https://docs.llamaindex.ai/en/stable/api_reference/packs/amazon_product_extraction/)
+        *   [Arize phoenix query engine](https://docs.llamaindex.ai/en/stable/api_reference/packs/arize_phoenix_query_engine/)
+        *   [Auto merging retriever](https://docs.llamaindex.ai/en/stable/api_reference/packs/auto_merging_retriever/)
+        *   [Chroma autoretrieval](https://docs.llamaindex.ai/en/stable/api_reference/packs/chroma_autoretrieval/)
+        *   [Code hierarchy](https://docs.llamaindex.ai/en/stable/api_reference/packs/code_hierarchy/)
+        *   [Cogniswitch agent](https://docs.llamaindex.ai/en/stable/api_reference/packs/cogniswitch_agent/)
+        *   [Cohere citation chat](https://docs.llamaindex.ai/en/stable/api_reference/packs/cohere_citation_chat/)
+        *   [Corrective rag](https://docs.llamaindex.ai/en/stable/api_reference/packs/corrective_rag/)
+        *   [Deeplake deepmemory retriever](https://docs.llamaindex.ai/en/stable/api_reference/packs/deeplake_deepmemory_retriever/)
+        *   [Deeplake multimodal retrieval](https://docs.llamaindex.ai/en/stable/api_reference/packs/deeplake_multimodal_retrieval/)
+        *   [Dense x retrieval](https://docs.llamaindex.ai/en/stable/api_reference/packs/dense_x_retrieval/)
+        *   [Diff private simple dataset](https://docs.llamaindex.ai/en/stable/api_reference/packs/diff_private_simple_dataset/)
+        *   [Docugami kg rag](https://docs.llamaindex.ai/en/stable/api_reference/packs/docugami_kg_rag/)
+        *   [Evaluator benchmarker](https://docs.llamaindex.ai/en/stable/api_reference/packs/evaluator_benchmarker/)
+        *   [Finchat](https://docs.llamaindex.ai/en/stable/api_reference/packs/finchat/)
+        *   [Fusion retriever](https://docs.llamaindex.ai/en/stable/api_reference/packs/fusion_retriever/)
+        *   [Fuzzy citation](https://docs.llamaindex.ai/en/stable/api_reference/packs/fuzzy_citation/)
+        *   [Gmail openai agent](https://docs.llamaindex.ai/en/stable/api_reference/packs/gmail_openai_agent/)
+        *   [Gradio agent chat](https://docs.llamaindex.ai/en/stable/api_reference/packs/gradio_agent_chat/)
+        *   [Gradio react agent chatbot](https://docs.llamaindex.ai/en/stable/api_reference/packs/gradio_react_agent_chatbot/)
+        *   [Infer retrieve rerank](https://docs.llamaindex.ai/en/stable/api_reference/packs/infer_retrieve_rerank/)
+        *   [Koda retriever](https://docs.llamaindex.ai/en/stable/api_reference/packs/koda_retriever/)
+        *   [Llama dataset metadata](https://docs.llamaindex.ai/en/stable/api_reference/packs/llama_dataset_metadata/)
+        *   [Llama guard moderator](https://docs.llamaindex.ai/en/stable/api_reference/packs/llama_guard_moderator/)
+        *   [Llava completion](https://docs.llamaindex.ai/en/stable/api_reference/packs/llava_completion/)
+        *   [Mixture of agents](https://docs.llamaindex.ai/en/stable/api_reference/packs/mixture_of_agents/)
+        *   [Multi document agents](https://docs.llamaindex.ai/en/stable/api_reference/packs/multi_document_agents/)
+        *   [Multi tenancy rag](https://docs.llamaindex.ai/en/stable/api_reference/packs/multi_tenancy_rag/)
+        *   [Multidoc autoretrieval](https://docs.llamaindex.ai/en/stable/api_reference/packs/multidoc_autoretrieval/)
+        *   [Nebulagraph query engine](https://docs.llamaindex.ai/en/stable/api_reference/packs/nebulagraph_query_engine/)
+        *   [Neo4j query engine](https://docs.llamaindex.ai/en/stable/api_reference/packs/neo4j_query_engine/)
+        *   [Node parser semantic chunking](https://docs.llamaindex.ai/en/stable/api_reference/packs/node_parser_semantic_chunking/)
+        *   [Ollama query engine](https://docs.llamaindex.ai/en/stable/api_reference/packs/ollama_query_engine/)
+        *   [Panel chatbot](https://docs.llamaindex.ai/en/stable/api_reference/packs/panel_chatbot/)
+        *   [Query understanding agent](https://docs.llamaindex.ai/en/stable/api_reference/packs/query_understanding_agent/)
+        *   [Raft dataset](https://docs.llamaindex.ai/en/stable/api_reference/packs/raft_dataset/)
+        *   [Rag cli local](https://docs.llamaindex.ai/en/stable/api_reference/packs/rag_cli_local/)
+        *   [Rag evaluator](https://docs.llamaindex.ai/en/stable/api_reference/packs/rag_evaluator/)
+        *   [Rag fusion query pipeline](https://docs.llamaindex.ai/en/stable/api_reference/packs/rag_fusion_query_pipeline/)
+        *   [Ragatouille retriever](https://docs.llamaindex.ai/en/stable/api_reference/packs/ragatouille_retriever/)
+        *   [Raptor](https://docs.llamaindex.ai/en/stable/api_reference/packs/raptor/)
+        *   [Recursive retriever](https://docs.llamaindex.ai/en/stable/api_reference/packs/recursive_retriever/)
+        *   [Redis ingestion pipeline](https://docs.llamaindex.ai/en/stable/api_reference/packs/redis_ingestion_pipeline/)
+        *   [Resume screener](https://docs.llamaindex.ai/en/stable/api_reference/packs/resume_screener/)
+        *   [Retry engine weaviate](https://docs.llamaindex.ai/en/stable/api_reference/packs/retry_engine_weaviate/)
+        *   [Searchain](https://docs.llamaindex.ai/en/stable/api_reference/packs/searchain/)
+        *   [Secgpt](https://docs.llamaindex.ai/en/stable/api_reference/packs/secgpt/)
+        *   [Self discover](https://docs.llamaindex.ai/en/stable/api_reference/packs/self_discover/)
+        *   [Self rag](https://docs.llamaindex.ai/en/stable/api_reference/packs/self_rag/)
+        *   [Sentence window retriever](https://docs.llamaindex.ai/en/stable/api_reference/packs/sentence_window_retriever/)
+        *   [Snowflake query engine](https://docs.llamaindex.ai/en/stable/api_reference/packs/snowflake_query_engine/)
+        *   [Stock market data query engine](https://docs.llamaindex.ai/en/stable/api_reference/packs/stock_market_data_query_engine/)
+        *   [Streamlit chatbot](https://docs.llamaindex.ai/en/stable/api_reference/packs/streamlit_chatbot/)
+        *   [Sub question weaviate](https://docs.llamaindex.ai/en/stable/api_reference/packs/sub_question_weaviate/)
+        *   [Subdoc summary](https://docs.llamaindex.ai/en/stable/api_reference/packs/subdoc_summary/)
+        *   [Tables](https://docs.llamaindex.ai/en/stable/api_reference/packs/tables/)
+        *   [Timescale vector autoretrieval](https://docs.llamaindex.ai/en/stable/api_reference/packs/timescale_vector_autoretrieval/)
+        *   [Trulens eval packs](https://docs.llamaindex.ai/en/stable/api_reference/packs/trulens_eval_packs/)
+        *   [Vanna](https://docs.llamaindex.ai/en/stable/api_reference/packs/vanna/)
+        *   [Vectara rag](https://docs.llamaindex.ai/en/stable/api_reference/packs/vectara_rag/)
+        *   [Voyage query engine](https://docs.llamaindex.ai/en/stable/api_reference/packs/voyage_query_engine/)
+        *   [Zenguard](https://docs.llamaindex.ai/en/stable/api_reference/packs/zenguard/)
+        *   [Zephyr query engine](https://docs.llamaindex.ai/en/stable/api_reference/packs/zephyr_query_engine/)
+        
+    *   [Memory](https://docs.llamaindex.ai/en/stable/api_reference/memory/)
+        
+        Memory
+        
+        *   [Chat memory buffer](https://docs.llamaindex.ai/en/stable/api_reference/memory/chat_memory_buffer/)
+        *   [Simple composable memory](https://docs.llamaindex.ai/en/stable/api_reference/memory/simple_composable_memory/)
+        *   [Vector memory](https://docs.llamaindex.ai/en/stable/api_reference/memory/vector_memory/)
+        
+    *   [Metadata Extractors](https://docs.llamaindex.ai/en/stable/api_reference/extractors/)
+        
+        Metadata Extractors
+        
+        *   [Entity](https://docs.llamaindex.ai/en/stable/api_reference/extractors/entity/)
+        *   [Keyword](https://docs.llamaindex.ai/en/stable/api_reference/extractors/keyword/)
+        *   [Marvin](https://docs.llamaindex.ai/en/stable/api_reference/extractors/marvin/)
+        *   [Pydantic](https://docs.llamaindex.ai/en/stable/api_reference/extractors/pydantic/)
+        *   [Question](https://docs.llamaindex.ai/en/stable/api_reference/extractors/question/)
+        *   [Summary](https://docs.llamaindex.ai/en/stable/api_reference/extractors/summary/)
+        *   [Title](https://docs.llamaindex.ai/en/stable/api_reference/extractors/title/)
+        
+    *   [Multi-Modal LLMs](https://docs.llamaindex.ai/en/stable/api_reference/multi_modal_llms/)
+        
+        Multi-Modal LLMs
+        
+        *   [Anthropic](https://docs.llamaindex.ai/en/stable/api_reference/multi_modal_llms/anthropic/)
+        *   [Azure openai](https://docs.llamaindex.ai/en/stable/api_reference/multi_modal_llms/azure_openai/)
+        *   [Dashscope](https://docs.llamaindex.ai/en/stable/api_reference/multi_modal_llms/dashscope/)
+        *   [Gemini](https://docs.llamaindex.ai/en/stable/api_reference/multi_modal_llms/gemini/)
+        *   [Ollama](https://docs.llamaindex.ai/en/stable/api_reference/multi_modal_llms/ollama/)
+        *   [Openai](https://docs.llamaindex.ai/en/stable/api_reference/multi_modal_llms/openai/)
+        *   [Replicate](https://docs.llamaindex.ai/en/stable/api_reference/multi_modal_llms/replicate/)
+        
+    *   [Node Parsers & Text Splitters](https://docs.llamaindex.ai/en/stable/api_reference/node_parsers/)
+        
+        Node Parsers & Text Splitters
+        
+        *   [Dashscope](https://docs.llamaindex.ai/en/stable/api_reference/node_parser/dashscope/)
+        *   [Code](https://docs.llamaindex.ai/en/stable/api_reference/node_parsers/code/)
+        *   [Hierarchical](https://docs.llamaindex.ai/en/stable/api_reference/node_parsers/hierarchical/)
+        *   [Html](https://docs.llamaindex.ai/en/stable/api_reference/node_parsers/html/)
+        *   [Json](https://docs.llamaindex.ai/en/stable/api_reference/node_parsers/json/)
+        *   [Langchain](https://docs.llamaindex.ai/en/stable/api_reference/node_parsers/langchain/)
+        *   [Markdown](https://docs.llamaindex.ai/en/stable/api_reference/node_parsers/markdown/)
+        *   [Markdown element](https://docs.llamaindex.ai/en/stable/api_reference/node_parsers/markdown_element/)
+        *   [Semantic splitter](https://docs.llamaindex.ai/en/stable/api_reference/node_parsers/semantic_splitter/)
+        *   [Sentence splitter](https://docs.llamaindex.ai/en/stable/api_reference/node_parsers/sentence_splitter/)
+        *   [Sentence window](https://docs.llamaindex.ai/en/stable/api_reference/node_parsers/sentence_window/)
+        *   [Token text splitter](https://docs.llamaindex.ai/en/stable/api_reference/node_parsers/token_text_splitter/)
+        *   [Unstructured element](https://docs.llamaindex.ai/en/stable/api_reference/node_parsers/unstructured_element/)
+        
+    *   [Node Postprocessors](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/)
+        
+        Node Postprocessors
+        
+        *   [NER PII](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/NER_PII/)
+        *   [PII](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/PII/)
+        *   [Auto prev next](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/auto_prev_next/)
+        *   [Cohere rerank](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/cohere_rerank/)
+        *   [Colbert rerank](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/colbert_rerank/)
+        *   [Dashscope rerank](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/dashscope_rerank/)
+        *   [Embedding recency](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/embedding_recency/)
+        *   [Fixed recency](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/fixed_recency/)
+        *   [Flag embedding reranker](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/flag_embedding_reranker/)
+        *   [Jinaai rerank](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/jinaai_rerank/)
+        *   [Keyword](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/keyword/)
+        *   [Llm rerank](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/llm_rerank/)
+        *   [Long context reorder](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/long_context_reorder/)
+        *   [Longllmlingua](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/longllmlingua/)
+        *   [Metadata replacement](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/metadata_replacement/)
+        *   [Mixedbreadai rerank](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/mixedbreadai_rerank/)
+        *   [Nvidia rerank](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/nvidia_rerank/)
+        *   [Openvino rerank](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/openvino_rerank/)
+        *   [Presidio](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/presidio/)
+        *   [Prev next](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/prev_next/)
+        *   [Rankgpt rerank](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/rankgpt_rerank/)
+        *   [Rankllm rerank](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/rankllm_rerank/)
+        *   [Sbert rerank](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/sbert_rerank/)
+        *   [Sentence optimizer](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/sentence_optimizer/)
+        *   [Similarity](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/similarity/)
+        *   [Time weighted](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/time_weighted/)
+        *   [Voyageai rerank](https://docs.llamaindex.ai/en/stable/api_reference/postprocessor/voyageai_rerank/)
+        
+    *   [Object Stores](https://docs.llamaindex.ai/en/stable/api_reference/objects/)
+        
+        Object Stores
+        
+    *   [Output Parsers](https://docs.llamaindex.ai/en/stable/api_reference/output_parsers/)
+        
+        Output Parsers
+        
+        *   [Guardrails](https://docs.llamaindex.ai/en/stable/api_reference/output_parsers/guardrails/)
+        *   [Langchain](https://docs.llamaindex.ai/en/stable/api_reference/output_parsers/langchain/)
+        *   [Pydantic](https://docs.llamaindex.ai/en/stable/api_reference/output_parsers/pydantic/)
+        *   [Selection](https://docs.llamaindex.ai/en/stable/api_reference/output_parsers/selection/)
+        
+    *   [Programs](https://docs.llamaindex.ai/en/stable/api_reference/program/)
+        
+        Programs
+        
+        *   [Evaporate](https://docs.llamaindex.ai/en/stable/api_reference/program/evaporate/)
+        *   [Guidance](https://docs.llamaindex.ai/en/stable/api_reference/program/guidance/)
+        *   [Llm text completion](https://docs.llamaindex.ai/en/stable/api_reference/program/llm_text_completion/)
+        *   [Lmformatenforcer](https://docs.llamaindex.ai/en/stable/api_reference/program/lmformatenforcer/)
+        *   [Multi modal](https://docs.llamaindex.ai/en/stable/api_reference/program/multi_modal/)
+        *   [Openai](https://docs.llamaindex.ai/en/stable/api_reference/program/openai/)
+        
+    *   [Prompts](https://docs.llamaindex.ai/en/stable/api_reference/prompts/)
+        
+        Prompts
+        
+    *   [Query Engines](https://docs.llamaindex.ai/en/stable/api_reference/query_engine/)
+        
+        Query Engines
+        
+        *   [FLARE](https://docs.llamaindex.ai/en/stable/api_reference/query_engine/FLARE/)
+        *   [JSONalayze](https://docs.llamaindex.ai/en/stable/api_reference/query_engine/JSONalayze/)
+        *   [NL SQL table](https://docs.llamaindex.ai/en/stable/api_reference/query_engine/NL_SQL_table/)
+        *   [PGVector SQL](https://docs.llamaindex.ai/en/stable/api_reference/query_engine/PGVector_SQL/)
+        *   [SQL join](https://docs.llamaindex.ai/en/stable/api_reference/query_engine/SQL_join/)
+        *   [SQL table retriever](https://docs.llamaindex.ai/en/stable/api_reference/query_engine/SQL_table_retriever/)
+        *   [Citation](https://docs.llamaindex.ai/en/stable/api_reference/query_engine/citation/)
+        *   [Cogniswitch](https://docs.llamaindex.ai/en/stable/api_reference/query_engine/cogniswitch/)
+        *   [Custom](https://docs.llamaindex.ai/en/stable/api_reference/query_engine/custom/)
+        *   [Knowledge graph](https://docs.llamaindex.ai/en/stable/api_reference/query_engine/knowledge_graph/)
+        *   [Multi step](https://docs.llamaindex.ai/en/stable/api_reference/query_engine/multi_step/)
+        *   [Pandas](https://docs.llamaindex.ai/en/stable/api_reference/query_engine/pandas/)
+        *   [Retriever](https://docs.llamaindex.ai/en/stable/api_reference/query_engine/retriever/)
+        *   [Retriever router](https://docs.llamaindex.ai/en/stable/api_reference/query_engine/retriever_router/)
+        *   [Retry](https://docs.llamaindex.ai/en/stable/api_reference/query_engine/retry/)
+        *   [Router](https://docs.llamaindex.ai/en/stable/api_reference/query_engine/router/)
+        *   [Simple multi modal](https://docs.llamaindex.ai/en/stable/api_reference/query_engine/simple_multi_modal/)
+        *   [Sub question](https://docs.llamaindex.ai/en/stable/api_reference/query_engine/sub_question/)
+        *   [Tool retriever router](https://docs.llamaindex.ai/en/stable/api_reference/query_engine/tool_retriever_router/)
+        *   [Transform](https://docs.llamaindex.ai/en/stable/api_reference/query_engine/transform/)
+        
+    *   [Query Pipeline](https://docs.llamaindex.ai/en/stable/api_reference/query_pipeline/)
+        
+        Query Pipeline
+        
+        *   [Agent](https://docs.llamaindex.ai/en/stable/api_reference/query_pipeline/agent/)
+        *   [Arg pack](https://docs.llamaindex.ai/en/stable/api_reference/query_pipeline/arg_pack/)
+        *   [Custom](https://docs.llamaindex.ai/en/stable/api_reference/query_pipeline/custom/)
+        *   [Function](https://docs.llamaindex.ai/en/stable/api_reference/query_pipeline/function/)
+        *   [Input](https://docs.llamaindex.ai/en/stable/api_reference/query_pipeline/input/)
+        *   [Llm](https://docs.llamaindex.ai/en/stable/api_reference/query_pipeline/llm/)
+        *   [Multi modal](https://docs.llamaindex.ai/en/stable/api_reference/query_pipeline/multi_modal/)
+        *   [Object](https://docs.llamaindex.ai/en/stable/api_reference/query_pipeline/object/)
+        *   [Output parser](https://docs.llamaindex.ai/en/stable/api_reference/query_pipeline/output_parser/)
+        *   [Postprocessor](https://docs.llamaindex.ai/en/stable/api_reference/query_pipeline/postprocessor/)
+        *   [Prompt](https://docs.llamaindex.ai/en/stable/api_reference/query_pipeline/prompt/)
+        *   [Query engine](https://docs.llamaindex.ai/en/stable/api_reference/query_pipeline/query_engine/)
+        *   [Query transform](https://docs.llamaindex.ai/en/stable/api_reference/query_pipeline/query_transform/)
+        *   [Retriever](https://docs.llamaindex.ai/en/stable/api_reference/query_pipeline/retriever/)
+        *   [Router](https://docs.llamaindex.ai/en/stable/api_reference/query_pipeline/router/)
+        *   [Synthesizer](https://docs.llamaindex.ai/en/stable/api_reference/query_pipeline/synthesizer/)
+        *   [Tool runner](https://docs.llamaindex.ai/en/stable/api_reference/query_pipeline/tool_runner/)
+        
+    *   [Question Generators](https://docs.llamaindex.ai/en/stable/api_reference/question_gen/)
+        
+        Question Generators
+        
+        *   [Guidance](https://docs.llamaindex.ai/en/stable/api_reference/question_gen/guidance/)
+        *   [Llm question gen](https://docs.llamaindex.ai/en/stable/api_reference/question_gen/llm_question_gen/)
+        *   [Openai](https://docs.llamaindex.ai/en/stable/api_reference/question_gen/openai/)
+        
+    *   [Readers](https://docs.llamaindex.ai/en/stable/api_reference/readers/)
+        
+        Readers
+        
+        *   [Agent search](https://docs.llamaindex.ai/en/stable/api_reference/readers/agent_search/)
+        *   [Airbyte cdk](https://docs.llamaindex.ai/en/stable/api_reference/readers/airbyte_cdk/)
+        *   [Airbyte gong](https://docs.llamaindex.ai/en/stable/api_reference/readers/airbyte_gong/)
+        *   [Airbyte hubspot](https://docs.llamaindex.ai/en/stable/api_reference/readers/airbyte_hubspot/)
+        *   [Airbyte salesforce](https://docs.llamaindex.ai/en/stable/api_reference/readers/airbyte_salesforce/)
+        *   [Airbyte shopify](https://docs.llamaindex.ai/en/stable/api_reference/readers/airbyte_shopify/)
+        *   [Airbyte stripe](https://docs.llamaindex.ai/en/stable/api_reference/readers/airbyte_stripe/)
+        *   [Airbyte typeform](https://docs.llamaindex.ai/en/stable/api_reference/readers/airbyte_typeform/)
+        *   [Airbyte zendesk support](https://docs.llamaindex.ai/en/stable/api_reference/readers/airbyte_zendesk_support/)
+        *   [Airtable](https://docs.llamaindex.ai/en/stable/api_reference/readers/airtable/)
+        *   [Apify](https://docs.llamaindex.ai/en/stable/api_reference/readers/apify/)
+        *   [Arango db](https://docs.llamaindex.ai/en/stable/api_reference/readers/arango_db/)
+        *   [Arxiv](https://docs.llamaindex.ai/en/stable/api_reference/readers/arxiv/)
+        *   [Asana](https://docs.llamaindex.ai/en/stable/api_reference/readers/asana/)
+        *   [Assemblyai](https://docs.llamaindex.ai/en/stable/api_reference/readers/assemblyai/)
+        *   [Astra db](https://docs.llamaindex.ai/en/stable/api_reference/readers/astra_db/)
+        *   [Athena](https://docs.llamaindex.ai/en/stable/api_reference/readers/athena/)
+        *   [Awadb](https://docs.llamaindex.ai/en/stable/api_reference/readers/awadb/)
+        *   [Azcognitive search](https://docs.llamaindex.ai/en/stable/api_reference/readers/azcognitive_search/)
+        *   [Azstorage blob](https://docs.llamaindex.ai/en/stable/api_reference/readers/azstorage_blob/)
+        *   [Azure devops](https://docs.llamaindex.ai/en/stable/api_reference/readers/azure_devops/)
+        *   [Bagel](https://docs.llamaindex.ai/en/stable/api_reference/readers/bagel/)
+        *   [Bilibili](https://docs.llamaindex.ai/en/stable/api_reference/readers/bilibili/)
+        *   [Bitbucket](https://docs.llamaindex.ai/en/stable/api_reference/readers/bitbucket/)
+        *   [Boarddocs](https://docs.llamaindex.ai/en/stable/api_reference/readers/boarddocs/)
+        *   [Chatgpt plugin](https://docs.llamaindex.ai/en/stable/api_reference/readers/chatgpt_plugin/)
+        *   [Chroma](https://docs.llamaindex.ai/en/stable/api_reference/readers/chroma/)
+        *   [Clickhouse](https://docs.llamaindex.ai/en/stable/api_reference/readers/clickhouse/)
+        *   [Confluence](https://docs.llamaindex.ai/en/stable/api_reference/readers/confluence/)
+        *   [Couchbase](https://docs.llamaindex.ai/en/stable/api_reference/readers/couchbase/)
+        *   [Couchdb](https://docs.llamaindex.ai/en/stable/api_reference/readers/couchdb/)
+        *   [Dad jokes](https://docs.llamaindex.ai/en/stable/api_reference/readers/dad_jokes/)
+        *   [Dashscope](https://docs.llamaindex.ai/en/stable/api_reference/readers/dashscope/)
+        *   [Dashvector](https://docs.llamaindex.ai/en/stable/api_reference/readers/dashvector/)
+        *   [Database](https://docs.llamaindex.ai/en/stable/api_reference/readers/database/)
+        *   [Deeplake](https://docs.llamaindex.ai/en/stable/api_reference/readers/deeplake/)
+        *   [Discord](https://docs.llamaindex.ai/en/stable/api_reference/readers/discord/)
+        *   [Docstring walker](https://docs.llamaindex.ai/en/stable/api_reference/readers/docstring_walker/)
+        *   [Docugami](https://docs.llamaindex.ai/en/stable/api_reference/readers/docugami/)
+        *   [Earnings call transcript](https://docs.llamaindex.ai/en/stable/api_reference/readers/earnings_call_transcript/)
+        *   [Elasticsearch](https://docs.llamaindex.ai/en/stable/api_reference/readers/elasticsearch/)
+        *   [Faiss](https://docs.llamaindex.ai/en/stable/api_reference/readers/faiss/)
+        *   [Feedly rss](https://docs.llamaindex.ai/en/stable/api_reference/readers/feedly_rss/)
+        *   [Feishu docs](https://docs.llamaindex.ai/en/stable/api_reference/readers/feishu_docs/)
+        *   [Feishu wiki](https://docs.llamaindex.ai/en/stable/api_reference/readers/feishu_wiki/)
+        *   [File](https://docs.llamaindex.ai/en/stable/api_reference/readers/file/)
+        *   [Firebase realtimedb](https://docs.llamaindex.ai/en/stable/api_reference/readers/firebase_realtimedb/)
+        *   [Firestore](https://docs.llamaindex.ai/en/stable/api_reference/readers/firestore/)
+        *   [Gcs](https://docs.llamaindex.ai/en/stable/api_reference/readers/gcs/)
+        *   [Genius](https://docs.llamaindex.ai/en/stable/api_reference/readers/genius/)
+        *   [Github](https://docs.llamaindex.ai/en/stable/api_reference/readers/github/)
+        *   [Google](https://docs.llamaindex.ai/en/stable/api_reference/readers/google/)
+        *   [Gpt repo](https://docs.llamaindex.ai/en/stable/api_reference/readers/gpt_repo/)
+        *   [Graphdb cypher](https://docs.llamaindex.ai/en/stable/api_reference/readers/graphdb_cypher/)
+        *   [Graphql](https://docs.llamaindex.ai/en/stable/api_reference/readers/graphql/)
+        *   [Guru](https://docs.llamaindex.ai/en/stable/api_reference/readers/guru/)
+        *   [Hatena blog](https://docs.llamaindex.ai/en/stable/api_reference/readers/hatena_blog/)
+        *   [Hive](https://docs.llamaindex.ai/en/stable/api_reference/readers/hive/)
+        *   [Hubspot](https://docs.llamaindex.ai/en/stable/api_reference/readers/hubspot/)
+        *   [Huggingface fs](https://docs.llamaindex.ai/en/stable/api_reference/readers/huggingface_fs/)
+        *   [Hwp](https://docs.llamaindex.ai/en/stable/api_reference/readers/hwp/)
+        *   [Iceberg](https://docs.llamaindex.ai/en/stable/api_reference/readers/iceberg/)
+        *   [Imdb review](https://docs.llamaindex.ai/en/stable/api_reference/readers/imdb_review/)
+        *   [Intercom](https://docs.llamaindex.ai/en/stable/api_reference/readers/intercom/)
+        *   [Jaguar](https://docs.llamaindex.ai/en/stable/api_reference/readers/jaguar/)
+        *   [Jira](https://docs.llamaindex.ai/en/stable/api_reference/readers/jira/)
+        *   [Joplin](https://docs.llamaindex.ai/en/stable/api_reference/readers/joplin/)
+        *   [Json](https://docs.llamaindex.ai/en/stable/api_reference/readers/json/)
+        *   [Kaltura esearch](https://docs.llamaindex.ai/en/stable/api_reference/readers/kaltura_esearch/)
+        *   [Kibela](https://docs.llamaindex.ai/en/stable/api_reference/readers/kibela/)
+        *   [Lilac](https://docs.llamaindex.ai/en/stable/api_reference/readers/lilac/)
+        *   [Linear](https://docs.llamaindex.ai/en/stable/api_reference/readers/linear/)
+        *   [Llama parse](https://docs.llamaindex.ai/en/stable/api_reference/readers/llama_parse/)
+        *   [Macrometa gdn](https://docs.llamaindex.ai/en/stable/api_reference/readers/macrometa_gdn/)
+        *   [Make com](https://docs.llamaindex.ai/en/stable/api_reference/readers/make_com/)
+        *   [Mangadex](https://docs.llamaindex.ai/en/stable/api_reference/readers/mangadex/)
+        *   [Mangoapps guides](https://docs.llamaindex.ai/en/stable/api_reference/readers/mangoapps_guides/)
+        *   [Maps](https://docs.llamaindex.ai/en/stable/api_reference/readers/maps/)
+        *   [Mbox](https://docs.llamaindex.ai/en/stable/api_reference/readers/mbox/)
+        *   [Memos](https://docs.llamaindex.ai/en/stable/api_reference/readers/memos/)
+        *   [Metal](https://docs.llamaindex.ai/en/stable/api_reference/readers/metal/)
+        *   [Microsoft onedrive](https://docs.llamaindex.ai/en/stable/api_reference/readers/microsoft_onedrive/)
+        *   [Microsoft outlook](https://docs.llamaindex.ai/en/stable/api_reference/readers/microsoft_outlook/)
+        *   [Microsoft sharepoint](https://docs.llamaindex.ai/en/stable/api_reference/readers/microsoft_sharepoint/)
+        *   [Milvus](https://docs.llamaindex.ai/en/stable/api_reference/readers/milvus/)
+        *   [Minio](https://docs.llamaindex.ai/en/stable/api_reference/readers/minio/)
+        *   [Mondaydotcom](https://docs.llamaindex.ai/en/stable/api_reference/readers/mondaydotcom/)
+        *   [Mongodb](https://docs.llamaindex.ai/en/stable/api_reference/readers/mongodb/)
+        *   [Myscale](https://docs.llamaindex.ai/en/stable/api_reference/readers/myscale/)
+        *   [Notion](https://docs.llamaindex.ai/en/stable/api_reference/readers/notion/)
+        *   [Nougat ocr](https://docs.llamaindex.ai/en/stable/api_reference/readers/nougat_ocr/)
+        *   [Obsidian](https://docs.llamaindex.ai/en/stable/api_reference/readers/obsidian/)
+        *   [Openalex](https://docs.llamaindex.ai/en/stable/api_reference/readers/openalex/)
+        *   [Openapi](https://docs.llamaindex.ai/en/stable/api_reference/readers/openapi/)
+        *   [Opendal](https://docs.llamaindex.ai/en/stable/api_reference/readers/opendal/)
+        *   [Opensearch](https://docs.llamaindex.ai/en/stable/api_reference/readers/opensearch/)
+        *   [Pandas ai](https://docs.llamaindex.ai/en/stable/api_reference/readers/pandas_ai/)
+        *   [Papers](https://docs.llamaindex.ai/en/stable/api_reference/readers/papers/)
+        *   [Patentsview](https://docs.llamaindex.ai/en/stable/api_reference/readers/patentsview/)
+        *   [Pathway](https://docs.llamaindex.ai/en/stable/api_reference/readers/pathway/)
+        *   [Pdb](https://docs.llamaindex.ai/en/stable/api_reference/readers/pdb/)
+        *   [Pdf marker](https://docs.llamaindex.ai/en/stable/api_reference/readers/pdf_marker/)
+        *   [Pdf table](https://docs.llamaindex.ai/en/stable/api_reference/readers/pdf_table/)
+        *   [Pebblo](https://docs.llamaindex.ai/en/stable/api_reference/readers/pebblo/)
+        *   [None](https://docs.llamaindex.ai/en/stable/api_reference/readers/pinecone.md)
+        *   [Preprocess](https://docs.llamaindex.ai/en/stable/api_reference/readers/preprocess/)
+        *   [Psychic](https://docs.llamaindex.ai/en/stable/api_reference/readers/psychic/)
+        *   [Qdrant](https://docs.llamaindex.ai/en/stable/api_reference/readers/qdrant/)
+        *   [Rayyan](https://docs.llamaindex.ai/en/stable/api_reference/readers/rayyan/)
+        *   [Readme](https://docs.llamaindex.ai/en/stable/api_reference/readers/readme/)
+        *   [Readwise](https://docs.llamaindex.ai/en/stable/api_reference/readers/readwise/)
+        *   [Reddit](https://docs.llamaindex.ai/en/stable/api_reference/readers/reddit/)
+        *   [Remote](https://docs.llamaindex.ai/en/stable/api_reference/readers/remote/)
+        *   [Remote depth](https://docs.llamaindex.ai/en/stable/api_reference/readers/remote_depth/)
+        *   [S3](https://docs.llamaindex.ai/en/stable/api_reference/readers/s3/)
+        *   [Sec filings](https://docs.llamaindex.ai/en/stable/api_reference/readers/sec_filings/)
+        *   [Semanticscholar](https://docs.llamaindex.ai/en/stable/api_reference/readers/semanticscholar/)
+        *   [Simple directory reader](https://docs.llamaindex.ai/en/stable/api_reference/readers/simple_directory_reader/)
+        *   [Singlestore](https://docs.llamaindex.ai/en/stable/api_reference/readers/singlestore/)
+        *   [Slack](https://docs.llamaindex.ai/en/stable/api_reference/readers/slack/)
+        *   [Smart pdf loader](https://docs.llamaindex.ai/en/stable/api_reference/readers/smart_pdf_loader/)
+        *   [Snowflake](https://docs.llamaindex.ai/en/stable/api_reference/readers/snowflake/)
+        *   [Snscrape twitter](https://docs.llamaindex.ai/en/stable/api_reference/readers/snscrape_twitter/)
+        *   [Spotify](https://docs.llamaindex.ai/en/stable/api_reference/readers/spotify/)
+        *   [Stackoverflow](https://docs.llamaindex.ai/en/stable/api_reference/readers/stackoverflow/)
+        *   [Steamship](https://docs.llamaindex.ai/en/stable/api_reference/readers/steamship/)
+        *   [String iterable](https://docs.llamaindex.ai/en/stable/api_reference/readers/string_iterable/)
+        *   [Stripe docs](https://docs.llamaindex.ai/en/stable/api_reference/readers/stripe_docs/)
+        *   [Structured data](https://docs.llamaindex.ai/en/stable/api_reference/readers/structured_data/)
+        *   [Telegram](https://docs.llamaindex.ai/en/stable/api_reference/readers/telegram/)
+        *   [Toggl](https://docs.llamaindex.ai/en/stable/api_reference/readers/toggl/)
+        *   [Trello](https://docs.llamaindex.ai/en/stable/api_reference/readers/trello/)
+        *   [Twitter](https://docs.llamaindex.ai/en/stable/api_reference/readers/twitter/)
+        *   [Txtai](https://docs.llamaindex.ai/en/stable/api_reference/readers/txtai/)
+        *   [Upstage](https://docs.llamaindex.ai/en/stable/api_reference/readers/upstage/)
+        *   [Weather](https://docs.llamaindex.ai/en/stable/api_reference/readers/weather/)
+        *   [Weaviate](https://docs.llamaindex.ai/en/stable/api_reference/readers/weaviate/)
+        *   [Web](https://docs.llamaindex.ai/en/stable/api_reference/readers/web/)
+        *   [Whatsapp](https://docs.llamaindex.ai/en/stable/api_reference/readers/whatsapp/)
+        *   [Wikipedia](https://docs.llamaindex.ai/en/stable/api_reference/readers/wikipedia/)
+        *   [Wordlift](https://docs.llamaindex.ai/en/stable/api_reference/readers/wordlift/)
+        *   [Wordpress](https://docs.llamaindex.ai/en/stable/api_reference/readers/wordpress/)
+        *   [Youtube metadata](https://docs.llamaindex.ai/en/stable/api_reference/readers/youtube_metadata/)
+        *   [Youtube transcript](https://docs.llamaindex.ai/en/stable/api_reference/readers/youtube_transcript/)
+        *   [Zendesk](https://docs.llamaindex.ai/en/stable/api_reference/readers/zendesk/)
+        *   [Zep](https://docs.llamaindex.ai/en/stable/api_reference/readers/zep/)
+        *   [Zulip](https://docs.llamaindex.ai/en/stable/api_reference/readers/zulip/)
+        
+    *   [Response Synthesizers](https://docs.llamaindex.ai/en/stable/api_reference/response_synthesizers/)
+        
+        Response Synthesizers
+        
+        *   [Accumulate](https://docs.llamaindex.ai/en/stable/api_reference/response_synthesizers/accumulate/)
+        *   [Compact accumulate](https://docs.llamaindex.ai/en/stable/api_reference/response_synthesizers/compact_accumulate/)
+        *   [Compact and refine](https://docs.llamaindex.ai/en/stable/api_reference/response_synthesizers/compact_and_refine/)
+        *   [Generation](https://docs.llamaindex.ai/en/stable/api_reference/response_synthesizers/generation/)
+        *   [Google](https://docs.llamaindex.ai/en/stable/api_reference/response_synthesizers/google/)
+        *   [Refine](https://docs.llamaindex.ai/en/stable/api_reference/response_synthesizers/refine/)
+        *   [Simple summarize](https://docs.llamaindex.ai/en/stable/api_reference/response_synthesizers/simple_summarize/)
+        *   [Tree summarize](https://docs.llamaindex.ai/en/stable/api_reference/response_synthesizers/tree_summarize/)
+        
+    *   [Retrievers](https://docs.llamaindex.ai/en/stable/api_reference/retrievers/)
+        
+        Retrievers
+        
+        *   [Auto merging](https://docs.llamaindex.ai/en/stable/api_reference/retrievers/auto_merging/)
+        *   [Bedrock](https://docs.llamaindex.ai/en/stable/api_reference/retrievers/bedrock/)
+        *   [Bm25](https://docs.llamaindex.ai/en/stable/api_reference/retrievers/bm25/)
+        *   [Duckdb retriever](https://docs.llamaindex.ai/en/stable/api_reference/retrievers/duckdb_retriever/)
+        *   [Keyword](https://docs.llamaindex.ai/en/stable/api_reference/retrievers/keyword/)
+        *   [Knowledge graph](https://docs.llamaindex.ai/en/stable/api_reference/retrievers/knowledge_graph/)
+        *   [Mongodb atlas bm25 retriever](https://docs.llamaindex.ai/en/stable/api_reference/retrievers/mongodb_atlas_bm25_retriever/)
+        *   [Pathway](https://docs.llamaindex.ai/en/stable/api_reference/retrievers/pathway/)
+        *   [Query fusion](https://docs.llamaindex.ai/en/stable/api_reference/retrievers/query_fusion/)
+        *   [Recursive](https://docs.llamaindex.ai/en/stable/api_reference/retrievers/recursive/)
+        *   [Router](https://docs.llamaindex.ai/en/stable/api_reference/retrievers/router/)
+        *   [Sql](https://docs.llamaindex.ai/en/stable/api_reference/retrievers/sql/)
+        *   [Summary](https://docs.llamaindex.ai/en/stable/api_reference/retrievers/summary/)
+        *   [Transform](https://docs.llamaindex.ai/en/stable/api_reference/retrievers/transform/)
+        *   [Tree](https://docs.llamaindex.ai/en/stable/api_reference/retrievers/tree/)
+        *   [Vector](https://docs.llamaindex.ai/en/stable/api_reference/retrievers/vector/)
+        *   [Videodb](https://docs.llamaindex.ai/en/stable/api_reference/retrievers/videodb/)
+        *   [You](https://docs.llamaindex.ai/en/stable/api_reference/retrievers/you/)
+        
+    *   [Schema](https://docs.llamaindex.ai/en/stable/api_reference/schema/)
+        
+        Schema
+        
+    *    Storage
+        
+        Storage
+        
+        *   [Chat Store](https://docs.llamaindex.ai/en/stable/api_reference/storage/chat_store/)
+            
+            Chat Store
+            
+            *   [Azure](https://docs.llamaindex.ai/en/stable/api_reference/storage/chat_store/azure/)
+            *   [Redis](https://docs.llamaindex.ai/en/stable/api_reference/storage/chat_store/redis/)
+            *   [Simple](https://docs.llamaindex.ai/en/stable/api_reference/storage/chat_store/simple/)
+            
+        *   [Docstore](https://docs.llamaindex.ai/en/stable/api_reference/storage/docstore/)
+            
+            Docstore
+            
+            *   [Azure](https://docs.llamaindex.ai/en/stable/api_reference/storage/docstore/azure/)
+            *   [Dynamodb](https://docs.llamaindex.ai/en/stable/api_reference/storage/docstore/dynamodb/)
+            *   [Elasticsearch](https://docs.llamaindex.ai/en/stable/api_reference/storage/docstore/elasticsearch/)
+            *   [Firestore](https://docs.llamaindex.ai/en/stable/api_reference/storage/docstore/firestore/)
+            *   [Mongodb](https://docs.llamaindex.ai/en/stable/api_reference/storage/docstore/mongodb/)
+            *   [Postgres](https://docs.llamaindex.ai/en/stable/api_reference/storage/docstore/postgres/)
+            *   [Redis](https://docs.llamaindex.ai/en/stable/api_reference/storage/docstore/redis/)
+            *   [Simple](https://docs.llamaindex.ai/en/stable/api_reference/storage/docstore/simple/)
+            
+        *   [Graph Stores](https://docs.llamaindex.ai/en/stable/api_reference/storage/graph_stores/)
+            
+            Graph Stores
+            
+            *   [Falkordb](https://docs.llamaindex.ai/en/stable/api_reference/storage/graph_stores/falkordb/)
+            *   [Kuzu](https://docs.llamaindex.ai/en/stable/api_reference/storage/graph_stores/kuzu/)
+            *   [Nebula](https://docs.llamaindex.ai/en/stable/api_reference/storage/graph_stores/nebula/)
+            *   [Neo4j](https://docs.llamaindex.ai/en/stable/api_reference/storage/graph_stores/neo4j/)
+            *   [Neptune](https://docs.llamaindex.ai/en/stable/api_reference/storage/graph_stores/neptune/)
+            *   [Simple](https://docs.llamaindex.ai/en/stable/api_reference/storage/graph_stores/simple/)
+            *   [Tidb](https://docs.llamaindex.ai/en/stable/api_reference/storage/graph_stores/tidb/)
+            
+        *   [Index Store](https://docs.llamaindex.ai/en/stable/api_reference/storage/index_store/)
+            
+            Index Store
+            
+            *   [Azure](https://docs.llamaindex.ai/en/stable/api_reference/storage/index_store/azure/)
+            *   [Dynamodb](https://docs.llamaindex.ai/en/stable/api_reference/storage/index_store/dynamodb/)
+            *   [Elasticsearch](https://docs.llamaindex.ai/en/stable/api_reference/storage/index_store/elasticsearch/)
+            *   [Firestore](https://docs.llamaindex.ai/en/stable/api_reference/storage/index_store/firestore/)
+            *   [Mongodb](https://docs.llamaindex.ai/en/stable/api_reference/storage/index_store/mongodb/)
+            *   [Postgres](https://docs.llamaindex.ai/en/stable/api_reference/storage/index_store/postgres/)
+            *   [Redis](https://docs.llamaindex.ai/en/stable/api_reference/storage/index_store/redis/)
+            *   [Simple](https://docs.llamaindex.ai/en/stable/api_reference/storage/index_store/simple/)
+            
+        *   [Kvstore](https://docs.llamaindex.ai/en/stable/api_reference/storage/kvstore/)
+            
+            Kvstore
+            
+            *   [Azure](https://docs.llamaindex.ai/en/stable/api_reference/storage/kvstore/azure/)
+            *   [Dynamodb](https://docs.llamaindex.ai/en/stable/api_reference/storage/kvstore/dynamodb/)
+            *   [Elasticsearch](https://docs.llamaindex.ai/en/stable/api_reference/storage/kvstore/elasticsearch/)
+            *   [Firestore](https://docs.llamaindex.ai/en/stable/api_reference/storage/kvstore/firestore/)
+            *   [Mongodb](https://docs.llamaindex.ai/en/stable/api_reference/storage/kvstore/mongodb/)
+            *   [Postgres](https://docs.llamaindex.ai/en/stable/api_reference/storage/kvstore/postgres/)
+            *   [Redis](https://docs.llamaindex.ai/en/stable/api_reference/storage/kvstore/redis/)
+            *   [S3](https://docs.llamaindex.ai/en/stable/api_reference/storage/kvstore/s3/)
+            *   [Simple](https://docs.llamaindex.ai/en/stable/api_reference/storage/kvstore/simple/)
+            
+        *    Storage
+            
+            Storage
+            
+            *   [Storage context](https://docs.llamaindex.ai/en/stable/api_reference/storage/storage_context/)
+            
+        *   [Vector Store](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/)
+            
+            Vector Store
+            
+            *   [Alibabacloud opensearch](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/alibabacloud_opensearch/)
+            *   [Analyticdb](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/analyticdb/)
+            *   [Astra db](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/astra_db/)
+            *   [Awadb](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/awadb/)
+            *   [Awsdocdb](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/awsdocdb/)
+            *   [Azureaisearch](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/azureaisearch/)
+            *   [Azurecosmosmongo](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/azurecosmosmongo/)
+            *   [Bagel](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/bagel/)
+            *   [Baiduvectordb](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/baiduvectordb/)
+            *   [Cassandra](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/cassandra/)
+            *   [Chatgpt plugin](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/chatgpt_plugin/)
+            *   [Chroma](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/chroma/)
+            *   [Clickhouse](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/clickhouse/)
+            *   [Couchbase](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/couchbase/)
+            *   [Dashvector](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/dashvector/)
+            *   [Databricks](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/databricks/)
+            *   [Deeplake](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/deeplake/)
+            *   [Docarray](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/docarray/)
+            *   [Duckdb](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/duckdb/)
+            *   [Dynamodb](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/dynamodb/)
+            *   [Elasticsearch](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/elasticsearch/)
+            *   [Epsilla](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/epsilla/)
+            *   [Faiss](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/faiss/)
+            *   [Firestore](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/firestore/)
+            *   [Google](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/google/)
+            *   [Hologres](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/hologres/)
+            *   [Jaguar](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/jaguar/)
+            *   [Kdbai](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/kdbai/)
+            *   [Lancedb](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/lancedb/)
+            *   [Lantern](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/lantern/)
+            *   [Metal](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/metal/)
+            *   [Milvus](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/milvus/)
+            *   [Mongodb](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/mongodb/)
+            *   [Myscale](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/myscale/)
+            *   [Neo4jvector](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/neo4jvector/)
+            *   [Neptune](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/neptune/)
+            *   [Opensearch](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/opensearch/)
+            *   [Pgvecto rs](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/pgvecto_rs/)
+            *   [Pinecone](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/pinecone/)
+            *   [Postgres](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/postgres/)
+            *   [Qdrant](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/qdrant/)
+            *   [Redis](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/redis/)
+            *   [Relyt](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/relyt/)
+            *   [Rocksetdb](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/rocksetdb/)
+            *   [Simple](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/simple/)
+            *   [Singlestoredb](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/singlestoredb/)
+            *   [Supabase](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/supabase/)
+            *   [Tair](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/tair/)
+            *   [Tencentvectordb](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/tencentvectordb/)
+            *   [Tidbvector](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/tidbvector/)
+            *   [Timescalevector](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/timescalevector/)
+            *   [Txtai](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/txtai/)
+            *   [Typesense](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/typesense/)
+            *   [Upstash](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/upstash/)
+            *   [Vearch](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/vearch/)
+            *   [Vertexaivectorsearch](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/vertexaivectorsearch/)
+            *   [Vespa](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/vespa/)
+            *   [Weaviate](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/weaviate/)
+            *   [Wordlift](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/wordlift/)
+            *   [Zep](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/zep/)
+            
+        
+    *   [Tools](https://docs.llamaindex.ai/en/stable/api_reference/tools/)
+        
+        Tools
+        
+        *   [Arxiv](https://docs.llamaindex.ai/en/stable/api_reference/tools/arxiv/)
+        *   [Azure code interpreter](https://docs.llamaindex.ai/en/stable/api_reference/tools/azure_code_interpreter/)
+        *   [Azure cv](https://docs.llamaindex.ai/en/stable/api_reference/tools/azure_cv/)
+        *   [Azure speech](https://docs.llamaindex.ai/en/stable/api_reference/tools/azure_speech/)
+        *   [Azure translate](https://docs.llamaindex.ai/en/stable/api_reference/tools/azure_translate/)
+        *   [Bing search](https://docs.llamaindex.ai/en/stable/api_reference/tools/bing_search/)
+        *   [Brave search](https://docs.llamaindex.ai/en/stable/api_reference/tools/brave_search/)
+        *   [Cassandra](https://docs.llamaindex.ai/en/stable/api_reference/tools/cassandra/)
+        *   [Chatgpt plugin](https://docs.llamaindex.ai/en/stable/api_reference/tools/chatgpt_plugin/)
+        *   [Code interpreter](https://docs.llamaindex.ai/en/stable/api_reference/tools/code_interpreter/)
+        *   [Cogniswitch](https://docs.llamaindex.ai/en/stable/api_reference/tools/cogniswitch/)
+        *   [Database](https://docs.llamaindex.ai/en/stable/api_reference/tools/database/)
+        *   [Duckduckgo](https://docs.llamaindex.ai/en/stable/api_reference/tools/duckduckgo/)
+        *   [Exa](https://docs.llamaindex.ai/en/stable/api_reference/tools/exa/)
+        *   [Finance](https://docs.llamaindex.ai/en/stable/api_reference/tools/finance/)
+        *   [Function](https://docs.llamaindex.ai/en/stable/api_reference/tools/function/)
+        *   [Google](https://docs.llamaindex.ai/en/stable/api_reference/tools/google/)
+        *   [Graphql](https://docs.llamaindex.ai/en/stable/api_reference/tools/graphql/)
+        *   [Ionic shopping](https://docs.llamaindex.ai/en/stable/api_reference/tools/ionic_shopping/)
+        *   [Jina](https://docs.llamaindex.ai/en/stable/api_reference/tools/jina/)
+        *   [Load and search](https://docs.llamaindex.ai/en/stable/api_reference/tools/load_and_search/)
+        *   [Metaphor](https://docs.llamaindex.ai/en/stable/api_reference/tools/metaphor/)
+        *   [Multion](https://docs.llamaindex.ai/en/stable/api_reference/tools/multion/)
+        *   [Neo4j](https://docs.llamaindex.ai/en/stable/api_reference/tools/neo4j/)
+        *   [Notion](https://docs.llamaindex.ai/en/stable/api_reference/tools/notion/)
+        *   [Ondemand loader](https://docs.llamaindex.ai/en/stable/api_reference/tools/ondemand_loader/)
+        *   [Openai](https://docs.llamaindex.ai/en/stable/api_reference/tools/openai/)
+        *   [Openapi](https://docs.llamaindex.ai/en/stable/api_reference/tools/openapi/)
+        *   [Passio nutrition ai](https://docs.llamaindex.ai/en/stable/api_reference/tools/passio_nutrition_ai/)
+        *   [Playgrounds](https://docs.llamaindex.ai/en/stable/api_reference/tools/playgrounds/)
+        *   [Python file](https://docs.llamaindex.ai/en/stable/api_reference/tools/python_file/)
+        *   [Query engine](https://docs.llamaindex.ai/en/stable/api_reference/tools/query_engine/)
+        *   [Query plan](https://docs.llamaindex.ai/en/stable/api_reference/tools/query_plan/)
+        *   [Requests](https://docs.llamaindex.ai/en/stable/api_reference/tools/requests/)
+        *   [Retriever](https://docs.llamaindex.ai/en/stable/api_reference/tools/retriever/)
+        *   [Salesforce](https://docs.llamaindex.ai/en/stable/api_reference/tools/salesforce/)
+        *   [Shopify](https://docs.llamaindex.ai/en/stable/api_reference/tools/shopify/)
+        *   [Slack](https://docs.llamaindex.ai/en/stable/api_reference/tools/slack/)
+        *   [Tavily research](https://docs.llamaindex.ai/en/stable/api_reference/tools/tavily_research/)
+        *   [Text to image](https://docs.llamaindex.ai/en/stable/api_reference/tools/text_to_image/)
+        *   [Tool spec](https://docs.llamaindex.ai/en/stable/api_reference/tools/tool_spec/)
+        *   [Vector db](https://docs.llamaindex.ai/en/stable/api_reference/tools/vector_db/)
+        *   [Waii](https://docs.llamaindex.ai/en/stable/api_reference/tools/waii/)
+        *   [Weather](https://docs.llamaindex.ai/en/stable/api_reference/tools/weather/)
+        *   [Wikipedia](https://docs.llamaindex.ai/en/stable/api_reference/tools/wikipedia/)
+        *   [Wolfram alpha](https://docs.llamaindex.ai/en/stable/api_reference/tools/wolfram_alpha/)
+        *   [Yahoo finance](https://docs.llamaindex.ai/en/stable/api_reference/tools/yahoo_finance/)
+        *   [Yelp](https://docs.llamaindex.ai/en/stable/api_reference/tools/yelp/)
+        *   [Zapier](https://docs.llamaindex.ai/en/stable/api_reference/tools/zapier/)
+        
+    
+*   [Open-Source Community](https://docs.llamaindex.ai/en/stable/community/llama_packs/)
+    
+    Open-Source Community
+    
+    *   [Integrations](https://docs.llamaindex.ai/en/stable/community/integrations/)
+    *   [Full Stack Projects](https://docs.llamaindex.ai/en/stable/community/full_stack_projects/)
+    *    Community FAQ
+        
+        Community FAQ
+        
+        *   [Chat Engines](https://docs.llamaindex.ai/en/stable/community/faq/chat_engines/)
+        *   [Documents and Nodes](https://docs.llamaindex.ai/en/stable/community/faq/documents_and_nodes/)
+        *   [Embeddings](https://docs.llamaindex.ai/en/stable/community/faq/embeddings/)
+        *   [Large Language Models](https://docs.llamaindex.ai/en/stable/community/faq/llms/)
+        *   [Query Engines](https://docs.llamaindex.ai/en/stable/community/faq/query_engines/)
+        *   [Vector Database](https://docs.llamaindex.ai/en/stable/community/faq/vector_database/)
+        
+    *    Contributing
+        
+        Contributing
+        
+        *   [Code](https://docs.llamaindex.ai/en/stable/CONTRIBUTING/)
+        *   [Docs](https://docs.llamaindex.ai/en/stable/DOCS_README/)
+        
+    *   [Changelog](https://docs.llamaindex.ai/en/stable/CHANGELOG/)
+    *   [Presentations](https://docs.llamaindex.ai/en/stable/presentations/past_presentations/)
+    *   [Upgrading to v0.10.x](https://docs.llamaindex.ai/en/stable/getting_started/v0_10_0_migration/)
+    *   [Deprecated Terms](https://docs.llamaindex.ai/en/stable/changes/deprecated_terms/)
+    
+*   [LlamaCloud](https://docs.llamaindex.ai/en/stable/llama_cloud/)
+    
+    LlamaCloud
+    
+    *   [LlamaParse](https://docs.llamaindex.ai/en/stable/llama_cloud/llama_parse/)
+    
+
+Table of contents
+
+*   [Chroma](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaFireworksNomic/#chroma)
+*   [Nomic](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaFireworksNomic/#nomic)
+*   [Fireworks.ai](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaFireworksNomic/#fireworksai)
+*   [Basic Example](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaFireworksNomic/#basic-example)
+    
+    *   [Creating a Chroma Index](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaFireworksNomic/#creating-a-chroma-index)
+    
+*   [Basic Example (including saving to disk) and resizable embeddings](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaFireworksNomic/#basic-example-including-saving-to-disk-and-resizable-embeddings)
+
+       
+
+[![Image 3: Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/run-llama/llama_index/blob/main/docs/docs/examples/vector_stores/ChromaIndexDemo.ipynb)
+
+Chroma + Fireworks + Nomic with Matryoshka embedding[¶](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaFireworksNomic/#chroma-fireworks-nomic-with-matryoshka-embedding)
+===========================================================================================================================================================================================
+
+This example is adapted from the ChromaIndex example, + how to use Matryoshka embedding from Nomic on top of Fireworks.ai.
+
+Chroma[¶](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaFireworksNomic/#chroma)
+---------------------------------------------------------------------------------------------------
+
+> [Chroma](https://docs.trychroma.com/getting-started) is a AI-native open-source vector database focused on developer productivity and happiness. Chroma is licensed under Apache 2.0.
+
+ [![Image 4: Discord](https://img.shields.io/discord/1073293645303795742)](https://discord.gg/MMeYNTmh3x)   [![Image 5: License](https://img.shields.io/static/v1?label=license&message=Apache%202.0&color=white)](https://github.com/chroma-core/chroma/blob/master/LICENSE)   ![Image 6: Integration Tests](https://github.com/chroma-core/chroma/actions/workflows/chroma-integration-test.yml/badge.svg?branch=main)
+
+*   [Website](https://www.trychroma.com/)
+*   [Documentation](https://docs.trychroma.com/)
+*   [Twitter](https://twitter.com/trychroma)
+*   [Discord](https://discord.gg/MMeYNTmh3x)
+
+Chroma is fully-typed, fully-tested and fully-documented.
+
+Install Chroma with:
+
+pip install chromadb
+
+Chroma runs in various modes. See below for examples of each integrated with LangChain.
+
+*   `in-memory` - in a python script or jupyter notebook
+*   `in-memory with persistance` - in a script or notebook and save/load to disk
+*   `in a docker container` - as a server running your local machine or in the cloud
+
+Like any other database, you can:
+
+*   `.add`
+*   `.get`
+*   `.update`
+*   `.upsert`
+*   `.delete`
+*   `.peek`
+*   and `.query` runs the similarity search.
+
+View full docs at [docs](https://docs.trychroma.com/reference/Collection).
+
+Nomic[¶](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaFireworksNomic/#nomic)
+-------------------------------------------------------------------------------------------------
+
+Nomic published a new embedding model nomic-ai/nomic-embed-text-v1.5 that is capable of returning variable embedding size depending on how cost sensitive you are. For more information please check out their model [here](https://huggingface.co/nomic-ai/nomic-embed-text-v1.5) and their website [here](https://home.nomic.ai/)
+
+Fireworks.ai[¶](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaFireworksNomic/#fireworksai)
+--------------------------------------------------------------------------------------------------------------
+
+Fireworks is the leading OSS model inference provider. In this example we will use Fireworks to run the nomic model as well as mixtral-8x7b-instruct model as the query engine. For more information about fireworks, please check out their website [here](https://fireworks.ai/)
+
+Basic Example[¶](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaFireworksNomic/#basic-example)
+-----------------------------------------------------------------------------------------------------------------
+
+In this basic example, we take the Paul Graham essay, split it into chunks, embed it using an open-source embedding model, load it into Chroma, and then query it.
+
+If you're opening this Notebook on colab, you will probably need to install LlamaIndex 🦙.
+
+In \[ \]:
+
+Copied!
+
+%pip install \-q llama\-index\-vector\-stores\-chroma llama\-index\-llms\-fireworks llama\-index\-embeddings\-fireworks\==0.1.2
+
+%pip install -q llama-index-vector-stores-chroma llama-index-llms-fireworks llama-index-embeddings-fireworks==0.1.2
+
+Note: you may need to restart the kernel to use updated packages.
+
+In \[ \]:
+
+Copied!
+
+%pip install \-q llama\-index
+
+%pip install -q llama-index
+
+Note: you may need to restart the kernel to use updated packages.
+
+#### Creating a Chroma Index[¶](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaFireworksNomic/#creating-a-chroma-index)
+
+In \[ \]:
+
+Copied!
+
+!pip install llama\-index chromadb \--quiet
+!pip install \-q chromadb
+!pip install \-q pydantic\==1.10.11
+
+!pip install llama-index chromadb --quiet !pip install -q chromadb !pip install -q pydantic==1.10.11
+
+In \[ \]:
+
+Copied!
+
+\# import
+from llama\_index.core import VectorStoreIndex, SimpleDirectoryReader
+from llama\_index.vector\_stores.chroma import ChromaVectorStore
+from llama\_index.core import StorageContext
+from llama\_index.embeddings.fireworks import FireworksEmbedding
+from llama\_index.llms.fireworks import Fireworks
+from IPython.display import Markdown, display
+import chromadb
+
+\# import from llama\_index.core import VectorStoreIndex, SimpleDirectoryReader from llama\_index.vector\_stores.chroma import ChromaVectorStore from llama\_index.core import StorageContext from llama\_index.embeddings.fireworks import FireworksEmbedding from llama\_index.llms.fireworks import Fireworks from IPython.display import Markdown, display import chromadb
+
+In \[ \]:
+
+Copied!
+
+\# set up Fireworks.ai Key
+import getpass
+
+fw\_api\_key \= getpass.getpass("Fireworks API Key:")
+
+\# set up Fireworks.ai Key import getpass fw\_api\_key = getpass.getpass("Fireworks API Key:")
+
+Download Data
+
+In \[ \]:
+
+Copied!
+
+!mkdir \-p 'data/paul\_graham/'
+!wget 'https://raw.githubusercontent.com/run-llama/llama\_index/main/docs/docs/examples/data/paul\_graham/paul\_graham\_essay.txt' \-O 'data/paul\_graham/paul\_graham\_essay.txt'
+
+!mkdir -p 'data/paul\_graham/' !wget 'https://raw.githubusercontent.com/run-llama/llama\_index/main/docs/docs/examples/data/paul\_graham/paul\_graham\_essay.txt' -O 'data/paul\_graham/paul\_graham\_essay.txt'
+
+\--2024-02-24 01:44:58--  https://raw.githubusercontent.com/run-llama/llama\_index/main/docs/docs/examples/data/paul\_graham/paul\_graham\_essay.txt
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.110.133, 185.199.109.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 75042 (73K) \[text/plain\]
+Saving to: ‘data/paul\_graham/paul\_graham\_essay.txt’
+
+data/paul\_graham/pa 100%\[===================>\]  73.28K  --.-KB/s    in 0.01s   
+
+2024-02-24 01:44:58 (5.15 MB/s) - ‘data/paul\_graham/paul\_graham\_essay.txt’ saved \[75042/75042\]
+
+In \[ \]:
+
+Copied!
+
+from llama\_index.llms.fireworks import Fireworks
+from llama\_index.embeddings.fireworks import FireworksEmbedding
+
+llm \= Fireworks(
+    temperature\=0, model\="accounts/fireworks/models/mixtral-8x7b-instruct"
+)
+
+\# create client and a new collection
+chroma\_client \= chromadb.EphemeralClient()
+chroma\_collection \= chroma\_client.create\_collection("quickstart")
+
+\# define embedding function
+embed\_model \= FireworksEmbedding(
+    model\_name\="nomic-ai/nomic-embed-text-v1.5",
+)
+
+\# load documents
+documents \= SimpleDirectoryReader("./data/paul\_graham/").load\_data()
+
+\# set up ChromaVectorStore and load in data
+vector\_store \= ChromaVectorStore(chroma\_collection\=chroma\_collection)
+storage\_context \= StorageContext.from\_defaults(vector\_store\=vector\_store)
+index \= VectorStoreIndex.from\_documents(
+    documents, storage\_context\=storage\_context, embed\_model\=embed\_model
+)
+
+\# Query Data
+query\_engine \= index.as\_query\_engine(llm\=llm)
+response \= query\_engine.query("What did the author do growing up?")
+display(Markdown(f"<b>{response}</b>"))
+
+from llama\_index.llms.fireworks import Fireworks from llama\_index.embeddings.fireworks import FireworksEmbedding llm = Fireworks( temperature=0, model="accounts/fireworks/models/mixtral-8x7b-instruct" ) # create client and a new collection chroma\_client = chromadb.EphemeralClient() chroma\_collection = chroma\_client.create\_collection("quickstart") # define embedding function embed\_model = FireworksEmbedding( model\_name="nomic-ai/nomic-embed-text-v1.5", ) # load documents documents = SimpleDirectoryReader("./data/paul\_graham/").load\_data() # set up ChromaVectorStore and load in data vector\_store = ChromaVectorStore(chroma\_collection=chroma\_collection) storage\_context = StorageContext.from\_defaults(vector\_store=vector\_store) index = VectorStoreIndex.from\_documents( documents, storage\_context=storage\_context, embed\_model=embed\_model ) # Query Data query\_engine = index.as\_query\_engine(llm=llm) response = query\_engine.query("What did the author do growing up?") display(Markdown(f"**{response}**"))
+
+show list of text \['file\_path: data/paul\_graham/paul\_graham\_essay.txt  What I Worked On  February 2021  Before college the two main things I worked on, outside of school, were writing and programming. I didn\\'t write essays. I wrote what beginning writers were supposed to write then, and probably still are: short stories. My stories were awful. They had hardly any plot, just characters with strong feelings, which I imagined made them deep.  The first programs I tried writing were on the IBM 1401 that our school district used for what was then called "data processing." This was in 9th grade, so I was 13 or 14. The school district\\'s 1401 happened to be in the basement of our junior high school, and my friend Rich Draves and I got permission to use it. It was like a mini Bond villain\\'s lair down there, with all these alien-looking machines — CPU, disk drives, printer, card reader — sitting up on a raised floor under bright fluorescent lights.  The language we used was an early version of Fortran. You had to type programs on punch cards, then stack them in the card reader and press a button to load the program into memory and run it. The result would ordinarily be to print something on the spectacularly loud printer.  I was puzzled by the 1401. I couldn\\'t figure out what to do with it. And in retrospect there\\'s not much I could have done with it. The only form of input to programs was data stored on punched cards, and I didn\\'t have any data stored on punched cards. The only other option was to do things that didn\\'t rely on any input, like calculate approximations of pi, but I didn\\'t know enough math to do anything interesting of that type. So I\\'m not surprised I can\\'t remember any programs I wrote, because they can\\'t have done much. My clearest memory is of the moment I learned it was possible for programs not to terminate, when one of mine didn\\'t. On a machine without time-sharing, this was a social as well as a technical error, as the data center manager\\'s expression made clear.  With microcomputers, everything changed. Now you could have a computer sitting right in front of you, on a desk, that could respond to your keystrokes as it was running instead of just churning through a stack of punch cards and then stopping. \[1\]  The first of my friends to get a microcomputer built it himself. It was sold as a kit by Heathkit. I remember vividly how impressed and envious I felt watching him sitting in front of it, typing programs right into the computer.  Computers were expensive in those days and it took me years of nagging before I convinced my father to buy one, a TRS-80, in about 1980. The gold standard then was the Apple II, but a TRS-80 was good enough. This was when I really started programming. I wrote simple games, a program to predict how high my model rockets would fly, and a word processor that my father used to write at least one book. There was only room in memory for about 2 pages of text, so he\\'d write 2 pages at a time and then print them out, but it was a lot better than a typewriter.  Though I liked programming, I didn\\'t plan to study it in college. In college I was going to study philosophy, which sounded much more powerful. It seemed, to my naive high school self, to be the study of the ultimate truths, compared to which the things studied in other fields would be mere domain knowledge. What I discovered when I got to college was that the other fields took up so much of the space of ideas that there wasn\\'t much left for these supposed ultimate truths. All that seemed left for philosophy were edge cases that people in other fields felt could safely be ignored.  I couldn\\'t have put this into words when I was 18. All I knew at the time was that I kept taking philosophy courses and they kept being boring. So I decided to switch to AI.  AI was in the air in the mid 1980s, but there were two things especially that made me want to work on it: a novel by Heinlein called The Moon is a Harsh Mistress, which featured an intelligent computer called Mike, and a PBS documentary that showed Terry Winograd using SHRDLU. I haven\\'t tried rereading The Moon is a Harsh Mistress, so I don\\'t know how well it has aged, but when I read it I was drawn entirely into its world. It seemed only a matter of time before we\\'d have Mike, and when I saw Winograd using SHRDLU, it seemed like that time would be a few years at most.', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  I couldn\\'t have put this into words when I was 18. All I knew at the time was that I kept taking philosophy courses and they kept being boring. So I decided to switch to AI.  AI was in the air in the mid 1980s, but there were two things especially that made me want to work on it: a novel by Heinlein called The Moon is a Harsh Mistress, which featured an intelligent computer called Mike, and a PBS documentary that showed Terry Winograd using SHRDLU. I haven\\'t tried rereading The Moon is a Harsh Mistress, so I don\\'t know how well it has aged, but when I read it I was drawn entirely into its world. It seemed only a matter of time before we\\'d have Mike, and when I saw Winograd using SHRDLU, it seemed like that time would be a few years at most. All you had to do was teach SHRDLU more words.  There weren\\'t any classes in AI at Cornell then, not even graduate classes, so I started trying to teach myself. Which meant learning Lisp, since in those days Lisp was regarded as the language of AI. The commonly used programming languages then were pretty primitive, and programmers\\' ideas correspondingly so. The default language at Cornell was a Pascal-like language called PL/I, and the situation was similar elsewhere. Learning Lisp expanded my concept of a program so fast that it was years before I started to have a sense of where the new limits were. This was more like it; this was what I had expected college to do. It wasn\\'t happening in a class, like it was supposed to, but that was ok. For the next couple years I was on a roll. I knew what I was going to do.  For my undergraduate thesis, I reverse-engineered SHRDLU. My God did I love working on that program. It was a pleasing bit of code, but what made it even more exciting was my belief — hard to imagine now, but not unique in 1985 — that it was already climbing the lower slopes of intelligence.  I had gotten into a program at Cornell that didn\\'t make you choose a major. You could take whatever classes you liked, and choose whatever you liked to put on your degree. I of course chose "Artificial Intelligence." When I got the actual physical diploma, I was dismayed to find that the quotes had been included, which made them read as scare-quotes. At the time this bothered me, but now it seems amusingly accurate, for reasons I was about to discover.  I applied to 3 grad schools: MIT and Yale, which were renowned for AI at the time, and Harvard, which I\\'d visited because Rich Draves went there, and was also home to Bill Woods, who\\'d invented the type of parser I used in my SHRDLU clone. Only Harvard accepted me, so that was where I went.  I don\\'t remember the moment it happened, or if there even was a specific moment, but during the first year of grad school I realized that AI, as practiced at the time, was a hoax. By which I mean the sort of AI in which a program that\\'s told "the dog is sitting on the chair" translates this into some formal representation and adds it to the list of things it knows.  What these programs really showed was that there\\'s a subset of natural language that\\'s a formal language. But a very proper subset. It was clear that there was an unbridgeable gap between what they could do and actually understanding natural language. It was not, in fact, simply a matter of teaching SHRDLU more words. That whole way of doing AI, with explicit data structures representing concepts, was not going to work. Its brokenness did, as so often happens, generate a lot of opportunities to write papers about various band-aids that could be applied to it, but it was never going to get us Mike.  So I looked around to see what I could salvage from the wreckage of my plans, and there was Lisp. I knew from experience that Lisp was interesting for its own sake and not just for its association with AI, even though that was the main reason people cared about it at the time. So I decided to focus on Lisp. In fact, I decided to write a book about Lisp hacking. It\\'s scary to think how little I knew about Lisp hacking when I started writing that book. But there\\'s nothing like writing a book about something to help you learn it. The book, On Lisp, wasn\\'t published till 1993, but I wrote much of it in grad school.  Computer Science is an uneasy alliance between two halves, theory and systems. The theory people prove things, and the systems people build things. I wanted to build things.', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  So I looked around to see what I could salvage from the wreckage of my plans, and there was Lisp. I knew from experience that Lisp was interesting for its own sake and not just for its association with AI, even though that was the main reason people cared about it at the time. So I decided to focus on Lisp. In fact, I decided to write a book about Lisp hacking. It\\'s scary to think how little I knew about Lisp hacking when I started writing that book. But there\\'s nothing like writing a book about something to help you learn it. The book, On Lisp, wasn\\'t published till 1993, but I wrote much of it in grad school.  Computer Science is an uneasy alliance between two halves, theory and systems. The theory people prove things, and the systems people build things. I wanted to build things. I had plenty of respect for theory — indeed, a sneaking suspicion that it was the more admirable of the two halves — but building things seemed so much more exciting.  The problem with systems work, though, was that it didn\\'t last. Any program you wrote today, no matter how good, would be obsolete in a couple decades at best. People might mention your software in footnotes, but no one would actually use it. And indeed, it would seem very feeble work. Only people with a sense of the history of the field would even realize that, in its time, it had been good.  There were some surplus Xerox Dandelions floating around the computer lab at one point. Anyone who wanted one to play around with could have one. I was briefly tempted, but they were so slow by present standards; what was the point? No one else wanted one either, so off they went. That was what happened to systems work.  I wanted not just to build things, but to build things that would last.  In this dissatisfied state I went in 1988 to visit Rich Draves at CMU, where he was in grad school. One day I went to visit the Carnegie Institute, where I\\'d spent a lot of time as a kid. While looking at a painting there I realized something that might seem obvious, but was a big surprise to me. There, right on the wall, was something you could make that would last. Paintings didn\\'t become obsolete. Some of the best ones were hundreds of years old.  And moreover this was something you could make a living doing. Not as easily as you could by writing software, of course, but I thought if you were really industrious and lived really cheaply, it had to be possible to make enough to survive. And as an artist you could be truly independent. You wouldn\\'t have a boss, or even need to get research funding.  I had always liked looking at paintings. Could I make them? I had no idea. I\\'d never imagined it was even possible. I knew intellectually that people made art — that it didn\\'t just appear spontaneously — but it was as if the people who made it were a different species. They either lived long ago or were mysterious geniuses doing strange things in profiles in Life magazine. The idea of actually being able to make art, to put that verb before that noun, seemed almost miraculous.  That fall I started taking art classes at Harvard. Grad students could take classes in any department, and my advisor, Tom Cheatham, was very easy going. If he even knew about the strange classes I was taking, he never said anything.  So now I was in a PhD program in computer science, yet planning to be an artist, yet also genuinely in love with Lisp hacking and working away at On Lisp. In other words, like many a grad student, I was working energetically on multiple projects that were not my thesis.  I didn\\'t see a way out of this situation. I didn\\'t want to drop out of grad school, but how else was I going to get out? I remember when my friend Robert Morris got kicked out of Cornell for writing the internet worm of 1988, I was envious that he\\'d found such a spectacular way to get out of grad school.  Then one day in April 1990 a crack appeared in the wall. I ran into professor Cheatham and he asked if I was far enough along to graduate that June. I didn\\'t have a word of my dissertation written, but in what must have been the quickest bit of thinking in my life, I decided to take a shot at writing one in the 5 weeks or so that remained before the deadline, reusing parts of On Lisp where I could, and I was able to respond, with no perceptible delay "Yes, I think so. I\\'ll give you something to read in a few days."', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  I didn\\'t want to drop out of grad school, but how else was I going to get out? I remember when my friend Robert Morris got kicked out of Cornell for writing the internet worm of 1988, I was envious that he\\'d found such a spectacular way to get out of grad school.  Then one day in April 1990 a crack appeared in the wall. I ran into professor Cheatham and he asked if I was far enough along to graduate that June. I didn\\'t have a word of my dissertation written, but in what must have been the quickest bit of thinking in my life, I decided to take a shot at writing one in the 5 weeks or so that remained before the deadline, reusing parts of On Lisp where I could, and I was able to respond, with no perceptible delay "Yes, I think so. I\\'ll give you something to read in a few days."  I picked applications of continuations as the topic. In retrospect I should have written about macros and embedded languages. There\\'s a whole world there that\\'s barely been explored. But all I wanted was to get out of grad school, and my rapidly written dissertation sufficed, just barely.  Meanwhile I was applying to art schools. I applied to two: RISD in the US, and the Accademia di Belli Arti in Florence, which, because it was the oldest art school, I imagined would be good. RISD accepted me, and I never heard back from the Accademia, so off to Providence I went.  I\\'d applied for the BFA program at RISD, which meant in effect that I had to go to college again. This was not as strange as it sounds, because I was only 25, and art schools are full of people of different ages. RISD counted me as a transfer sophomore and said I had to do the foundation that summer. The foundation means the classes that everyone has to take in fundamental subjects like drawing, color, and design.  Toward the end of the summer I got a big surprise: a letter from the Accademia, which had been delayed because they\\'d sent it to Cambridge England instead of Cambridge Massachusetts, inviting me to take the entrance exam in Florence that fall. This was now only weeks away. My nice landlady let me leave my stuff in her attic. I had some money saved from consulting work I\\'d done in grad school; there was probably enough to last a year if I lived cheaply. Now all I had to do was learn Italian.  Only stranieri (foreigners) had to take this entrance exam. In retrospect it may well have been a way of excluding them, because there were so many stranieri attracted by the idea of studying art in Florence that the Italian students would otherwise have been outnumbered. I was in decent shape at painting and drawing from the RISD foundation that summer, but I still don\\'t know how I managed to pass the written exam. I remember that I answered the essay question by writing about Cezanne, and that I cranked up the intellectual level as high as I could to make the most of my limited vocabulary. \[2\]  I\\'m only up to age 25 and already there are such conspicuous patterns. Here I was, yet again about to attend some august institution in the hopes of learning about some prestigious subject, and yet again about to be disappointed. The students and faculty in the painting department at the Accademia were the nicest people you could imagine, but they had long since arrived at an arrangement whereby the students wouldn\\'t require the faculty to teach anything, and in return the faculty wouldn\\'t require the students to learn anything. And at the same time all involved would adhere outwardly to the conventions of a 19th century atelier. We actually had one of those little stoves, fed with kindling, that you see in 19th century studio paintings, and a nude model sitting as close to it as possible without getting burned. Except hardly anyone else painted her besides me. The rest of the students spent their time chatting or occasionally trying to imitate things they\\'d seen in American art magazines.  Our model turned out to live just down the street from me. She made a living from a combination of modelling and making fakes for a local antique dealer. She\\'d copy an obscure old painting out of a book, and then he\\'d take the copy and maltreat it to make it look old. \[3\]  While I was a student at the Accademia I started painting still lives in my bedroom at night. These paintings were tiny, because the room was, and because I painted them on leftover scraps of canvas, which was all I could afford at the time.', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  We actually had one of those little stoves, fed with kindling, that you see in 19th century studio paintings, and a nude model sitting as close to it as possible without getting burned. Except hardly anyone else painted her besides me. The rest of the students spent their time chatting or occasionally trying to imitate things they\\'d seen in American art magazines.  Our model turned out to live just down the street from me. She made a living from a combination of modelling and making fakes for a local antique dealer. She\\'d copy an obscure old painting out of a book, and then he\\'d take the copy and maltreat it to make it look old. \[3\]  While I was a student at the Accademia I started painting still lives in my bedroom at night. These paintings were tiny, because the room was, and because I painted them on leftover scraps of canvas, which was all I could afford at the time. Painting still lives is different from painting people, because the subject, as its name suggests, can\\'t move. People can\\'t sit for more than about 15 minutes at a time, and when they do they don\\'t sit very still. So the traditional m.o. for painting people is to know how to paint a generic person, which you then modify to match the specific person you\\'re painting. Whereas a still life you can, if you want, copy pixel by pixel from what you\\'re seeing. You don\\'t want to stop there, of course, or you get merely photographic accuracy, and what makes a still life interesting is that it\\'s been through a head. You want to emphasize the visual cues that tell you, for example, that the reason the color changes suddenly at a certain point is that it\\'s the edge of an object. By subtly emphasizing such things you can make paintings that are more realistic than photographs not just in some metaphorical sense, but in the strict information-theoretic sense. \[4\]  I liked painting still lives because I was curious about what I was seeing. In everyday life, we aren\\'t consciously aware of much we\\'re seeing. Most visual perception is handled by low-level processes that merely tell your brain "that\\'s a water droplet" without telling you details like where the lightest and darkest points are, or "that\\'s a bush" without telling you the shape and position of every leaf. This is a feature of brains, not a bug. In everyday life it would be distracting to notice every leaf on every bush. But when you have to paint something, you have to look more closely, and when you do there\\'s a lot to see. You can still be noticing new things after days of trying to paint something people usually take for granted, just as you can after days of trying to write an essay about something people usually take for granted.  This is not the only way to paint. I\\'m not 100% sure it\\'s even a good way to paint. But it seemed a good enough bet to be worth trying.  Our teacher, professor Ulivi, was a nice guy. He could see I worked hard, and gave me a good grade, which he wrote down in a sort of passport each student had. But the Accademia wasn\\'t teaching me anything except Italian, and my money was running out, so at the end of the first year I went back to the US.  I wanted to go back to RISD, but I was now broke and RISD was very expensive, so I decided to get a job for a year and then return to RISD the next fall. I got one at a company called Interleaf, which made software for creating documents. You mean like Microsoft Word? Exactly. That was how I learned that low end software tends to eat high end software. But Interleaf still had a few years to live yet. \[5\]  Interleaf had done something pretty bold. Inspired by Emacs, they\\'d added a scripting language, and even made the scripting language a dialect of Lisp. Now they wanted a Lisp hacker to write things in it. This was the closest thing I\\'ve had to a normal job, and I hereby apologize to my boss and coworkers, because I was a bad employee. Their Lisp was the thinnest icing on a giant C cake, and since I didn\\'t know C and didn\\'t want to learn it, I never understood most of the software. Plus I was terribly irresponsible. This was back when a programming job meant showing up every day during certain working hours. That seemed unnatural to me, and on this point the rest of the world is coming around to my way of thinking, but at the time it caused a lot of friction.', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  But Interleaf still had a few years to live yet. \[5\]  Interleaf had done something pretty bold. Inspired by Emacs, they\\'d added a scripting language, and even made the scripting language a dialect of Lisp. Now they wanted a Lisp hacker to write things in it. This was the closest thing I\\'ve had to a normal job, and I hereby apologize to my boss and coworkers, because I was a bad employee. Their Lisp was the thinnest icing on a giant C cake, and since I didn\\'t know C and didn\\'t want to learn it, I never understood most of the software. Plus I was terribly irresponsible. This was back when a programming job meant showing up every day during certain working hours. That seemed unnatural to me, and on this point the rest of the world is coming around to my way of thinking, but at the time it caused a lot of friction. Toward the end of the year I spent much of my time surreptitiously working on On Lisp, which I had by this time gotten a contract to publish.  The good part was that I got paid huge amounts of money, especially by art student standards. In Florence, after paying my part of the rent, my budget for everything else had been $7 a day. Now I was getting paid more than 4 times that every hour, even when I was just sitting in a meeting. By living cheaply I not only managed to save enough to go back to RISD, but also paid off my college loans.  I learned some useful things at Interleaf, though they were mostly about what not to do. I learned that it\\'s better for technology companies to be run by product people than sales people (though sales is a real skill and people who are good at it are really good at it), that it leads to bugs when code is edited by too many people, that cheap office space is no bargain if it\\'s depressing, that planned meetings are inferior to corridor conversations, that big, bureaucratic customers are a dangerous source of money, and that there\\'s not much overlap between conventional office hours and the optimal time for hacking, or conventional offices and the optimal place for it.  But the most important thing I learned, and which I used in both Viaweb and Y Combinator, is that the low end eats the high end: that it\\'s good to be the "entry level" option, even though that will be less prestigious, because if you\\'re not, someone else will be, and will squash you against the ceiling. Which in turn means that prestige is a danger sign.  When I left to go back to RISD the next fall, I arranged to do freelance work for the group that did projects for customers, and this was how I survived for the next several years. When I came back to visit for a project later on, someone told me about a new thing called HTML, which was, as he described it, a derivative of SGML. Markup language enthusiasts were an occupational hazard at Interleaf and I ignored him, but this HTML thing later became a big part of my life.  In the fall of 1992 I moved back to Providence to continue at RISD. The foundation had merely been intro stuff, and the Accademia had been a (very civilized) joke. Now I was going to see what real art school was like. But alas it was more like the Accademia than not. Better organized, certainly, and a lot more expensive, but it was now becoming clear that art school did not bear the same relationship to art that medical school bore to medicine. At least not the painting department. The textile department, which my next door neighbor belonged to, seemed to be pretty rigorous. No doubt illustration and architecture were too. But painting was post-rigorous. Painting students were supposed to express themselves, which to the more worldly ones meant to try to cook up some sort of distinctive signature style.  A signature style is the visual equivalent of what in show business is known as a "schtick": something that immediately identifies the work as yours and no one else\\'s. For example, when you see a painting that looks like a certain kind of cartoon, you know it\\'s by Roy Lichtenstein. So if you see a big painting of this type hanging in the apartment of a hedge fund manager, you know he paid millions of dollars for it. That\\'s not always why artists have a signature style, but it\\'s usually why buyers pay a lot for such work. \[6\]  There were plenty of earnest students too: kids who "could draw" in high school, and now had come to what was supposed to be the best art school in the country, to learn to draw even better.', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  Painting students were supposed to express themselves, which to the more worldly ones meant to try to cook up some sort of distinctive signature style.  A signature style is the visual equivalent of what in show business is known as a "schtick": something that immediately identifies the work as yours and no one else\\'s. For example, when you see a painting that looks like a certain kind of cartoon, you know it\\'s by Roy Lichtenstein. So if you see a big painting of this type hanging in the apartment of a hedge fund manager, you know he paid millions of dollars for it. That\\'s not always why artists have a signature style, but it\\'s usually why buyers pay a lot for such work. \[6\]  There were plenty of earnest students too: kids who "could draw" in high school, and now had come to what was supposed to be the best art school in the country, to learn to draw even better. They tended to be confused and demoralized by what they found at RISD, but they kept going, because painting was what they did. I was not one of the kids who could draw in high school, but at RISD I was definitely closer to their tribe than the tribe of signature style seekers.  I learned a lot in the color class I took at RISD, but otherwise I was basically teaching myself to paint, and I could do that for free. So in 1993 I dropped out. I hung around Providence for a bit, and then my college friend Nancy Parmet did me a big favor. A rent-controlled apartment in a building her mother owned in New York was becoming vacant. Did I want it? It wasn\\'t much more than my current place, and New York was supposed to be where the artists were. So yes, I wanted it! \[7\]  Asterix comics begin by zooming in on a tiny corner of Roman Gaul that turns out not to be controlled by the Romans. You can do something similar on a map of New York City: if you zoom in on the Upper East Side, there\\'s a tiny corner that\\'s not rich, or at least wasn\\'t in 1993. It\\'s called Yorkville, and that was my new home. Now I was a New York artist — in the strictly technical sense of making paintings and living in New York.  I was nervous about money, because I could sense that Interleaf was on the way down. Freelance Lisp hacking work was very rare, and I didn\\'t want to have to program in another language, which in those days would have meant C++ if I was lucky. So with my unerring nose for financial opportunity, I decided to write another book on Lisp. This would be a popular book, the sort of book that could be used as a textbook. I imagined myself living frugally off the royalties and spending all my time painting. (The painting on the cover of this book, ANSI Common Lisp, is one that I painted around this time.)  The best thing about New York for me was the presence of Idelle and Julian Weber. Idelle Weber was a painter, one of the early photorealists, and I\\'d taken her painting class at Harvard. I\\'ve never known a teacher more beloved by her students. Large numbers of former students kept in touch with her, including me. After I moved to New York I became her de facto studio assistant.  She liked to paint on big, square canvases, 4 to 5 feet on a side. One day in late 1994 as I was stretching one of these monsters there was something on the radio about a famous fund manager. He wasn\\'t that much older than me, and was super rich. The thought suddenly occurred to me: why don\\'t I become rich? Then I\\'ll be able to work on whatever I want.  Meanwhile I\\'d been hearing more and more about this new thing called the World Wide Web. Robert Morris showed it to me when I visited him in Cambridge, where he was now in grad school at Harvard. It seemed to me that the web would be a big deal. I\\'d seen what graphical user interfaces had done for the popularity of microcomputers. It seemed like the web would do the same for the internet.  If I wanted to get rich, here was the next train leaving the station. I was right about that part. What I got wrong was the idea. I decided we should start a company to put art galleries online. I can\\'t honestly say, after reading so many Y Combinator applications, that this was the worst startup idea ever, but it was up there. Art galleries didn\\'t want to be online, and still don\\'t, not the fancy ones. That\\'s not how they sell.', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  Meanwhile I\\'d been hearing more and more about this new thing called the World Wide Web. Robert Morris showed it to me when I visited him in Cambridge, where he was now in grad school at Harvard. It seemed to me that the web would be a big deal. I\\'d seen what graphical user interfaces had done for the popularity of microcomputers. It seemed like the web would do the same for the internet.  If I wanted to get rich, here was the next train leaving the station. I was right about that part. What I got wrong was the idea. I decided we should start a company to put art galleries online. I can\\'t honestly say, after reading so many Y Combinator applications, that this was the worst startup idea ever, but it was up there. Art galleries didn\\'t want to be online, and still don\\'t, not the fancy ones. That\\'s not how they sell. I wrote some software to generate web sites for galleries, and Robert wrote some to resize images and set up an http server to serve the pages. Then we tried to sign up galleries. To call this a difficult sale would be an understatement. It was difficult to give away. A few galleries let us make sites for them for free, but none paid us.  Then some online stores started to appear, and I realized that except for the order buttons they were identical to the sites we\\'d been generating for galleries. This impressive-sounding thing called an "internet storefront" was something we already knew how to build.  So in the summer of 1995, after I submitted the camera-ready copy of ANSI Common Lisp to the publishers, we started trying to write software to build online stores. At first this was going to be normal desktop software, which in those days meant Windows software. That was an alarming prospect, because neither of us knew how to write Windows software or wanted to learn. We lived in the Unix world. But we decided we\\'d at least try writing a prototype store builder on Unix. Robert wrote a shopping cart, and I wrote a new site generator for stores — in Lisp, of course.  We were working out of Robert\\'s apartment in Cambridge. His roommate was away for big chunks of time, during which I got to sleep in his room. For some reason there was no bed frame or sheets, just a mattress on the floor. One morning as I was lying on this mattress I had an idea that made me sit up like a capital L. What if we ran the software on the server, and let users control it by clicking on links? Then we\\'d never have to write anything to run on users\\' computers. We could generate the sites on the same server we\\'d serve them from. Users wouldn\\'t need anything more than a browser.  This kind of software, known as a web app, is common now, but at the time it wasn\\'t clear that it was even possible. To find out, we decided to try making a version of our store builder that you could control through the browser. A couple days later, on August 12, we had one that worked. The UI was horrible, but it proved you could build a whole store through the browser, without any client software or typing anything into the command line on the server.  Now we felt like we were really onto something. I had visions of a whole new generation of software working this way. You wouldn\\'t need versions, or ports, or any of that crap. At Interleaf there had been a whole group called Release Engineering that seemed to be at least as big as the group that actually wrote the software. Now you could just update the software right on the server.  We started a new company we called Viaweb, after the fact that our software worked via the web, and we got $10,000 in seed funding from Idelle\\'s husband Julian. In return for that and doing the initial legal work and giving us business advice, we gave him 10% of the company. Ten years later this deal became the model for Y Combinator\\'s. We knew founders needed something like this, because we\\'d needed it ourselves.  At this stage I had a negative net worth, because the thousand dollars or so I had in the bank was more than counterbalanced by what I owed the government in taxes. (Had I diligently set aside the proper proportion of the money I\\'d made consulting for Interleaf? No, I had not.) So although Robert had his graduate student stipend, I needed that seed funding to live on.  We originally hoped to launch in September, but we got more ambitious about the software as we worked on it.', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  In return for that and doing the initial legal work and giving us business advice, we gave him 10% of the company. Ten years later this deal became the model for Y Combinator\\'s. We knew founders needed something like this, because we\\'d needed it ourselves.  At this stage I had a negative net worth, because the thousand dollars or so I had in the bank was more than counterbalanced by what I owed the government in taxes. (Had I diligently set aside the proper proportion of the money I\\'d made consulting for Interleaf? No, I had not.) So although Robert had his graduate student stipend, I needed that seed funding to live on.  We originally hoped to launch in September, but we got more ambitious about the software as we worked on it. Eventually we managed to build a WYSIWYG site builder, in the sense that as you were creating pages, they looked exactly like the static ones that would be generated later, except that instead of leading to static pages, the links all referred to closures stored in a hash table on the server.  It helped to have studied art, because the main goal of an online store builder is to make users look legit, and the key to looking legit is high production values. If you get page layouts and fonts and colors right, you can make a guy running a store out of his bedroom look more legit than a big company.  (If you\\'re curious why my site looks so old-fashioned, it\\'s because it\\'s still made with this software. It may look clunky today, but in 1996 it was the last word in slick.)  In September, Robert rebelled. "We\\'ve been working on this for a month," he said, "and it\\'s still not done." This is funny in retrospect, because he would still be working on it almost 3 years later. But I decided it might be prudent to recruit more programmers, and I asked Robert who else in grad school with him was really good. He recommended Trevor Blackwell, which surprised me at first, because at that point I knew Trevor mainly for his plan to reduce everything in his life to a stack of notecards, which he carried around with him. But Rtm was right, as usual. Trevor turned out to be a frighteningly effective hacker.  It was a lot of fun working with Robert and Trevor. They\\'re the two most independent-minded people I know, and in completely different ways. If you could see inside Rtm\\'s brain it would look like a colonial New England church, and if you could see inside Trevor\\'s it would look like the worst excesses of Austrian Rococo.  We opened for business, with 6 stores, in January 1996. It was just as well we waited a few months, because although we worried we were late, we were actually almost fatally early. There was a lot of talk in the press then about ecommerce, but not many people actually wanted online stores. \[8\]  There were three main parts to the software: the editor, which people used to build sites and which I wrote, the shopping cart, which Robert wrote, and the manager, which kept track of orders and statistics, and which Trevor wrote. In its time, the editor was one of the best general-purpose site builders. I kept the code tight and didn\\'t have to integrate with any other software except Robert\\'s and Trevor\\'s, so it was quite fun to work on. If all I\\'d had to do was work on this software, the next 3 years would have been the easiest of my life. Unfortunately I had to do a lot more, all of it stuff I was worse at than programming, and the next 3 years were instead the most stressful.  There were a lot of startups making ecommerce software in the second half of the 90s. We were determined to be the Microsoft Word, not the Interleaf. Which meant being easy to use and inexpensive. It was lucky for us that we were poor, because that caused us to make Viaweb even more inexpensive than we realized. We charged $100 a month for a small store and $300 a month for a big one. This low price was a big attraction, and a constant thorn in the sides of competitors, but it wasn\\'t because of some clever insight that we set the price low. We had no idea what businesses paid for things. $300 a month seemed like a lot of money to us.  We did a lot of things right by accident like that. For example, we did what\\'s now called "doing things that don\\'t scale," although at the time we would have described it as "being so lame that we\\'re driven to the most desperate measures to get users." The most common of which was building stores for them.', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  Which meant being easy to use and inexpensive. It was lucky for us that we were poor, because that caused us to make Viaweb even more inexpensive than we realized. We charged $100 a month for a small store and $300 a month for a big one. This low price was a big attraction, and a constant thorn in the sides of competitors, but it wasn\\'t because of some clever insight that we set the price low. We had no idea what businesses paid for things. $300 a month seemed like a lot of money to us.  We did a lot of things right by accident like that. For example, we did what\\'s now called "doing things that don\\'t scale," although at the time we would have described it as "being so lame that we\\'re driven to the most desperate measures to get users." The most common of which was building stores for them. This seemed particularly humiliating, since the whole raison d\\'etre of our software was that people could use it to make their own stores. But anything to get users.  We learned a lot more about retail than we wanted to know. For example, that if you could only have a small image of a man\\'s shirt (and all images were small then by present standards), it was better to have a closeup of the collar than a picture of the whole shirt. The reason I remember learning this was that it meant I had to rescan about 30 images of men\\'s shirts. My first set of scans were so beautiful too.  Though this felt wrong, it was exactly the right thing to be doing. Building stores for users taught us about retail, and about how it felt to use our software. I was initially both mystified and repelled by "business" and thought we needed a "business person" to be in charge of it, but once we started to get users, I was converted, in much the same way I was converted to fatherhood once I had kids. Whatever users wanted, I was all theirs. Maybe one day we\\'d have so many users that I couldn\\'t scan their images for them, but in the meantime there was nothing more important to do.  Another thing I didn\\'t get at the time is that growth rate is the ultimate test of a startup. Our growth rate was fine. We had about 70 stores at the end of 1996 and about 500 at the end of 1997. I mistakenly thought the thing that mattered was the absolute number of users. And that is the thing that matters in the sense that that\\'s how much money you\\'re making, and if you\\'re not making enough, you might go out of business. But in the long term the growth rate takes care of the absolute number. If we\\'d been a startup I was advising at Y Combinator, I would have said: Stop being so stressed out, because you\\'re doing fine. You\\'re growing 7x a year. Just don\\'t hire too many more people and you\\'ll soon be profitable, and then you\\'ll control your own destiny.  Alas I hired lots more people, partly because our investors wanted me to, and partly because that\\'s what startups did during the Internet Bubble. A company with just a handful of employees would have seemed amateurish. So we didn\\'t reach breakeven until about when Yahoo bought us in the summer of 1998. Which in turn meant we were at the mercy of investors for the entire life of the company. And since both we and our investors were noobs at startups, the result was a mess even by startup standards.  It was a huge relief when Yahoo bought us. In principle our Viaweb stock was valuable. It was a share in a business that was profitable and growing rapidly. But it didn\\'t feel very valuable to me; I had no idea how to value a business, but I was all too keenly aware of the near-death experiences we seemed to have every few months. Nor had I changed my grad student lifestyle significantly since we started. So when Yahoo bought us it felt like going from rags to riches. Since we were going to California, I bought a car, a yellow 1998 VW GTI. I remember thinking that its leather seats alone were by far the most luxurious thing I owned.  The next year, from the summer of 1998 to the summer of 1999, must have been the least productive of my life. I didn\\'t realize it at the time, but I was worn out from the effort and stress of running Viaweb. For a while after I got to California I tried to continue my usual m.o.'\] nomic-ai/nomic-embed-text-v1.5 {}
+show list of text \["file\_path: data/paul\_graham/paul\_graham\_essay.txt  But it didn't feel very valuable to me; I had no idea how to value a business, but I was all too keenly aware of the near-death experiences we seemed to have every few months. Nor had I changed my grad student lifestyle significantly since we started. So when Yahoo bought us it felt like going from rags to riches. Since we were going to California, I bought a car, a yellow 1998 VW GTI. I remember thinking that its leather seats alone were by far the most luxurious thing I owned.  The next year, from the summer of 1998 to the summer of 1999, must have been the least productive of my life. I didn't realize it at the time, but I was worn out from the effort and stress of running Viaweb. For a while after I got to California I tried to continue my usual m.o. of programming till 3 in the morning, but fatigue combined with Yahoo's prematurely aged culture and grim cube farm in Santa Clara gradually dragged me down. After a few months it felt disconcertingly like working at Interleaf.  Yahoo had given us a lot of options when they bought us. At the time I thought Yahoo was so overvalued that they'd never be worth anything, but to my astonishment the stock went up 5x in the next year. I hung on till the first chunk of options vested, then in the summer of 1999 I left. It had been so long since I'd painted anything that I'd half forgotten why I was doing this. My brain had been entirely full of software and men's shirts for 4 years. But I had done this to get rich so I could paint, I reminded myself, and now I was rich, so I should go paint.  When I said I was leaving, my boss at Yahoo had a long conversation with me about my plans. I told him all about the kinds of pictures I wanted to paint. At the time I was touched that he took such an interest in me. Now I realize it was because he thought I was lying. My options at that point were worth about $2 million a month. If I was leaving that kind of money on the table, it could only be to go and start some new startup, and if I did, I might take people with me. This was the height of the Internet Bubble, and Yahoo was ground zero of it. My boss was at that moment a billionaire. Leaving then to start a new startup must have seemed to him an insanely, and yet also plausibly, ambitious plan.  But I really was quitting to paint, and I started immediately. There was no time to lose. I'd already burned 4 years getting rich. Now when I talk to founders who are leaving after selling their companies, my advice is always the same: take a vacation. That's what I should have done, just gone off somewhere and done nothing for a month or two, but the idea never occurred to me.  So I tried to paint, but I just didn't seem to have any energy or ambition. Part of the problem was that I didn't know many people in California. I'd compounded this problem by buying a house up in the Santa Cruz Mountains, with a beautiful view but miles from anywhere. I stuck it out for a few more months, then in desperation I went back to New York, where unless you understand about rent control you'll be surprised to hear I still had my apartment, sealed up like a tomb of my old life. Idelle was in New York at least, and there were other people trying to paint there, even though I didn't know any of them.  When I got back to New York I resumed my old life, except now I was rich. It was as weird as it sounds. I resumed all my old patterns, except now there were doors where there hadn't been. Now when I was tired of walking, all I had to do was raise my hand, and (unless it was raining) a taxi would stop to pick me up. Now when I walked past charming little restaurants I could go in and order lunch. It was exciting for a while. Painting started to go better. I experimented with a new kind of still life where I'd paint one painting in the old way, then photograph it and print it, blown up, on canvas, and then use that as the underpainting for a second still life, painted from the same objects (which hopefully hadn't rotted yet).  Meanwhile I looked for an apartment to buy. Now I could actually choose what neighborhood to live in. Where, I asked myself and various real estate agents, is the Cambridge of New York?", 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  It was as weird as it sounds. I resumed all my old patterns, except now there were doors where there hadn\\'t been. Now when I was tired of walking, all I had to do was raise my hand, and (unless it was raining) a taxi would stop to pick me up. Now when I walked past charming little restaurants I could go in and order lunch. It was exciting for a while. Painting started to go better. I experimented with a new kind of still life where I\\'d paint one painting in the old way, then photograph it and print it, blown up, on canvas, and then use that as the underpainting for a second still life, painted from the same objects (which hopefully hadn\\'t rotted yet).  Meanwhile I looked for an apartment to buy. Now I could actually choose what neighborhood to live in. Where, I asked myself and various real estate agents, is the Cambridge of New York? Aided by occasional visits to actual Cambridge, I gradually realized there wasn\\'t one. Huh.  Around this time, in the spring of 2000, I had an idea. It was clear from our experience with Viaweb that web apps were the future. Why not build a web app for making web apps? Why not let people edit code on our server through the browser, and then host the resulting applications for them? \[9\] You could run all sorts of services on the servers that these applications could use just by making an API call: making and receiving phone calls, manipulating images, taking credit card payments, etc.  I got so excited about this idea that I couldn\\'t think about anything else. It seemed obvious that this was the future. I didn\\'t particularly want to start another company, but it was clear that this idea would have to be embodied as one, so I decided to move to Cambridge and start it. I hoped to lure Robert into working on it with me, but there I ran into a hitch. Robert was now a postdoc at MIT, and though he\\'d made a lot of money the last time I\\'d lured him into working on one of my schemes, it had also been a huge time sink. So while he agreed that it sounded like a plausible idea, he firmly refused to work on it.  Hmph. Well, I\\'d do it myself then. I recruited Dan Giffin, who had worked for Viaweb, and two undergrads who wanted summer jobs, and we got to work trying to build what it\\'s now clear is about twenty companies and several open source projects worth of software. The language for defining applications would of course be a dialect of Lisp. But I wasn\\'t so naive as to assume I could spring an overt Lisp on a general audience; we\\'d hide the parentheses, like Dylan did.  By then there was a name for the kind of company Viaweb was, an "application service provider," or ASP. This name didn\\'t last long before it was replaced by "software as a service," but it was current for long enough that I named this new company after it: it was going to be called Aspra.  I started working on the application builder, Dan worked on network infrastructure, and the two undergrads worked on the first two services (images and phone calls). But about halfway through the summer I realized I really didn\\'t want to run a company — especially not a big one, which it was looking like this would have to be. I\\'d only started Viaweb because I needed the money. Now that I didn\\'t need money anymore, why was I doing this? If this vision had to be realized as a company, then screw the vision. I\\'d build a subset that could be done as an open source project.  Much to my surprise, the time I spent working on this stuff was not wasted after all. After we started Y Combinator, I would often encounter startups working on parts of this new architecture, and it was very useful to have spent so much time thinking about it and even trying to write some of it.  The subset I would build as an open source project was the new Lisp, whose parentheses I now wouldn\\'t even have to hide. A lot of Lisp hackers dream of building a new Lisp, partly because one of the distinctive features of the language is that it has dialects, and partly, I think, because we have in our minds a Platonic form of Lisp that all existing dialects fall short of. I certainly did. So at the end of the summer Dan and I switched to working on this new dialect of Lisp, which I called Arc, in a house I bought in Cambridge.  The following spring, lightning struck.', "file\_path: data/paul\_graham/paul\_graham\_essay.txt  Much to my surprise, the time I spent working on this stuff was not wasted after all. After we started Y Combinator, I would often encounter startups working on parts of this new architecture, and it was very useful to have spent so much time thinking about it and even trying to write some of it.  The subset I would build as an open source project was the new Lisp, whose parentheses I now wouldn't even have to hide. A lot of Lisp hackers dream of building a new Lisp, partly because one of the distinctive features of the language is that it has dialects, and partly, I think, because we have in our minds a Platonic form of Lisp that all existing dialects fall short of. I certainly did. So at the end of the summer Dan and I switched to working on this new dialect of Lisp, which I called Arc, in a house I bought in Cambridge.  The following spring, lightning struck. I was invited to give a talk at a Lisp conference, so I gave one about how we'd used Lisp at Viaweb. Afterward I put a postscript file of this talk online, on paulgraham.com, which I'd created years before using Viaweb but had never used for anything. In one day it got 30,000 page views. What on earth had happened? The referring urls showed that someone had posted it on Slashdot. \[10\]  Wow, I thought, there's an audience. If I write something and put it on the web, anyone can read it. That may seem obvious now, but it was surprising then. In the print era there was a narrow channel to readers, guarded by fierce monsters known as editors. The only way to get an audience for anything you wrote was to get it published as a book, or in a newspaper or magazine. Now anyone could publish anything.  This had been possible in principle since 1993, but not many people had realized it yet. I had been intimately involved with building the infrastructure of the web for most of that time, and a writer as well, and it had taken me 8 years to realize it. Even then it took me several years to understand the implications. It meant there would be a whole new generation of essays. \[11\]  In the print era, the channel for publishing essays had been vanishingly small. Except for a few officially anointed thinkers who went to the right parties in New York, the only people allowed to publish essays were specialists writing about their specialties. There were so many essays that had never been written, because there had been no way to publish them. Now they could be, and I was going to write them. \[12\]  I've worked on several different things, but to the extent there was a turning point where I figured out what to work on, it was when I started publishing essays online. From then on I knew that whatever else I did, I'd always write essays too.  I knew that online essays would be a marginal medium at first. Socially they'd seem more like rants posted by nutjobs on their GeoCities sites than the genteel and beautifully typeset compositions published in The New Yorker. But by this point I knew enough to find that encouraging instead of discouraging.  One of the most conspicuous patterns I've noticed in my life is how well it has worked, for me at least, to work on things that weren't prestigious. Still life has always been the least prestigious form of painting. Viaweb and Y Combinator both seemed lame when we started them. I still get the glassy eye from strangers when they ask what I'm writing, and I explain that it's an essay I'm going to publish on my web site. Even Lisp, though prestigious intellectually in something like the way Latin is, also seems about as hip.  It's not that unprestigious types of work are good per se. But when you find yourself drawn to some kind of work despite its current lack of prestige, it's a sign both that there's something real to be discovered there, and that you have the right kind of motives. Impure motives are a big danger for the ambitious. If anything is going to lead you astray, it will be the desire to impress people. So while working on things that aren't prestigious doesn't guarantee you're on the right track, it at least guarantees you're not on the most common type of wrong one.  Over the next several years I wrote lots of essays about all kinds of different topics. O'Reilly reprinted a collection of them as a book, called Hackers & Painters after one of the essays in it. I also worked on spam filters, and did some more painting.", 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  It\\'s not that unprestigious types of work are good per se. But when you find yourself drawn to some kind of work despite its current lack of prestige, it\\'s a sign both that there\\'s something real to be discovered there, and that you have the right kind of motives. Impure motives are a big danger for the ambitious. If anything is going to lead you astray, it will be the desire to impress people. So while working on things that aren\\'t prestigious doesn\\'t guarantee you\\'re on the right track, it at least guarantees you\\'re not on the most common type of wrong one.  Over the next several years I wrote lots of essays about all kinds of different topics. O\\'Reilly reprinted a collection of them as a book, called Hackers & Painters after one of the essays in it. I also worked on spam filters, and did some more painting. I used to have dinners for a group of friends every thursday night, which taught me how to cook for groups. And I bought another building in Cambridge, a former candy factory (and later, twas said, porn studio), to use as an office.  One night in October 2003 there was a big party at my house. It was a clever idea of my friend Maria Daniels, who was one of the thursday diners. Three separate hosts would all invite their friends to one party. So for every guest, two thirds of the other guests would be people they didn\\'t know but would probably like. One of the guests was someone I didn\\'t know but would turn out to like a lot: a woman called Jessica Livingston. A couple days later I asked her out.  Jessica was in charge of marketing at a Boston investment bank. This bank thought it understood startups, but over the next year, as she met friends of mine from the startup world, she was surprised how different reality was. And how colorful their stories were. So she decided to compile a book of interviews with startup founders.  When the bank had financial problems and she had to fire half her staff, she started looking for a new job. In early 2005 she interviewed for a marketing job at a Boston VC firm. It took them weeks to make up their minds, and during this time I started telling her about all the things that needed to be fixed about venture capital. They should make a larger number of smaller investments instead of a handful of giant ones, they should be funding younger, more technical founders instead of MBAs, they should let the founders remain as CEO, and so on.  One of my tricks for writing essays had always been to give talks. The prospect of having to stand up in front of a group of people and tell them something that won\\'t waste their time is a great spur to the imagination. When the Harvard Computer Society, the undergrad computer club, asked me to give a talk, I decided I would tell them how to start a startup. Maybe they\\'d be able to avoid the worst of the mistakes we\\'d made.  So I gave this talk, in the course of which I told them that the best sources of seed funding were successful startup founders, because then they\\'d be sources of advice too. Whereupon it seemed they were all looking expectantly at me. Horrified at the prospect of having my inbox flooded by business plans (if I\\'d only known), I blurted out "But not me!" and went on with the talk. But afterward it occurred to me that I should really stop procrastinating about angel investing. I\\'d been meaning to since Yahoo bought us, and now it was 7 years later and I still hadn\\'t done one angel investment.  Meanwhile I had been scheming with Robert and Trevor about projects we could work on together. I missed working with them, and it seemed like there had to be something we could collaborate on.  As Jessica and I were walking home from dinner on March 11, at the corner of Garden and Walker streets, these three threads converged. Screw the VCs who were taking so long to make up their minds. We\\'d start our own investment firm and actually implement the ideas we\\'d been talking about. I\\'d fund it, and Jessica could quit her job and work for it, and we\\'d get Robert and Trevor as partners too. \[13\]  Once again, ignorance worked in our favor. We had no idea how to be angel investors, and in Boston in 2005 there were no Ron Conways to learn from. So we just made what seemed like the obvious choices, and some of the things we did turned out to be novel.  There are multiple components to Y Combinator, and we didn\\'t figure them all out at once. The part we got first was to be an angel firm.', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  As Jessica and I were walking home from dinner on March 11, at the corner of Garden and Walker streets, these three threads converged. Screw the VCs who were taking so long to make up their minds. We\\'d start our own investment firm and actually implement the ideas we\\'d been talking about. I\\'d fund it, and Jessica could quit her job and work for it, and we\\'d get Robert and Trevor as partners too. \[13\]  Once again, ignorance worked in our favor. We had no idea how to be angel investors, and in Boston in 2005 there were no Ron Conways to learn from. So we just made what seemed like the obvious choices, and some of the things we did turned out to be novel.  There are multiple components to Y Combinator, and we didn\\'t figure them all out at once. The part we got first was to be an angel firm. In those days, those two words didn\\'t go together. There were VC firms, which were organized companies with people whose job it was to make investments, but they only did big, million dollar investments. And there were angels, who did smaller investments, but these were individuals who were usually focused on other things and made investments on the side. And neither of them helped founders enough in the beginning. We knew how helpless founders were in some respects, because we remembered how helpless we\\'d been. For example, one thing Julian had done for us that seemed to us like magic was to get us set up as a company. We were fine writing fairly difficult software, but actually getting incorporated, with bylaws and stock and all that stuff, how on earth did you do that? Our plan was not only to make seed investments, but to do for startups everything Julian had done for us.  YC was not organized as a fund. It was cheap enough to run that we funded it with our own money. That went right by 99% of readers, but professional investors are thinking "Wow, that means they got all the returns." But once again, this was not due to any particular insight on our part. We didn\\'t know how VC firms were organized. It never occurred to us to try to raise a fund, and if it had, we wouldn\\'t have known where to start. \[14\]  The most distinctive thing about YC is the batch model: to fund a bunch of startups all at once, twice a year, and then to spend three months focusing intensively on trying to help them. That part we discovered by accident, not merely implicitly but explicitly due to our ignorance about investing. We needed to get experience as investors. What better way, we thought, than to fund a whole bunch of startups at once? We knew undergrads got temporary jobs at tech companies during the summer. Why not organize a summer program where they\\'d start startups instead? We wouldn\\'t feel guilty for being in a sense fake investors, because they would in a similar sense be fake founders. So while we probably wouldn\\'t make much money out of it, we\\'d at least get to practice being investors on them, and they for their part would probably have a more interesting summer than they would working at Microsoft.  We\\'d use the building I owned in Cambridge as our headquarters. We\\'d all have dinner there once a week — on tuesdays, since I was already cooking for the thursday diners on thursdays — and after dinner we\\'d bring in experts on startups to give talks.  We knew undergrads were deciding then about summer jobs, so in a matter of days we cooked up something we called the Summer Founders Program, and I posted an announcement on my site, inviting undergrads to apply. I had never imagined that writing essays would be a way to get "deal flow," as investors call it, but it turned out to be the perfect source. \[15\] We got 225 applications for the Summer Founders Program, and we were surprised to find that a lot of them were from people who\\'d already graduated, or were about to that spring. Already this SFP thing was starting to feel more serious than we\\'d intended.  We invited about 20 of the 225 groups to interview in person, and from those we picked 8 to fund. They were an impressive group. That first batch included reddit, Justin Kan and Emmett Shear, who went on to found Twitch, Aaron Swartz, who had already helped write the RSS spec and would a few years later become a martyr for open access, and Sam Altman, who would later become the second president of YC. I don\\'t think it was entirely luck that the first batch was so good.', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  \[15\] We got 225 applications for the Summer Founders Program, and we were surprised to find that a lot of them were from people who\\'d already graduated, or were about to that spring. Already this SFP thing was starting to feel more serious than we\\'d intended.  We invited about 20 of the 225 groups to interview in person, and from those we picked 8 to fund. They were an impressive group. That first batch included reddit, Justin Kan and Emmett Shear, who went on to found Twitch, Aaron Swartz, who had already helped write the RSS spec and would a few years later become a martyr for open access, and Sam Altman, who would later become the second president of YC. I don\\'t think it was entirely luck that the first batch was so good. You had to be pretty bold to sign up for a weird thing like the Summer Founders Program instead of a summer job at a legit place like Microsoft or Goldman Sachs.  The deal for startups was based on a combination of the deal we did with Julian ($10k for 10%) and what Robert said MIT grad students got for the summer ($6k). We invested $6k per founder, which in the typical two-founder case was $12k, in return for 6%. That had to be fair, because it was twice as good as the deal we ourselves had taken. Plus that first summer, which was really hot, Jessica brought the founders free air conditioners. \[16\]  Fairly quickly I realized that we had stumbled upon the way to scale startup funding. Funding startups in batches was more convenient for us, because it meant we could do things for a lot of startups at once, but being part of a batch was better for the startups too. It solved one of the biggest problems faced by founders: the isolation. Now you not only had colleagues, but colleagues who understood the problems you were facing and could tell you how they were solving them.  As YC grew, we started to notice other advantages of scale. The alumni became a tight community, dedicated to helping one another, and especially the current batch, whose shoes they remembered being in. We also noticed that the startups were becoming one another\\'s customers. We used to refer jokingly to the "YC GDP," but as YC grows this becomes less and less of a joke. Now lots of startups get their initial set of customers almost entirely from among their batchmates.  I had not originally intended YC to be a full-time job. I was going to do three things: hack, write essays, and work on YC. As YC grew, and I grew more excited about it, it started to take up a lot more than a third of my attention. But for the first few years I was still able to work on other things.  In the summer of 2006, Robert and I started working on a new version of Arc. This one was reasonably fast, because it was compiled into Scheme. To test this new Arc, I wrote Hacker News in it. It was originally meant to be a news aggregator for startup founders and was called Startup News, but after a few months I got tired of reading about nothing but startups. Plus it wasn\\'t startup founders we wanted to reach. It was future startup founders. So I changed the name to Hacker News and the topic to whatever engaged one\\'s intellectual curiosity.  HN was no doubt good for YC, but it was also by far the biggest source of stress for me. If all I\\'d had to do was select and help founders, life would have been so easy. And that implies that HN was a mistake. Surely the biggest source of stress in one\\'s work should at least be something close to the core of the work. Whereas I was like someone who was in pain while running a marathon not from the exertion of running, but because I had a blister from an ill-fitting shoe. When I was dealing with some urgent problem during YC, there was about a 60% chance it had to do with HN, and a 40% chance it had do with everything else combined. \[17\]  As well as HN, I wrote all of YC\\'s internal software in Arc. But while I continued to work a good deal in Arc, I gradually stopped working on Arc, partly because I didn\\'t have time to, and partly because it was a lot less attractive to mess around with the language now that we had all this infrastructure depending on it. So now my three projects were reduced to two: writing essays and working on YC.  YC was different from other kinds of work I\\'ve done. Instead of deciding for myself what to work on, the problems came to me.', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  When I was dealing with some urgent problem during YC, there was about a 60% chance it had to do with HN, and a 40% chance it had do with everything else combined. \[17\]  As well as HN, I wrote all of YC\\'s internal software in Arc. But while I continued to work a good deal in Arc, I gradually stopped working on Arc, partly because I didn\\'t have time to, and partly because it was a lot less attractive to mess around with the language now that we had all this infrastructure depending on it. So now my three projects were reduced to two: writing essays and working on YC.  YC was different from other kinds of work I\\'ve done. Instead of deciding for myself what to work on, the problems came to me. Every 6 months there was a new batch of startups, and their problems, whatever they were, became our problems. It was very engaging work, because their problems were quite varied, and the good founders were very effective. If you were trying to learn the most you could about startups in the shortest possible time, you couldn\\'t have picked a better way to do it.  There were parts of the job I didn\\'t like. Disputes between cofounders, figuring out when people were lying to us, fighting with people who maltreated the startups, and so on. But I worked hard even at the parts I didn\\'t like. I was haunted by something Kevin Hale once said about companies: "No one works harder than the boss." He meant it both descriptively and prescriptively, and it was the second part that scared me. I wanted YC to be good, so if how hard I worked set the upper bound on how hard everyone else worked, I\\'d better work very hard.  One day in 2010, when he was visiting California for interviews, Robert Morris did something astonishing: he offered me unsolicited advice. I can only remember him doing that once before. One day at Viaweb, when I was bent over double from a kidney stone, he suggested that it would be a good idea for him to take me to the hospital. That was what it took for Rtm to offer unsolicited advice. So I remember his exact words very clearly. "You know," he said, "you should make sure Y Combinator isn\\'t the last cool thing you do."  At the time I didn\\'t understand what he meant, but gradually it dawned on me that he was saying I should quit. This seemed strange advice, because YC was doing great. But if there was one thing rarer than Rtm offering advice, it was Rtm being wrong. So this set me thinking. It was true that on my current trajectory, YC would be the last thing I did, because it was only taking up more of my attention. It had already eaten Arc, and was in the process of eating essays too. Either YC was my life\\'s work or I\\'d have to leave eventually. And it wasn\\'t, so I would.  In the summer of 2012 my mother had a stroke, and the cause turned out to be a blood clot caused by colon cancer. The stroke destroyed her balance, and she was put in a nursing home, but she really wanted to get out of it and back to her house, and my sister and I were determined to help her do it. I used to fly up to Oregon to visit her regularly, and I had a lot of time to think on those flights. On one of them I realized I was ready to hand YC over to someone else.  I asked Jessica if she wanted to be president, but she didn\\'t, so we decided we\\'d try to recruit Sam Altman. We talked to Robert and Trevor and we agreed to make it a complete changing of the guard. Up till that point YC had been controlled by the original LLC we four had started. But we wanted YC to last for a long time, and to do that it couldn\\'t be controlled by the founders. So if Sam said yes, we\\'d let him reorganize YC. Robert and I would retire, and Jessica and Trevor would become ordinary partners.  When we asked Sam if he wanted to be president of YC, initially he said no. He wanted to start a startup to make nuclear reactors. But I kept at it, and in October 2013 he finally agreed. We decided he\\'d take over starting with the winter 2014 batch. For the rest of 2013 I left running YC more and more to Sam, partly so he could learn the job, and partly because I was focused on my mother, whose cancer had returned.', "file\_path: data/paul\_graham/paul\_graham\_essay.txt  Up till that point YC had been controlled by the original LLC we four had started. But we wanted YC to last for a long time, and to do that it couldn't be controlled by the founders. So if Sam said yes, we'd let him reorganize YC. Robert and I would retire, and Jessica and Trevor would become ordinary partners.  When we asked Sam if he wanted to be president of YC, initially he said no. He wanted to start a startup to make nuclear reactors. But I kept at it, and in October 2013 he finally agreed. We decided he'd take over starting with the winter 2014 batch. For the rest of 2013 I left running YC more and more to Sam, partly so he could learn the job, and partly because I was focused on my mother, whose cancer had returned.  She died on January 15, 2014. We knew this was coming, but it was still hard when it did.  I kept working on YC till March, to help get that batch of startups through Demo Day, then I checked out pretty completely. (I still talk to alumni and to new startups working on things I'm interested in, but that only takes a few hours a week.)  What should I do next? Rtm's advice hadn't included anything about that. I wanted to do something completely different, so I decided I'd paint. I wanted to see how good I could get if I really focused on it. So the day after I stopped working on YC, I started painting. I was rusty and it took a while to get back into shape, but it was at least completely engaging. \[18\]  I spent most of the rest of 2014 painting. I'd never been able to work so uninterruptedly before, and I got to be better than I had been. Not good enough, but better. Then in November, right in the middle of a painting, I ran out of steam. Up till that point I'd always been curious to see how the painting I was working on would turn out, but suddenly finishing this one seemed like a chore. So I stopped working on it and cleaned my brushes and haven't painted since. So far anyway.  I realize that sounds rather wimpy. But attention is a zero sum game. If you can choose what to work on, and you choose a project that's not the best one (or at least a good one) for you, then it's getting in the way of another project that is. And at 50 there was some opportunity cost to screwing around.  I started writing essays again, and wrote a bunch of new ones over the next few months. I even wrote a couple that weren't about startups. Then in March 2015 I started working on Lisp again.  The distinctive thing about Lisp is that its core is a language defined by writing an interpreter in itself. It wasn't originally intended as a programming language in the ordinary sense. It was meant to be a formal model of computation, an alternative to the Turing machine. If you want to write an interpreter for a language in itself, what's the minimum set of predefined operators you need? The Lisp that John McCarthy invented, or more accurately discovered, is an answer to that question. \[19\]  McCarthy didn't realize this Lisp could even be used to program computers till his grad student Steve Russell suggested it. Russell translated McCarthy's interpreter into IBM 704 machine language, and from that point Lisp started also to be a programming language in the ordinary sense. But its origins as a model of computation gave it a power and elegance that other languages couldn't match. It was this that attracted me in college, though I didn't understand why at the time.  McCarthy's 1960 Lisp did nothing more than interpret Lisp expressions. It was missing a lot of things you'd want in a programming language. So these had to be added, and when they were, they weren't defined using McCarthy's original axiomatic approach. That wouldn't have been feasible at the time. McCarthy tested his interpreter by hand-simulating the execution of programs. But it was already getting close to the limit of interpreters you could test that way — indeed, there was a bug in it that McCarthy had overlooked. To test a more complicated interpreter, you'd have had to run it, and computers then weren't powerful enough.  Now they are, though. Now you could continue using McCarthy's axiomatic approach till you'd defined a complete programming language. And as long as every change you made to McCarthy's Lisp was a discoveredness-preserving transformation, you could, in principle, end up with a complete language that had this quality.", 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  It was missing a lot of things you\\'d want in a programming language. So these had to be added, and when they were, they weren\\'t defined using McCarthy\\'s original axiomatic approach. That wouldn\\'t have been feasible at the time. McCarthy tested his interpreter by hand-simulating the execution of programs. But it was already getting close to the limit of interpreters you could test that way — indeed, there was a bug in it that McCarthy had overlooked. To test a more complicated interpreter, you\\'d have had to run it, and computers then weren\\'t powerful enough.  Now they are, though. Now you could continue using McCarthy\\'s axiomatic approach till you\\'d defined a complete programming language. And as long as every change you made to McCarthy\\'s Lisp was a discoveredness-preserving transformation, you could, in principle, end up with a complete language that had this quality. Harder to do than to talk about, of course, but if it was possible in principle, why not try? So I decided to take a shot at it. It took 4 years, from March 26, 2015 to October 12, 2019. It was fortunate that I had a precisely defined goal, or it would have been hard to keep at it for so long.  I wrote this new Lisp, called Bel, in itself in Arc. That may sound like a contradiction, but it\\'s an indication of the sort of trickery I had to engage in to make this work. By means of an egregious collection of hacks I managed to make something close enough to an interpreter written in itself that could actually run. Not fast, but fast enough to test.  I had to ban myself from writing essays during most of this time, or I\\'d never have finished. In late 2015 I spent 3 months writing essays, and when I went back to working on Bel I could barely understand the code. Not so much because it was badly written as because the problem is so convoluted. When you\\'re working on an interpreter written in itself, it\\'s hard to keep track of what\\'s happening at what level, and errors can be practically encrypted by the time you get them.  So I said no more essays till Bel was done. But I told few people about Bel while I was working on it. So for years it must have seemed that I was doing nothing, when in fact I was working harder than I\\'d ever worked on anything. Occasionally after wrestling for hours with some gruesome bug I\\'d check Twitter or HN and see someone asking "Does Paul Graham still code?"  Working on Bel was hard but satisfying. I worked on it so intensively that at any given time I had a decent chunk of the code in my head and could write more there. I remember taking the boys to the coast on a sunny day in 2015 and figuring out how to deal with some problem involving continuations while I watched them play in the tide pools. It felt like I was doing life right. I remember that because I was slightly dismayed at how novel it felt. The good news is that I had more moments like this over the next few years.  In the summer of 2016 we moved to England. We wanted our kids to see what it was like living in another country, and since I was a British citizen by birth, that seemed the obvious choice. We only meant to stay for a year, but we liked it so much that we still live there. So most of Bel was written in England.  In the fall of 2019, Bel was finally finished. Like McCarthy\\'s original Lisp, it\\'s a spec rather than an implementation, although like McCarthy\\'s Lisp it\\'s a spec expressed as code.  Now that I could write essays again, I wrote a bunch about topics I\\'d had stacked up. I kept writing essays through 2020, but I also started to think about other things I could work on. How should I choose what to do? Well, how had I chosen what to work on in the past? I wrote an essay for myself to answer that question, and I was surprised how long and messy the answer turned out to be. If this surprised me, who\\'d lived it, then I thought perhaps it would be interesting to other people, and encouraging to those with similarly messy lives. So I wrote a more detailed version for others to read, and this is the last sentence of it.          Notes  \[1\] My experience skipped a step in the evolution of computers: time-sharing machines with interactive OSes. I went straight from batch processing to microcomputers, which made microcomputers seem all the more exciting.', "file\_path: data/paul\_graham/paul\_graham\_essay.txt  Now that I could write essays again, I wrote a bunch about topics I'd had stacked up. I kept writing essays through 2020, but I also started to think about other things I could work on. How should I choose what to do? Well, how had I chosen what to work on in the past? I wrote an essay for myself to answer that question, and I was surprised how long and messy the answer turned out to be. If this surprised me, who'd lived it, then I thought perhaps it would be interesting to other people, and encouraging to those with similarly messy lives. So I wrote a more detailed version for others to read, and this is the last sentence of it.          Notes  \[1\] My experience skipped a step in the evolution of computers: time-sharing machines with interactive OSes. I went straight from batch processing to microcomputers, which made microcomputers seem all the more exciting.  \[2\] Italian words for abstract concepts can nearly always be predicted from their English cognates (except for occasional traps like polluzione). It's the everyday words that differ. So if you string together a lot of abstract concepts with a few simple verbs, you can make a little Italian go a long way.  \[3\] I lived at Piazza San Felice 4, so my walk to the Accademia went straight down the spine of old Florence: past the Pitti, across the bridge, past Orsanmichele, between the Duomo and the Baptistery, and then up Via Ricasoli to Piazza San Marco. I saw Florence at street level in every possible condition, from empty dark winter evenings to sweltering summer days when the streets were packed with tourists.  \[4\] You can of course paint people like still lives if you want to, and they're willing. That sort of portrait is arguably the apex of still life painting, though the long sitting does tend to produce pained expressions in the sitters.  \[5\] Interleaf was one of many companies that had smart people and built impressive technology, and yet got crushed by Moore's Law. In the 1990s the exponential growth in the power of commodity (i.e. Intel) processors rolled up high-end, special-purpose hardware and software companies like a bulldozer.  \[6\] The signature style seekers at RISD weren't specifically mercenary. In the art world, money and coolness are tightly coupled. Anything expensive comes to be seen as cool, and anything seen as cool will soon become equally expensive.  \[7\] Technically the apartment wasn't rent-controlled but rent-stabilized, but this is a refinement only New Yorkers would know or care about. The point is that it was really cheap, less than half market price.  \[8\] Most software you can launch as soon as it's done. But when the software is an online store builder and you're hosting the stores, if you don't have any users yet, that fact will be painfully obvious. So before we could launch publicly we had to launch privately, in the sense of recruiting an initial set of users and making sure they had decent-looking stores.  \[9\] We'd had a code editor in Viaweb for users to define their own page styles. They didn't know it, but they were editing Lisp expressions underneath. But this wasn't an app editor, because the code ran when the merchants' sites were generated, not when shoppers visited them.  \[10\] This was the first instance of what is now a familiar experience, and so was what happened next, when I read the comments and found they were full of angry people. How could I claim that Lisp was better than other languages? Weren't they all Turing complete? People who see the responses to essays I write sometimes tell me how sorry they feel for me, but I'm not exaggerating when I reply that it has always been like this, since the very beginning. It comes with the territory. An essay must tell readers things they don't already know, and some people dislike being told such things.  \[11\] People put plenty of stuff on the internet in the 90s of course, but putting something online is not the same as publishing it online. Publishing online means you treat the online version as the (or at least a) primary version.  \[12\] There is a general lesson here that our experience with Y Combinator also teaches: Customs continue to constrain you long after the restrictions that caused them have disappeared. Customary VC practice had once, like the customs about publishing essays, been based on real constraints. Startups had once been much more expensive to start, and proportionally rare."\] nomic-ai/nomic-embed-text-v1.5 {}
+show list of text \['file\_path: data/paul\_graham/paul\_graham\_essay.txt  People who see the responses to essays I write sometimes tell me how sorry they feel for me, but I\\'m not exaggerating when I reply that it has always been like this, since the very beginning. It comes with the territory. An essay must tell readers things they don\\'t already know, and some people dislike being told such things.  \[11\] People put plenty of stuff on the internet in the 90s of course, but putting something online is not the same as publishing it online. Publishing online means you treat the online version as the (or at least a) primary version.  \[12\] There is a general lesson here that our experience with Y Combinator also teaches: Customs continue to constrain you long after the restrictions that caused them have disappeared. Customary VC practice had once, like the customs about publishing essays, been based on real constraints. Startups had once been much more expensive to start, and proportionally rare. Now they could be cheap and common, but the VCs\\' customs still reflected the old world, just as customs about writing essays still reflected the constraints of the print era.  Which in turn implies that people who are independent-minded (i.e. less influenced by custom) will have an advantage in fields affected by rapid change (where customs are more likely to be obsolete).  Here\\'s an interesting point, though: you can\\'t always predict which fields will be affected by rapid change. Obviously software and venture capital will be, but who would have predicted that essay writing would be?  \[13\] Y Combinator was not the original name. At first we were called Cambridge Seed. But we didn\\'t want a regional name, in case someone copied us in Silicon Valley, so we renamed ourselves after one of the coolest tricks in the lambda calculus, the Y combinator.  I picked orange as our color partly because it\\'s the warmest, and partly because no VC used it. In 2005 all the VCs used staid colors like maroon, navy blue, and forest green, because they were trying to appeal to LPs, not founders. The YC logo itself is an inside joke: the Viaweb logo had been a white V on a red circle, so I made the YC logo a white Y on an orange square.  \[14\] YC did become a fund for a couple years starting in 2009, because it was getting so big I could no longer afford to fund it personally. But after Heroku got bought we had enough money to go back to being self-funded.  \[15\] I\\'ve never liked the term "deal flow," because it implies that the number of new startups at any given time is fixed. This is not only false, but it\\'s the purpose of YC to falsify it, by causing startups to be founded that would not otherwise have existed.  \[16\] She reports that they were all different shapes and sizes, because there was a run on air conditioners and she had to get whatever she could, but that they were all heavier than she could carry now.  \[17\] Another problem with HN was a bizarre edge case that occurs when you both write essays and run a forum. When you run a forum, you\\'re assumed to see if not every conversation, at least every conversation involving you. And when you write essays, people post highly imaginative misinterpretations of them on forums. Individually these two phenomena are tedious but bearable, but the combination is disastrous. You actually have to respond to the misinterpretations, because the assumption that you\\'re present in the conversation means that not responding to any sufficiently upvoted misinterpretation reads as a tacit admission that it\\'s correct. But that in turn encourages more; anyone who wants to pick a fight with you senses that now is their chance.  \[18\] The worst thing about leaving YC was not working with Jessica anymore. We\\'d been working on YC almost the whole time we\\'d known each other, and we\\'d neither tried nor wanted to separate it from our personal lives, so leaving was like pulling up a deeply rooted tree.  \[19\] One way to get more precise about the concept of invented vs discovered is to talk about space aliens. Any sufficiently advanced alien civilization would certainly know about the Pythagorean theorem, for example. I believe, though with less certainty, that they would also know about the Lisp in McCarthy\\'s 1960 paper.  But if so there\\'s no reason to suppose that this is the limit of the language that might be known to them. Presumably aliens need numbers and errors and I/O too. So it seems likely there exists at least one path out of McCarthy\\'s Lisp along which discoveredness is preserved.', "file\_path: data/paul\_graham/paul\_graham\_essay.txt  \[18\] The worst thing about leaving YC was not working with Jessica anymore. We'd been working on YC almost the whole time we'd known each other, and we'd neither tried nor wanted to separate it from our personal lives, so leaving was like pulling up a deeply rooted tree.  \[19\] One way to get more precise about the concept of invented vs discovered is to talk about space aliens. Any sufficiently advanced alien civilization would certainly know about the Pythagorean theorem, for example. I believe, though with less certainty, that they would also know about the Lisp in McCarthy's 1960 paper.  But if so there's no reason to suppose that this is the limit of the language that might be known to them. Presumably aliens need numbers and errors and I/O too. So it seems likely there exists at least one path out of McCarthy's Lisp along which discoveredness is preserved.    Thanks to Trevor Blackwell, John Collison, Patrick Collison, Daniel Gackle, Ralph Hazell, Jessica Livingston, Robert Morris, and Harj Taggar for reading drafts of this."\] nomic-ai/nomic-embed-text-v1.5 {}
+
+**The author, growing up, primarily worked on writing and programming. He started by writing short stories, which he admits were not very good, and tried programming on an IBM 1401 in ninth grade. However, he found it puzzling as he couldn't figure out what to do with it due to the lack of input data. His first significant experience with programming came with the advent of microcomputers, which he could use right at his desk and receive immediate responses. He built his own microcomputer and later convinced his father to buy a TRS-80. He wrote simple games, a program to predict rocket flights, and a word processor. Despite his interest in programming, he initially planned to study philosophy in college, but eventually switched to AI.**
+
+Basic Example (including saving to disk) and resizable embeddings[¶](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaFireworksNomic/#basic-example-including-saving-to-disk-and-resizable-embeddings)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Extending the previous example, if you want to save to disk, simply initialize the Chroma client and pass the directory where you want the data to be saved to.
+
+`Caution`: Chroma makes a best-effort to automatically save data to disk, however multiple in-memory clients can stomp each other's work. As a best practice, only have one client per path running at any given time.
+
+Also we are going to resize the embeddings down to 128 dimensions. This is helpful for cases where you are cost conscious on the database side.
+
+In \[ \]:
+
+Copied!
+
+\# save to disk
+
+db \= chromadb.PersistentClient(path\="./chroma\_db")
+chroma\_collection \= db.get\_or\_create\_collection("quickstart")
+vector\_store \= ChromaVectorStore(chroma\_collection\=chroma\_collection)
+storage\_context \= StorageContext.from\_defaults(vector\_store\=vector\_store)
+
+embed\_model \= FireworksEmbedding(
+    model\_name\="nomic-ai/nomic-embed-text-v1.5",
+    api\_base\="https://api.fireworks.ai/inference/v1",
+    dimensions\=128,
+)
+index \= VectorStoreIndex.from\_documents(
+    documents, storage\_context\=storage\_context, embed\_model\=embed\_model
+)
+
+\# load from disk
+db2 \= chromadb.PersistentClient(path\="./chroma\_db")
+chroma\_collection \= db2.get\_or\_create\_collection("quickstart")
+vector\_store \= ChromaVectorStore(chroma\_collection\=chroma\_collection)
+index \= VectorStoreIndex.from\_vector\_store(
+    vector\_store,
+    embed\_model\=embed\_model,
+)
+
+\# Query Data from the persisted index
+query\_engine \= index.as\_query\_engine(llm\=llm)
+response \= query\_engine.query("What did the author do growing up?")
+display(Markdown(f"<b>{response}</b>"))
+
+\# save to disk db = chromadb.PersistentClient(path="./chroma\_db") chroma\_collection = db.get\_or\_create\_collection("quickstart") vector\_store = ChromaVectorStore(chroma\_collection=chroma\_collection) storage\_context = StorageContext.from\_defaults(vector\_store=vector\_store) embed\_model = FireworksEmbedding( model\_name="nomic-ai/nomic-embed-text-v1.5", api\_base="https://api.fireworks.ai/inference/v1", dimensions=128, ) index = VectorStoreIndex.from\_documents( documents, storage\_context=storage\_context, embed\_model=embed\_model ) # load from disk db2 = chromadb.PersistentClient(path="./chroma\_db") chroma\_collection = db2.get\_or\_create\_collection("quickstart") vector\_store = ChromaVectorStore(chroma\_collection=chroma\_collection) index = VectorStoreIndex.from\_vector\_store( vector\_store, embed\_model=embed\_model, ) # Query Data from the persisted index query\_engine = index.as\_query\_engine(llm=llm) response = query\_engine.query("What did the author do growing up?") display(Markdown(f"**{response}**"))
+
+show list of text \['file\_path: data/paul\_graham/paul\_graham\_essay.txt  What I Worked On  February 2021  Before college the two main things I worked on, outside of school, were writing and programming. I didn\\'t write essays. I wrote what beginning writers were supposed to write then, and probably still are: short stories. My stories were awful. They had hardly any plot, just characters with strong feelings, which I imagined made them deep.  The first programs I tried writing were on the IBM 1401 that our school district used for what was then called "data processing." This was in 9th grade, so I was 13 or 14. The school district\\'s 1401 happened to be in the basement of our junior high school, and my friend Rich Draves and I got permission to use it. It was like a mini Bond villain\\'s lair down there, with all these alien-looking machines — CPU, disk drives, printer, card reader — sitting up on a raised floor under bright fluorescent lights.  The language we used was an early version of Fortran. You had to type programs on punch cards, then stack them in the card reader and press a button to load the program into memory and run it. The result would ordinarily be to print something on the spectacularly loud printer.  I was puzzled by the 1401. I couldn\\'t figure out what to do with it. And in retrospect there\\'s not much I could have done with it. The only form of input to programs was data stored on punched cards, and I didn\\'t have any data stored on punched cards. The only other option was to do things that didn\\'t rely on any input, like calculate approximations of pi, but I didn\\'t know enough math to do anything interesting of that type. So I\\'m not surprised I can\\'t remember any programs I wrote, because they can\\'t have done much. My clearest memory is of the moment I learned it was possible for programs not to terminate, when one of mine didn\\'t. On a machine without time-sharing, this was a social as well as a technical error, as the data center manager\\'s expression made clear.  With microcomputers, everything changed. Now you could have a computer sitting right in front of you, on a desk, that could respond to your keystrokes as it was running instead of just churning through a stack of punch cards and then stopping. \[1\]  The first of my friends to get a microcomputer built it himself. It was sold as a kit by Heathkit. I remember vividly how impressed and envious I felt watching him sitting in front of it, typing programs right into the computer.  Computers were expensive in those days and it took me years of nagging before I convinced my father to buy one, a TRS-80, in about 1980. The gold standard then was the Apple II, but a TRS-80 was good enough. This was when I really started programming. I wrote simple games, a program to predict how high my model rockets would fly, and a word processor that my father used to write at least one book. There was only room in memory for about 2 pages of text, so he\\'d write 2 pages at a time and then print them out, but it was a lot better than a typewriter.  Though I liked programming, I didn\\'t plan to study it in college. In college I was going to study philosophy, which sounded much more powerful. It seemed, to my naive high school self, to be the study of the ultimate truths, compared to which the things studied in other fields would be mere domain knowledge. What I discovered when I got to college was that the other fields took up so much of the space of ideas that there wasn\\'t much left for these supposed ultimate truths. All that seemed left for philosophy were edge cases that people in other fields felt could safely be ignored.  I couldn\\'t have put this into words when I was 18. All I knew at the time was that I kept taking philosophy courses and they kept being boring. So I decided to switch to AI.  AI was in the air in the mid 1980s, but there were two things especially that made me want to work on it: a novel by Heinlein called The Moon is a Harsh Mistress, which featured an intelligent computer called Mike, and a PBS documentary that showed Terry Winograd using SHRDLU. I haven\\'t tried rereading The Moon is a Harsh Mistress, so I don\\'t know how well it has aged, but when I read it I was drawn entirely into its world. It seemed only a matter of time before we\\'d have Mike, and when I saw Winograd using SHRDLU, it seemed like that time would be a few years at most.', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  I couldn\\'t have put this into words when I was 18. All I knew at the time was that I kept taking philosophy courses and they kept being boring. So I decided to switch to AI.  AI was in the air in the mid 1980s, but there were two things especially that made me want to work on it: a novel by Heinlein called The Moon is a Harsh Mistress, which featured an intelligent computer called Mike, and a PBS documentary that showed Terry Winograd using SHRDLU. I haven\\'t tried rereading The Moon is a Harsh Mistress, so I don\\'t know how well it has aged, but when I read it I was drawn entirely into its world. It seemed only a matter of time before we\\'d have Mike, and when I saw Winograd using SHRDLU, it seemed like that time would be a few years at most. All you had to do was teach SHRDLU more words.  There weren\\'t any classes in AI at Cornell then, not even graduate classes, so I started trying to teach myself. Which meant learning Lisp, since in those days Lisp was regarded as the language of AI. The commonly used programming languages then were pretty primitive, and programmers\\' ideas correspondingly so. The default language at Cornell was a Pascal-like language called PL/I, and the situation was similar elsewhere. Learning Lisp expanded my concept of a program so fast that it was years before I started to have a sense of where the new limits were. This was more like it; this was what I had expected college to do. It wasn\\'t happening in a class, like it was supposed to, but that was ok. For the next couple years I was on a roll. I knew what I was going to do.  For my undergraduate thesis, I reverse-engineered SHRDLU. My God did I love working on that program. It was a pleasing bit of code, but what made it even more exciting was my belief — hard to imagine now, but not unique in 1985 — that it was already climbing the lower slopes of intelligence.  I had gotten into a program at Cornell that didn\\'t make you choose a major. You could take whatever classes you liked, and choose whatever you liked to put on your degree. I of course chose "Artificial Intelligence." When I got the actual physical diploma, I was dismayed to find that the quotes had been included, which made them read as scare-quotes. At the time this bothered me, but now it seems amusingly accurate, for reasons I was about to discover.  I applied to 3 grad schools: MIT and Yale, which were renowned for AI at the time, and Harvard, which I\\'d visited because Rich Draves went there, and was also home to Bill Woods, who\\'d invented the type of parser I used in my SHRDLU clone. Only Harvard accepted me, so that was where I went.  I don\\'t remember the moment it happened, or if there even was a specific moment, but during the first year of grad school I realized that AI, as practiced at the time, was a hoax. By which I mean the sort of AI in which a program that\\'s told "the dog is sitting on the chair" translates this into some formal representation and adds it to the list of things it knows.  What these programs really showed was that there\\'s a subset of natural language that\\'s a formal language. But a very proper subset. It was clear that there was an unbridgeable gap between what they could do and actually understanding natural language. It was not, in fact, simply a matter of teaching SHRDLU more words. That whole way of doing AI, with explicit data structures representing concepts, was not going to work. Its brokenness did, as so often happens, generate a lot of opportunities to write papers about various band-aids that could be applied to it, but it was never going to get us Mike.  So I looked around to see what I could salvage from the wreckage of my plans, and there was Lisp. I knew from experience that Lisp was interesting for its own sake and not just for its association with AI, even though that was the main reason people cared about it at the time. So I decided to focus on Lisp. In fact, I decided to write a book about Lisp hacking. It\\'s scary to think how little I knew about Lisp hacking when I started writing that book. But there\\'s nothing like writing a book about something to help you learn it. The book, On Lisp, wasn\\'t published till 1993, but I wrote much of it in grad school.  Computer Science is an uneasy alliance between two halves, theory and systems. The theory people prove things, and the systems people build things. I wanted to build things.', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  So I looked around to see what I could salvage from the wreckage of my plans, and there was Lisp. I knew from experience that Lisp was interesting for its own sake and not just for its association with AI, even though that was the main reason people cared about it at the time. So I decided to focus on Lisp. In fact, I decided to write a book about Lisp hacking. It\\'s scary to think how little I knew about Lisp hacking when I started writing that book. But there\\'s nothing like writing a book about something to help you learn it. The book, On Lisp, wasn\\'t published till 1993, but I wrote much of it in grad school.  Computer Science is an uneasy alliance between two halves, theory and systems. The theory people prove things, and the systems people build things. I wanted to build things. I had plenty of respect for theory — indeed, a sneaking suspicion that it was the more admirable of the two halves — but building things seemed so much more exciting.  The problem with systems work, though, was that it didn\\'t last. Any program you wrote today, no matter how good, would be obsolete in a couple decades at best. People might mention your software in footnotes, but no one would actually use it. And indeed, it would seem very feeble work. Only people with a sense of the history of the field would even realize that, in its time, it had been good.  There were some surplus Xerox Dandelions floating around the computer lab at one point. Anyone who wanted one to play around with could have one. I was briefly tempted, but they were so slow by present standards; what was the point? No one else wanted one either, so off they went. That was what happened to systems work.  I wanted not just to build things, but to build things that would last.  In this dissatisfied state I went in 1988 to visit Rich Draves at CMU, where he was in grad school. One day I went to visit the Carnegie Institute, where I\\'d spent a lot of time as a kid. While looking at a painting there I realized something that might seem obvious, but was a big surprise to me. There, right on the wall, was something you could make that would last. Paintings didn\\'t become obsolete. Some of the best ones were hundreds of years old.  And moreover this was something you could make a living doing. Not as easily as you could by writing software, of course, but I thought if you were really industrious and lived really cheaply, it had to be possible to make enough to survive. And as an artist you could be truly independent. You wouldn\\'t have a boss, or even need to get research funding.  I had always liked looking at paintings. Could I make them? I had no idea. I\\'d never imagined it was even possible. I knew intellectually that people made art — that it didn\\'t just appear spontaneously — but it was as if the people who made it were a different species. They either lived long ago or were mysterious geniuses doing strange things in profiles in Life magazine. The idea of actually being able to make art, to put that verb before that noun, seemed almost miraculous.  That fall I started taking art classes at Harvard. Grad students could take classes in any department, and my advisor, Tom Cheatham, was very easy going. If he even knew about the strange classes I was taking, he never said anything.  So now I was in a PhD program in computer science, yet planning to be an artist, yet also genuinely in love with Lisp hacking and working away at On Lisp. In other words, like many a grad student, I was working energetically on multiple projects that were not my thesis.  I didn\\'t see a way out of this situation. I didn\\'t want to drop out of grad school, but how else was I going to get out? I remember when my friend Robert Morris got kicked out of Cornell for writing the internet worm of 1988, I was envious that he\\'d found such a spectacular way to get out of grad school.  Then one day in April 1990 a crack appeared in the wall. I ran into professor Cheatham and he asked if I was far enough along to graduate that June. I didn\\'t have a word of my dissertation written, but in what must have been the quickest bit of thinking in my life, I decided to take a shot at writing one in the 5 weeks or so that remained before the deadline, reusing parts of On Lisp where I could, and I was able to respond, with no perceptible delay "Yes, I think so. I\\'ll give you something to read in a few days."', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  I didn\\'t want to drop out of grad school, but how else was I going to get out? I remember when my friend Robert Morris got kicked out of Cornell for writing the internet worm of 1988, I was envious that he\\'d found such a spectacular way to get out of grad school.  Then one day in April 1990 a crack appeared in the wall. I ran into professor Cheatham and he asked if I was far enough along to graduate that June. I didn\\'t have a word of my dissertation written, but in what must have been the quickest bit of thinking in my life, I decided to take a shot at writing one in the 5 weeks or so that remained before the deadline, reusing parts of On Lisp where I could, and I was able to respond, with no perceptible delay "Yes, I think so. I\\'ll give you something to read in a few days."  I picked applications of continuations as the topic. In retrospect I should have written about macros and embedded languages. There\\'s a whole world there that\\'s barely been explored. But all I wanted was to get out of grad school, and my rapidly written dissertation sufficed, just barely.  Meanwhile I was applying to art schools. I applied to two: RISD in the US, and the Accademia di Belli Arti in Florence, which, because it was the oldest art school, I imagined would be good. RISD accepted me, and I never heard back from the Accademia, so off to Providence I went.  I\\'d applied for the BFA program at RISD, which meant in effect that I had to go to college again. This was not as strange as it sounds, because I was only 25, and art schools are full of people of different ages. RISD counted me as a transfer sophomore and said I had to do the foundation that summer. The foundation means the classes that everyone has to take in fundamental subjects like drawing, color, and design.  Toward the end of the summer I got a big surprise: a letter from the Accademia, which had been delayed because they\\'d sent it to Cambridge England instead of Cambridge Massachusetts, inviting me to take the entrance exam in Florence that fall. This was now only weeks away. My nice landlady let me leave my stuff in her attic. I had some money saved from consulting work I\\'d done in grad school; there was probably enough to last a year if I lived cheaply. Now all I had to do was learn Italian.  Only stranieri (foreigners) had to take this entrance exam. In retrospect it may well have been a way of excluding them, because there were so many stranieri attracted by the idea of studying art in Florence that the Italian students would otherwise have been outnumbered. I was in decent shape at painting and drawing from the RISD foundation that summer, but I still don\\'t know how I managed to pass the written exam. I remember that I answered the essay question by writing about Cezanne, and that I cranked up the intellectual level as high as I could to make the most of my limited vocabulary. \[2\]  I\\'m only up to age 25 and already there are such conspicuous patterns. Here I was, yet again about to attend some august institution in the hopes of learning about some prestigious subject, and yet again about to be disappointed. The students and faculty in the painting department at the Accademia were the nicest people you could imagine, but they had long since arrived at an arrangement whereby the students wouldn\\'t require the faculty to teach anything, and in return the faculty wouldn\\'t require the students to learn anything. And at the same time all involved would adhere outwardly to the conventions of a 19th century atelier. We actually had one of those little stoves, fed with kindling, that you see in 19th century studio paintings, and a nude model sitting as close to it as possible without getting burned. Except hardly anyone else painted her besides me. The rest of the students spent their time chatting or occasionally trying to imitate things they\\'d seen in American art magazines.  Our model turned out to live just down the street from me. She made a living from a combination of modelling and making fakes for a local antique dealer. She\\'d copy an obscure old painting out of a book, and then he\\'d take the copy and maltreat it to make it look old. \[3\]  While I was a student at the Accademia I started painting still lives in my bedroom at night. These paintings were tiny, because the room was, and because I painted them on leftover scraps of canvas, which was all I could afford at the time.', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  We actually had one of those little stoves, fed with kindling, that you see in 19th century studio paintings, and a nude model sitting as close to it as possible without getting burned. Except hardly anyone else painted her besides me. The rest of the students spent their time chatting or occasionally trying to imitate things they\\'d seen in American art magazines.  Our model turned out to live just down the street from me. She made a living from a combination of modelling and making fakes for a local antique dealer. She\\'d copy an obscure old painting out of a book, and then he\\'d take the copy and maltreat it to make it look old. \[3\]  While I was a student at the Accademia I started painting still lives in my bedroom at night. These paintings were tiny, because the room was, and because I painted them on leftover scraps of canvas, which was all I could afford at the time. Painting still lives is different from painting people, because the subject, as its name suggests, can\\'t move. People can\\'t sit for more than about 15 minutes at a time, and when they do they don\\'t sit very still. So the traditional m.o. for painting people is to know how to paint a generic person, which you then modify to match the specific person you\\'re painting. Whereas a still life you can, if you want, copy pixel by pixel from what you\\'re seeing. You don\\'t want to stop there, of course, or you get merely photographic accuracy, and what makes a still life interesting is that it\\'s been through a head. You want to emphasize the visual cues that tell you, for example, that the reason the color changes suddenly at a certain point is that it\\'s the edge of an object. By subtly emphasizing such things you can make paintings that are more realistic than photographs not just in some metaphorical sense, but in the strict information-theoretic sense. \[4\]  I liked painting still lives because I was curious about what I was seeing. In everyday life, we aren\\'t consciously aware of much we\\'re seeing. Most visual perception is handled by low-level processes that merely tell your brain "that\\'s a water droplet" without telling you details like where the lightest and darkest points are, or "that\\'s a bush" without telling you the shape and position of every leaf. This is a feature of brains, not a bug. In everyday life it would be distracting to notice every leaf on every bush. But when you have to paint something, you have to look more closely, and when you do there\\'s a lot to see. You can still be noticing new things after days of trying to paint something people usually take for granted, just as you can after days of trying to write an essay about something people usually take for granted.  This is not the only way to paint. I\\'m not 100% sure it\\'s even a good way to paint. But it seemed a good enough bet to be worth trying.  Our teacher, professor Ulivi, was a nice guy. He could see I worked hard, and gave me a good grade, which he wrote down in a sort of passport each student had. But the Accademia wasn\\'t teaching me anything except Italian, and my money was running out, so at the end of the first year I went back to the US.  I wanted to go back to RISD, but I was now broke and RISD was very expensive, so I decided to get a job for a year and then return to RISD the next fall. I got one at a company called Interleaf, which made software for creating documents. You mean like Microsoft Word? Exactly. That was how I learned that low end software tends to eat high end software. But Interleaf still had a few years to live yet. \[5\]  Interleaf had done something pretty bold. Inspired by Emacs, they\\'d added a scripting language, and even made the scripting language a dialect of Lisp. Now they wanted a Lisp hacker to write things in it. This was the closest thing I\\'ve had to a normal job, and I hereby apologize to my boss and coworkers, because I was a bad employee. Their Lisp was the thinnest icing on a giant C cake, and since I didn\\'t know C and didn\\'t want to learn it, I never understood most of the software. Plus I was terribly irresponsible. This was back when a programming job meant showing up every day during certain working hours. That seemed unnatural to me, and on this point the rest of the world is coming around to my way of thinking, but at the time it caused a lot of friction.', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  But Interleaf still had a few years to live yet. \[5\]  Interleaf had done something pretty bold. Inspired by Emacs, they\\'d added a scripting language, and even made the scripting language a dialect of Lisp. Now they wanted a Lisp hacker to write things in it. This was the closest thing I\\'ve had to a normal job, and I hereby apologize to my boss and coworkers, because I was a bad employee. Their Lisp was the thinnest icing on a giant C cake, and since I didn\\'t know C and didn\\'t want to learn it, I never understood most of the software. Plus I was terribly irresponsible. This was back when a programming job meant showing up every day during certain working hours. That seemed unnatural to me, and on this point the rest of the world is coming around to my way of thinking, but at the time it caused a lot of friction. Toward the end of the year I spent much of my time surreptitiously working on On Lisp, which I had by this time gotten a contract to publish.  The good part was that I got paid huge amounts of money, especially by art student standards. In Florence, after paying my part of the rent, my budget for everything else had been $7 a day. Now I was getting paid more than 4 times that every hour, even when I was just sitting in a meeting. By living cheaply I not only managed to save enough to go back to RISD, but also paid off my college loans.  I learned some useful things at Interleaf, though they were mostly about what not to do. I learned that it\\'s better for technology companies to be run by product people than sales people (though sales is a real skill and people who are good at it are really good at it), that it leads to bugs when code is edited by too many people, that cheap office space is no bargain if it\\'s depressing, that planned meetings are inferior to corridor conversations, that big, bureaucratic customers are a dangerous source of money, and that there\\'s not much overlap between conventional office hours and the optimal time for hacking, or conventional offices and the optimal place for it.  But the most important thing I learned, and which I used in both Viaweb and Y Combinator, is that the low end eats the high end: that it\\'s good to be the "entry level" option, even though that will be less prestigious, because if you\\'re not, someone else will be, and will squash you against the ceiling. Which in turn means that prestige is a danger sign.  When I left to go back to RISD the next fall, I arranged to do freelance work for the group that did projects for customers, and this was how I survived for the next several years. When I came back to visit for a project later on, someone told me about a new thing called HTML, which was, as he described it, a derivative of SGML. Markup language enthusiasts were an occupational hazard at Interleaf and I ignored him, but this HTML thing later became a big part of my life.  In the fall of 1992 I moved back to Providence to continue at RISD. The foundation had merely been intro stuff, and the Accademia had been a (very civilized) joke. Now I was going to see what real art school was like. But alas it was more like the Accademia than not. Better organized, certainly, and a lot more expensive, but it was now becoming clear that art school did not bear the same relationship to art that medical school bore to medicine. At least not the painting department. The textile department, which my next door neighbor belonged to, seemed to be pretty rigorous. No doubt illustration and architecture were too. But painting was post-rigorous. Painting students were supposed to express themselves, which to the more worldly ones meant to try to cook up some sort of distinctive signature style.  A signature style is the visual equivalent of what in show business is known as a "schtick": something that immediately identifies the work as yours and no one else\\'s. For example, when you see a painting that looks like a certain kind of cartoon, you know it\\'s by Roy Lichtenstein. So if you see a big painting of this type hanging in the apartment of a hedge fund manager, you know he paid millions of dollars for it. That\\'s not always why artists have a signature style, but it\\'s usually why buyers pay a lot for such work. \[6\]  There were plenty of earnest students too: kids who "could draw" in high school, and now had come to what was supposed to be the best art school in the country, to learn to draw even better.', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  Painting students were supposed to express themselves, which to the more worldly ones meant to try to cook up some sort of distinctive signature style.  A signature style is the visual equivalent of what in show business is known as a "schtick": something that immediately identifies the work as yours and no one else\\'s. For example, when you see a painting that looks like a certain kind of cartoon, you know it\\'s by Roy Lichtenstein. So if you see a big painting of this type hanging in the apartment of a hedge fund manager, you know he paid millions of dollars for it. That\\'s not always why artists have a signature style, but it\\'s usually why buyers pay a lot for such work. \[6\]  There were plenty of earnest students too: kids who "could draw" in high school, and now had come to what was supposed to be the best art school in the country, to learn to draw even better. They tended to be confused and demoralized by what they found at RISD, but they kept going, because painting was what they did. I was not one of the kids who could draw in high school, but at RISD I was definitely closer to their tribe than the tribe of signature style seekers.  I learned a lot in the color class I took at RISD, but otherwise I was basically teaching myself to paint, and I could do that for free. So in 1993 I dropped out. I hung around Providence for a bit, and then my college friend Nancy Parmet did me a big favor. A rent-controlled apartment in a building her mother owned in New York was becoming vacant. Did I want it? It wasn\\'t much more than my current place, and New York was supposed to be where the artists were. So yes, I wanted it! \[7\]  Asterix comics begin by zooming in on a tiny corner of Roman Gaul that turns out not to be controlled by the Romans. You can do something similar on a map of New York City: if you zoom in on the Upper East Side, there\\'s a tiny corner that\\'s not rich, or at least wasn\\'t in 1993. It\\'s called Yorkville, and that was my new home. Now I was a New York artist — in the strictly technical sense of making paintings and living in New York.  I was nervous about money, because I could sense that Interleaf was on the way down. Freelance Lisp hacking work was very rare, and I didn\\'t want to have to program in another language, which in those days would have meant C++ if I was lucky. So with my unerring nose for financial opportunity, I decided to write another book on Lisp. This would be a popular book, the sort of book that could be used as a textbook. I imagined myself living frugally off the royalties and spending all my time painting. (The painting on the cover of this book, ANSI Common Lisp, is one that I painted around this time.)  The best thing about New York for me was the presence of Idelle and Julian Weber. Idelle Weber was a painter, one of the early photorealists, and I\\'d taken her painting class at Harvard. I\\'ve never known a teacher more beloved by her students. Large numbers of former students kept in touch with her, including me. After I moved to New York I became her de facto studio assistant.  She liked to paint on big, square canvases, 4 to 5 feet on a side. One day in late 1994 as I was stretching one of these monsters there was something on the radio about a famous fund manager. He wasn\\'t that much older than me, and was super rich. The thought suddenly occurred to me: why don\\'t I become rich? Then I\\'ll be able to work on whatever I want.  Meanwhile I\\'d been hearing more and more about this new thing called the World Wide Web. Robert Morris showed it to me when I visited him in Cambridge, where he was now in grad school at Harvard. It seemed to me that the web would be a big deal. I\\'d seen what graphical user interfaces had done for the popularity of microcomputers. It seemed like the web would do the same for the internet.  If I wanted to get rich, here was the next train leaving the station. I was right about that part. What I got wrong was the idea. I decided we should start a company to put art galleries online. I can\\'t honestly say, after reading so many Y Combinator applications, that this was the worst startup idea ever, but it was up there. Art galleries didn\\'t want to be online, and still don\\'t, not the fancy ones. That\\'s not how they sell.', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  Meanwhile I\\'d been hearing more and more about this new thing called the World Wide Web. Robert Morris showed it to me when I visited him in Cambridge, where he was now in grad school at Harvard. It seemed to me that the web would be a big deal. I\\'d seen what graphical user interfaces had done for the popularity of microcomputers. It seemed like the web would do the same for the internet.  If I wanted to get rich, here was the next train leaving the station. I was right about that part. What I got wrong was the idea. I decided we should start a company to put art galleries online. I can\\'t honestly say, after reading so many Y Combinator applications, that this was the worst startup idea ever, but it was up there. Art galleries didn\\'t want to be online, and still don\\'t, not the fancy ones. That\\'s not how they sell. I wrote some software to generate web sites for galleries, and Robert wrote some to resize images and set up an http server to serve the pages. Then we tried to sign up galleries. To call this a difficult sale would be an understatement. It was difficult to give away. A few galleries let us make sites for them for free, but none paid us.  Then some online stores started to appear, and I realized that except for the order buttons they were identical to the sites we\\'d been generating for galleries. This impressive-sounding thing called an "internet storefront" was something we already knew how to build.  So in the summer of 1995, after I submitted the camera-ready copy of ANSI Common Lisp to the publishers, we started trying to write software to build online stores. At first this was going to be normal desktop software, which in those days meant Windows software. That was an alarming prospect, because neither of us knew how to write Windows software or wanted to learn. We lived in the Unix world. But we decided we\\'d at least try writing a prototype store builder on Unix. Robert wrote a shopping cart, and I wrote a new site generator for stores — in Lisp, of course.  We were working out of Robert\\'s apartment in Cambridge. His roommate was away for big chunks of time, during which I got to sleep in his room. For some reason there was no bed frame or sheets, just a mattress on the floor. One morning as I was lying on this mattress I had an idea that made me sit up like a capital L. What if we ran the software on the server, and let users control it by clicking on links? Then we\\'d never have to write anything to run on users\\' computers. We could generate the sites on the same server we\\'d serve them from. Users wouldn\\'t need anything more than a browser.  This kind of software, known as a web app, is common now, but at the time it wasn\\'t clear that it was even possible. To find out, we decided to try making a version of our store builder that you could control through the browser. A couple days later, on August 12, we had one that worked. The UI was horrible, but it proved you could build a whole store through the browser, without any client software or typing anything into the command line on the server.  Now we felt like we were really onto something. I had visions of a whole new generation of software working this way. You wouldn\\'t need versions, or ports, or any of that crap. At Interleaf there had been a whole group called Release Engineering that seemed to be at least as big as the group that actually wrote the software. Now you could just update the software right on the server.  We started a new company we called Viaweb, after the fact that our software worked via the web, and we got $10,000 in seed funding from Idelle\\'s husband Julian. In return for that and doing the initial legal work and giving us business advice, we gave him 10% of the company. Ten years later this deal became the model for Y Combinator\\'s. We knew founders needed something like this, because we\\'d needed it ourselves.  At this stage I had a negative net worth, because the thousand dollars or so I had in the bank was more than counterbalanced by what I owed the government in taxes. (Had I diligently set aside the proper proportion of the money I\\'d made consulting for Interleaf? No, I had not.) So although Robert had his graduate student stipend, I needed that seed funding to live on.  We originally hoped to launch in September, but we got more ambitious about the software as we worked on it.', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  In return for that and doing the initial legal work and giving us business advice, we gave him 10% of the company. Ten years later this deal became the model for Y Combinator\\'s. We knew founders needed something like this, because we\\'d needed it ourselves.  At this stage I had a negative net worth, because the thousand dollars or so I had in the bank was more than counterbalanced by what I owed the government in taxes. (Had I diligently set aside the proper proportion of the money I\\'d made consulting for Interleaf? No, I had not.) So although Robert had his graduate student stipend, I needed that seed funding to live on.  We originally hoped to launch in September, but we got more ambitious about the software as we worked on it. Eventually we managed to build a WYSIWYG site builder, in the sense that as you were creating pages, they looked exactly like the static ones that would be generated later, except that instead of leading to static pages, the links all referred to closures stored in a hash table on the server.  It helped to have studied art, because the main goal of an online store builder is to make users look legit, and the key to looking legit is high production values. If you get page layouts and fonts and colors right, you can make a guy running a store out of his bedroom look more legit than a big company.  (If you\\'re curious why my site looks so old-fashioned, it\\'s because it\\'s still made with this software. It may look clunky today, but in 1996 it was the last word in slick.)  In September, Robert rebelled. "We\\'ve been working on this for a month," he said, "and it\\'s still not done." This is funny in retrospect, because he would still be working on it almost 3 years later. But I decided it might be prudent to recruit more programmers, and I asked Robert who else in grad school with him was really good. He recommended Trevor Blackwell, which surprised me at first, because at that point I knew Trevor mainly for his plan to reduce everything in his life to a stack of notecards, which he carried around with him. But Rtm was right, as usual. Trevor turned out to be a frighteningly effective hacker.  It was a lot of fun working with Robert and Trevor. They\\'re the two most independent-minded people I know, and in completely different ways. If you could see inside Rtm\\'s brain it would look like a colonial New England church, and if you could see inside Trevor\\'s it would look like the worst excesses of Austrian Rococo.  We opened for business, with 6 stores, in January 1996. It was just as well we waited a few months, because although we worried we were late, we were actually almost fatally early. There was a lot of talk in the press then about ecommerce, but not many people actually wanted online stores. \[8\]  There were three main parts to the software: the editor, which people used to build sites and which I wrote, the shopping cart, which Robert wrote, and the manager, which kept track of orders and statistics, and which Trevor wrote. In its time, the editor was one of the best general-purpose site builders. I kept the code tight and didn\\'t have to integrate with any other software except Robert\\'s and Trevor\\'s, so it was quite fun to work on. If all I\\'d had to do was work on this software, the next 3 years would have been the easiest of my life. Unfortunately I had to do a lot more, all of it stuff I was worse at than programming, and the next 3 years were instead the most stressful.  There were a lot of startups making ecommerce software in the second half of the 90s. We were determined to be the Microsoft Word, not the Interleaf. Which meant being easy to use and inexpensive. It was lucky for us that we were poor, because that caused us to make Viaweb even more inexpensive than we realized. We charged $100 a month for a small store and $300 a month for a big one. This low price was a big attraction, and a constant thorn in the sides of competitors, but it wasn\\'t because of some clever insight that we set the price low. We had no idea what businesses paid for things. $300 a month seemed like a lot of money to us.  We did a lot of things right by accident like that. For example, we did what\\'s now called "doing things that don\\'t scale," although at the time we would have described it as "being so lame that we\\'re driven to the most desperate measures to get users." The most common of which was building stores for them.', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  Which meant being easy to use and inexpensive. It was lucky for us that we were poor, because that caused us to make Viaweb even more inexpensive than we realized. We charged $100 a month for a small store and $300 a month for a big one. This low price was a big attraction, and a constant thorn in the sides of competitors, but it wasn\\'t because of some clever insight that we set the price low. We had no idea what businesses paid for things. $300 a month seemed like a lot of money to us.  We did a lot of things right by accident like that. For example, we did what\\'s now called "doing things that don\\'t scale," although at the time we would have described it as "being so lame that we\\'re driven to the most desperate measures to get users." The most common of which was building stores for them. This seemed particularly humiliating, since the whole raison d\\'etre of our software was that people could use it to make their own stores. But anything to get users.  We learned a lot more about retail than we wanted to know. For example, that if you could only have a small image of a man\\'s shirt (and all images were small then by present standards), it was better to have a closeup of the collar than a picture of the whole shirt. The reason I remember learning this was that it meant I had to rescan about 30 images of men\\'s shirts. My first set of scans were so beautiful too.  Though this felt wrong, it was exactly the right thing to be doing. Building stores for users taught us about retail, and about how it felt to use our software. I was initially both mystified and repelled by "business" and thought we needed a "business person" to be in charge of it, but once we started to get users, I was converted, in much the same way I was converted to fatherhood once I had kids. Whatever users wanted, I was all theirs. Maybe one day we\\'d have so many users that I couldn\\'t scan their images for them, but in the meantime there was nothing more important to do.  Another thing I didn\\'t get at the time is that growth rate is the ultimate test of a startup. Our growth rate was fine. We had about 70 stores at the end of 1996 and about 500 at the end of 1997. I mistakenly thought the thing that mattered was the absolute number of users. And that is the thing that matters in the sense that that\\'s how much money you\\'re making, and if you\\'re not making enough, you might go out of business. But in the long term the growth rate takes care of the absolute number. If we\\'d been a startup I was advising at Y Combinator, I would have said: Stop being so stressed out, because you\\'re doing fine. You\\'re growing 7x a year. Just don\\'t hire too many more people and you\\'ll soon be profitable, and then you\\'ll control your own destiny.  Alas I hired lots more people, partly because our investors wanted me to, and partly because that\\'s what startups did during the Internet Bubble. A company with just a handful of employees would have seemed amateurish. So we didn\\'t reach breakeven until about when Yahoo bought us in the summer of 1998. Which in turn meant we were at the mercy of investors for the entire life of the company. And since both we and our investors were noobs at startups, the result was a mess even by startup standards.  It was a huge relief when Yahoo bought us. In principle our Viaweb stock was valuable. It was a share in a business that was profitable and growing rapidly. But it didn\\'t feel very valuable to me; I had no idea how to value a business, but I was all too keenly aware of the near-death experiences we seemed to have every few months. Nor had I changed my grad student lifestyle significantly since we started. So when Yahoo bought us it felt like going from rags to riches. Since we were going to California, I bought a car, a yellow 1998 VW GTI. I remember thinking that its leather seats alone were by far the most luxurious thing I owned.  The next year, from the summer of 1998 to the summer of 1999, must have been the least productive of my life. I didn\\'t realize it at the time, but I was worn out from the effort and stress of running Viaweb. For a while after I got to California I tried to continue my usual m.o.'\] nomic-ai/nomic-embed-text-v1.5 {'dimensions': 128}
+show list of text \["file\_path: data/paul\_graham/paul\_graham\_essay.txt  But it didn't feel very valuable to me; I had no idea how to value a business, but I was all too keenly aware of the near-death experiences we seemed to have every few months. Nor had I changed my grad student lifestyle significantly since we started. So when Yahoo bought us it felt like going from rags to riches. Since we were going to California, I bought a car, a yellow 1998 VW GTI. I remember thinking that its leather seats alone were by far the most luxurious thing I owned.  The next year, from the summer of 1998 to the summer of 1999, must have been the least productive of my life. I didn't realize it at the time, but I was worn out from the effort and stress of running Viaweb. For a while after I got to California I tried to continue my usual m.o. of programming till 3 in the morning, but fatigue combined with Yahoo's prematurely aged culture and grim cube farm in Santa Clara gradually dragged me down. After a few months it felt disconcertingly like working at Interleaf.  Yahoo had given us a lot of options when they bought us. At the time I thought Yahoo was so overvalued that they'd never be worth anything, but to my astonishment the stock went up 5x in the next year. I hung on till the first chunk of options vested, then in the summer of 1999 I left. It had been so long since I'd painted anything that I'd half forgotten why I was doing this. My brain had been entirely full of software and men's shirts for 4 years. But I had done this to get rich so I could paint, I reminded myself, and now I was rich, so I should go paint.  When I said I was leaving, my boss at Yahoo had a long conversation with me about my plans. I told him all about the kinds of pictures I wanted to paint. At the time I was touched that he took such an interest in me. Now I realize it was because he thought I was lying. My options at that point were worth about $2 million a month. If I was leaving that kind of money on the table, it could only be to go and start some new startup, and if I did, I might take people with me. This was the height of the Internet Bubble, and Yahoo was ground zero of it. My boss was at that moment a billionaire. Leaving then to start a new startup must have seemed to him an insanely, and yet also plausibly, ambitious plan.  But I really was quitting to paint, and I started immediately. There was no time to lose. I'd already burned 4 years getting rich. Now when I talk to founders who are leaving after selling their companies, my advice is always the same: take a vacation. That's what I should have done, just gone off somewhere and done nothing for a month or two, but the idea never occurred to me.  So I tried to paint, but I just didn't seem to have any energy or ambition. Part of the problem was that I didn't know many people in California. I'd compounded this problem by buying a house up in the Santa Cruz Mountains, with a beautiful view but miles from anywhere. I stuck it out for a few more months, then in desperation I went back to New York, where unless you understand about rent control you'll be surprised to hear I still had my apartment, sealed up like a tomb of my old life. Idelle was in New York at least, and there were other people trying to paint there, even though I didn't know any of them.  When I got back to New York I resumed my old life, except now I was rich. It was as weird as it sounds. I resumed all my old patterns, except now there were doors where there hadn't been. Now when I was tired of walking, all I had to do was raise my hand, and (unless it was raining) a taxi would stop to pick me up. Now when I walked past charming little restaurants I could go in and order lunch. It was exciting for a while. Painting started to go better. I experimented with a new kind of still life where I'd paint one painting in the old way, then photograph it and print it, blown up, on canvas, and then use that as the underpainting for a second still life, painted from the same objects (which hopefully hadn't rotted yet).  Meanwhile I looked for an apartment to buy. Now I could actually choose what neighborhood to live in. Where, I asked myself and various real estate agents, is the Cambridge of New York?", 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  It was as weird as it sounds. I resumed all my old patterns, except now there were doors where there hadn\\'t been. Now when I was tired of walking, all I had to do was raise my hand, and (unless it was raining) a taxi would stop to pick me up. Now when I walked past charming little restaurants I could go in and order lunch. It was exciting for a while. Painting started to go better. I experimented with a new kind of still life where I\\'d paint one painting in the old way, then photograph it and print it, blown up, on canvas, and then use that as the underpainting for a second still life, painted from the same objects (which hopefully hadn\\'t rotted yet).  Meanwhile I looked for an apartment to buy. Now I could actually choose what neighborhood to live in. Where, I asked myself and various real estate agents, is the Cambridge of New York? Aided by occasional visits to actual Cambridge, I gradually realized there wasn\\'t one. Huh.  Around this time, in the spring of 2000, I had an idea. It was clear from our experience with Viaweb that web apps were the future. Why not build a web app for making web apps? Why not let people edit code on our server through the browser, and then host the resulting applications for them? \[9\] You could run all sorts of services on the servers that these applications could use just by making an API call: making and receiving phone calls, manipulating images, taking credit card payments, etc.  I got so excited about this idea that I couldn\\'t think about anything else. It seemed obvious that this was the future. I didn\\'t particularly want to start another company, but it was clear that this idea would have to be embodied as one, so I decided to move to Cambridge and start it. I hoped to lure Robert into working on it with me, but there I ran into a hitch. Robert was now a postdoc at MIT, and though he\\'d made a lot of money the last time I\\'d lured him into working on one of my schemes, it had also been a huge time sink. So while he agreed that it sounded like a plausible idea, he firmly refused to work on it.  Hmph. Well, I\\'d do it myself then. I recruited Dan Giffin, who had worked for Viaweb, and two undergrads who wanted summer jobs, and we got to work trying to build what it\\'s now clear is about twenty companies and several open source projects worth of software. The language for defining applications would of course be a dialect of Lisp. But I wasn\\'t so naive as to assume I could spring an overt Lisp on a general audience; we\\'d hide the parentheses, like Dylan did.  By then there was a name for the kind of company Viaweb was, an "application service provider," or ASP. This name didn\\'t last long before it was replaced by "software as a service," but it was current for long enough that I named this new company after it: it was going to be called Aspra.  I started working on the application builder, Dan worked on network infrastructure, and the two undergrads worked on the first two services (images and phone calls). But about halfway through the summer I realized I really didn\\'t want to run a company — especially not a big one, which it was looking like this would have to be. I\\'d only started Viaweb because I needed the money. Now that I didn\\'t need money anymore, why was I doing this? If this vision had to be realized as a company, then screw the vision. I\\'d build a subset that could be done as an open source project.  Much to my surprise, the time I spent working on this stuff was not wasted after all. After we started Y Combinator, I would often encounter startups working on parts of this new architecture, and it was very useful to have spent so much time thinking about it and even trying to write some of it.  The subset I would build as an open source project was the new Lisp, whose parentheses I now wouldn\\'t even have to hide. A lot of Lisp hackers dream of building a new Lisp, partly because one of the distinctive features of the language is that it has dialects, and partly, I think, because we have in our minds a Platonic form of Lisp that all existing dialects fall short of. I certainly did. So at the end of the summer Dan and I switched to working on this new dialect of Lisp, which I called Arc, in a house I bought in Cambridge.  The following spring, lightning struck.', "file\_path: data/paul\_graham/paul\_graham\_essay.txt  Much to my surprise, the time I spent working on this stuff was not wasted after all. After we started Y Combinator, I would often encounter startups working on parts of this new architecture, and it was very useful to have spent so much time thinking about it and even trying to write some of it.  The subset I would build as an open source project was the new Lisp, whose parentheses I now wouldn't even have to hide. A lot of Lisp hackers dream of building a new Lisp, partly because one of the distinctive features of the language is that it has dialects, and partly, I think, because we have in our minds a Platonic form of Lisp that all existing dialects fall short of. I certainly did. So at the end of the summer Dan and I switched to working on this new dialect of Lisp, which I called Arc, in a house I bought in Cambridge.  The following spring, lightning struck. I was invited to give a talk at a Lisp conference, so I gave one about how we'd used Lisp at Viaweb. Afterward I put a postscript file of this talk online, on paulgraham.com, which I'd created years before using Viaweb but had never used for anything. In one day it got 30,000 page views. What on earth had happened? The referring urls showed that someone had posted it on Slashdot. \[10\]  Wow, I thought, there's an audience. If I write something and put it on the web, anyone can read it. That may seem obvious now, but it was surprising then. In the print era there was a narrow channel to readers, guarded by fierce monsters known as editors. The only way to get an audience for anything you wrote was to get it published as a book, or in a newspaper or magazine. Now anyone could publish anything.  This had been possible in principle since 1993, but not many people had realized it yet. I had been intimately involved with building the infrastructure of the web for most of that time, and a writer as well, and it had taken me 8 years to realize it. Even then it took me several years to understand the implications. It meant there would be a whole new generation of essays. \[11\]  In the print era, the channel for publishing essays had been vanishingly small. Except for a few officially anointed thinkers who went to the right parties in New York, the only people allowed to publish essays were specialists writing about their specialties. There were so many essays that had never been written, because there had been no way to publish them. Now they could be, and I was going to write them. \[12\]  I've worked on several different things, but to the extent there was a turning point where I figured out what to work on, it was when I started publishing essays online. From then on I knew that whatever else I did, I'd always write essays too.  I knew that online essays would be a marginal medium at first. Socially they'd seem more like rants posted by nutjobs on their GeoCities sites than the genteel and beautifully typeset compositions published in The New Yorker. But by this point I knew enough to find that encouraging instead of discouraging.  One of the most conspicuous patterns I've noticed in my life is how well it has worked, for me at least, to work on things that weren't prestigious. Still life has always been the least prestigious form of painting. Viaweb and Y Combinator both seemed lame when we started them. I still get the glassy eye from strangers when they ask what I'm writing, and I explain that it's an essay I'm going to publish on my web site. Even Lisp, though prestigious intellectually in something like the way Latin is, also seems about as hip.  It's not that unprestigious types of work are good per se. But when you find yourself drawn to some kind of work despite its current lack of prestige, it's a sign both that there's something real to be discovered there, and that you have the right kind of motives. Impure motives are a big danger for the ambitious. If anything is going to lead you astray, it will be the desire to impress people. So while working on things that aren't prestigious doesn't guarantee you're on the right track, it at least guarantees you're not on the most common type of wrong one.  Over the next several years I wrote lots of essays about all kinds of different topics. O'Reilly reprinted a collection of them as a book, called Hackers & Painters after one of the essays in it. I also worked on spam filters, and did some more painting.", 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  It\\'s not that unprestigious types of work are good per se. But when you find yourself drawn to some kind of work despite its current lack of prestige, it\\'s a sign both that there\\'s something real to be discovered there, and that you have the right kind of motives. Impure motives are a big danger for the ambitious. If anything is going to lead you astray, it will be the desire to impress people. So while working on things that aren\\'t prestigious doesn\\'t guarantee you\\'re on the right track, it at least guarantees you\\'re not on the most common type of wrong one.  Over the next several years I wrote lots of essays about all kinds of different topics. O\\'Reilly reprinted a collection of them as a book, called Hackers & Painters after one of the essays in it. I also worked on spam filters, and did some more painting. I used to have dinners for a group of friends every thursday night, which taught me how to cook for groups. And I bought another building in Cambridge, a former candy factory (and later, twas said, porn studio), to use as an office.  One night in October 2003 there was a big party at my house. It was a clever idea of my friend Maria Daniels, who was one of the thursday diners. Three separate hosts would all invite their friends to one party. So for every guest, two thirds of the other guests would be people they didn\\'t know but would probably like. One of the guests was someone I didn\\'t know but would turn out to like a lot: a woman called Jessica Livingston. A couple days later I asked her out.  Jessica was in charge of marketing at a Boston investment bank. This bank thought it understood startups, but over the next year, as she met friends of mine from the startup world, she was surprised how different reality was. And how colorful their stories were. So she decided to compile a book of interviews with startup founders.  When the bank had financial problems and she had to fire half her staff, she started looking for a new job. In early 2005 she interviewed for a marketing job at a Boston VC firm. It took them weeks to make up their minds, and during this time I started telling her about all the things that needed to be fixed about venture capital. They should make a larger number of smaller investments instead of a handful of giant ones, they should be funding younger, more technical founders instead of MBAs, they should let the founders remain as CEO, and so on.  One of my tricks for writing essays had always been to give talks. The prospect of having to stand up in front of a group of people and tell them something that won\\'t waste their time is a great spur to the imagination. When the Harvard Computer Society, the undergrad computer club, asked me to give a talk, I decided I would tell them how to start a startup. Maybe they\\'d be able to avoid the worst of the mistakes we\\'d made.  So I gave this talk, in the course of which I told them that the best sources of seed funding were successful startup founders, because then they\\'d be sources of advice too. Whereupon it seemed they were all looking expectantly at me. Horrified at the prospect of having my inbox flooded by business plans (if I\\'d only known), I blurted out "But not me!" and went on with the talk. But afterward it occurred to me that I should really stop procrastinating about angel investing. I\\'d been meaning to since Yahoo bought us, and now it was 7 years later and I still hadn\\'t done one angel investment.  Meanwhile I had been scheming with Robert and Trevor about projects we could work on together. I missed working with them, and it seemed like there had to be something we could collaborate on.  As Jessica and I were walking home from dinner on March 11, at the corner of Garden and Walker streets, these three threads converged. Screw the VCs who were taking so long to make up their minds. We\\'d start our own investment firm and actually implement the ideas we\\'d been talking about. I\\'d fund it, and Jessica could quit her job and work for it, and we\\'d get Robert and Trevor as partners too. \[13\]  Once again, ignorance worked in our favor. We had no idea how to be angel investors, and in Boston in 2005 there were no Ron Conways to learn from. So we just made what seemed like the obvious choices, and some of the things we did turned out to be novel.  There are multiple components to Y Combinator, and we didn\\'t figure them all out at once. The part we got first was to be an angel firm.', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  As Jessica and I were walking home from dinner on March 11, at the corner of Garden and Walker streets, these three threads converged. Screw the VCs who were taking so long to make up their minds. We\\'d start our own investment firm and actually implement the ideas we\\'d been talking about. I\\'d fund it, and Jessica could quit her job and work for it, and we\\'d get Robert and Trevor as partners too. \[13\]  Once again, ignorance worked in our favor. We had no idea how to be angel investors, and in Boston in 2005 there were no Ron Conways to learn from. So we just made what seemed like the obvious choices, and some of the things we did turned out to be novel.  There are multiple components to Y Combinator, and we didn\\'t figure them all out at once. The part we got first was to be an angel firm. In those days, those two words didn\\'t go together. There were VC firms, which were organized companies with people whose job it was to make investments, but they only did big, million dollar investments. And there were angels, who did smaller investments, but these were individuals who were usually focused on other things and made investments on the side. And neither of them helped founders enough in the beginning. We knew how helpless founders were in some respects, because we remembered how helpless we\\'d been. For example, one thing Julian had done for us that seemed to us like magic was to get us set up as a company. We were fine writing fairly difficult software, but actually getting incorporated, with bylaws and stock and all that stuff, how on earth did you do that? Our plan was not only to make seed investments, but to do for startups everything Julian had done for us.  YC was not organized as a fund. It was cheap enough to run that we funded it with our own money. That went right by 99% of readers, but professional investors are thinking "Wow, that means they got all the returns." But once again, this was not due to any particular insight on our part. We didn\\'t know how VC firms were organized. It never occurred to us to try to raise a fund, and if it had, we wouldn\\'t have known where to start. \[14\]  The most distinctive thing about YC is the batch model: to fund a bunch of startups all at once, twice a year, and then to spend three months focusing intensively on trying to help them. That part we discovered by accident, not merely implicitly but explicitly due to our ignorance about investing. We needed to get experience as investors. What better way, we thought, than to fund a whole bunch of startups at once? We knew undergrads got temporary jobs at tech companies during the summer. Why not organize a summer program where they\\'d start startups instead? We wouldn\\'t feel guilty for being in a sense fake investors, because they would in a similar sense be fake founders. So while we probably wouldn\\'t make much money out of it, we\\'d at least get to practice being investors on them, and they for their part would probably have a more interesting summer than they would working at Microsoft.  We\\'d use the building I owned in Cambridge as our headquarters. We\\'d all have dinner there once a week — on tuesdays, since I was already cooking for the thursday diners on thursdays — and after dinner we\\'d bring in experts on startups to give talks.  We knew undergrads were deciding then about summer jobs, so in a matter of days we cooked up something we called the Summer Founders Program, and I posted an announcement on my site, inviting undergrads to apply. I had never imagined that writing essays would be a way to get "deal flow," as investors call it, but it turned out to be the perfect source. \[15\] We got 225 applications for the Summer Founders Program, and we were surprised to find that a lot of them were from people who\\'d already graduated, or were about to that spring. Already this SFP thing was starting to feel more serious than we\\'d intended.  We invited about 20 of the 225 groups to interview in person, and from those we picked 8 to fund. They were an impressive group. That first batch included reddit, Justin Kan and Emmett Shear, who went on to found Twitch, Aaron Swartz, who had already helped write the RSS spec and would a few years later become a martyr for open access, and Sam Altman, who would later become the second president of YC. I don\\'t think it was entirely luck that the first batch was so good.', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  \[15\] We got 225 applications for the Summer Founders Program, and we were surprised to find that a lot of them were from people who\\'d already graduated, or were about to that spring. Already this SFP thing was starting to feel more serious than we\\'d intended.  We invited about 20 of the 225 groups to interview in person, and from those we picked 8 to fund. They were an impressive group. That first batch included reddit, Justin Kan and Emmett Shear, who went on to found Twitch, Aaron Swartz, who had already helped write the RSS spec and would a few years later become a martyr for open access, and Sam Altman, who would later become the second president of YC. I don\\'t think it was entirely luck that the first batch was so good. You had to be pretty bold to sign up for a weird thing like the Summer Founders Program instead of a summer job at a legit place like Microsoft or Goldman Sachs.  The deal for startups was based on a combination of the deal we did with Julian ($10k for 10%) and what Robert said MIT grad students got for the summer ($6k). We invested $6k per founder, which in the typical two-founder case was $12k, in return for 6%. That had to be fair, because it was twice as good as the deal we ourselves had taken. Plus that first summer, which was really hot, Jessica brought the founders free air conditioners. \[16\]  Fairly quickly I realized that we had stumbled upon the way to scale startup funding. Funding startups in batches was more convenient for us, because it meant we could do things for a lot of startups at once, but being part of a batch was better for the startups too. It solved one of the biggest problems faced by founders: the isolation. Now you not only had colleagues, but colleagues who understood the problems you were facing and could tell you how they were solving them.  As YC grew, we started to notice other advantages of scale. The alumni became a tight community, dedicated to helping one another, and especially the current batch, whose shoes they remembered being in. We also noticed that the startups were becoming one another\\'s customers. We used to refer jokingly to the "YC GDP," but as YC grows this becomes less and less of a joke. Now lots of startups get their initial set of customers almost entirely from among their batchmates.  I had not originally intended YC to be a full-time job. I was going to do three things: hack, write essays, and work on YC. As YC grew, and I grew more excited about it, it started to take up a lot more than a third of my attention. But for the first few years I was still able to work on other things.  In the summer of 2006, Robert and I started working on a new version of Arc. This one was reasonably fast, because it was compiled into Scheme. To test this new Arc, I wrote Hacker News in it. It was originally meant to be a news aggregator for startup founders and was called Startup News, but after a few months I got tired of reading about nothing but startups. Plus it wasn\\'t startup founders we wanted to reach. It was future startup founders. So I changed the name to Hacker News and the topic to whatever engaged one\\'s intellectual curiosity.  HN was no doubt good for YC, but it was also by far the biggest source of stress for me. If all I\\'d had to do was select and help founders, life would have been so easy. And that implies that HN was a mistake. Surely the biggest source of stress in one\\'s work should at least be something close to the core of the work. Whereas I was like someone who was in pain while running a marathon not from the exertion of running, but because I had a blister from an ill-fitting shoe. When I was dealing with some urgent problem during YC, there was about a 60% chance it had to do with HN, and a 40% chance it had do with everything else combined. \[17\]  As well as HN, I wrote all of YC\\'s internal software in Arc. But while I continued to work a good deal in Arc, I gradually stopped working on Arc, partly because I didn\\'t have time to, and partly because it was a lot less attractive to mess around with the language now that we had all this infrastructure depending on it. So now my three projects were reduced to two: writing essays and working on YC.  YC was different from other kinds of work I\\'ve done. Instead of deciding for myself what to work on, the problems came to me.', 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  When I was dealing with some urgent problem during YC, there was about a 60% chance it had to do with HN, and a 40% chance it had do with everything else combined. \[17\]  As well as HN, I wrote all of YC\\'s internal software in Arc. But while I continued to work a good deal in Arc, I gradually stopped working on Arc, partly because I didn\\'t have time to, and partly because it was a lot less attractive to mess around with the language now that we had all this infrastructure depending on it. So now my three projects were reduced to two: writing essays and working on YC.  YC was different from other kinds of work I\\'ve done. Instead of deciding for myself what to work on, the problems came to me. Every 6 months there was a new batch of startups, and their problems, whatever they were, became our problems. It was very engaging work, because their problems were quite varied, and the good founders were very effective. If you were trying to learn the most you could about startups in the shortest possible time, you couldn\\'t have picked a better way to do it.  There were parts of the job I didn\\'t like. Disputes between cofounders, figuring out when people were lying to us, fighting with people who maltreated the startups, and so on. But I worked hard even at the parts I didn\\'t like. I was haunted by something Kevin Hale once said about companies: "No one works harder than the boss." He meant it both descriptively and prescriptively, and it was the second part that scared me. I wanted YC to be good, so if how hard I worked set the upper bound on how hard everyone else worked, I\\'d better work very hard.  One day in 2010, when he was visiting California for interviews, Robert Morris did something astonishing: he offered me unsolicited advice. I can only remember him doing that once before. One day at Viaweb, when I was bent over double from a kidney stone, he suggested that it would be a good idea for him to take me to the hospital. That was what it took for Rtm to offer unsolicited advice. So I remember his exact words very clearly. "You know," he said, "you should make sure Y Combinator isn\\'t the last cool thing you do."  At the time I didn\\'t understand what he meant, but gradually it dawned on me that he was saying I should quit. This seemed strange advice, because YC was doing great. But if there was one thing rarer than Rtm offering advice, it was Rtm being wrong. So this set me thinking. It was true that on my current trajectory, YC would be the last thing I did, because it was only taking up more of my attention. It had already eaten Arc, and was in the process of eating essays too. Either YC was my life\\'s work or I\\'d have to leave eventually. And it wasn\\'t, so I would.  In the summer of 2012 my mother had a stroke, and the cause turned out to be a blood clot caused by colon cancer. The stroke destroyed her balance, and she was put in a nursing home, but she really wanted to get out of it and back to her house, and my sister and I were determined to help her do it. I used to fly up to Oregon to visit her regularly, and I had a lot of time to think on those flights. On one of them I realized I was ready to hand YC over to someone else.  I asked Jessica if she wanted to be president, but she didn\\'t, so we decided we\\'d try to recruit Sam Altman. We talked to Robert and Trevor and we agreed to make it a complete changing of the guard. Up till that point YC had been controlled by the original LLC we four had started. But we wanted YC to last for a long time, and to do that it couldn\\'t be controlled by the founders. So if Sam said yes, we\\'d let him reorganize YC. Robert and I would retire, and Jessica and Trevor would become ordinary partners.  When we asked Sam if he wanted to be president of YC, initially he said no. He wanted to start a startup to make nuclear reactors. But I kept at it, and in October 2013 he finally agreed. We decided he\\'d take over starting with the winter 2014 batch. For the rest of 2013 I left running YC more and more to Sam, partly so he could learn the job, and partly because I was focused on my mother, whose cancer had returned.', "file\_path: data/paul\_graham/paul\_graham\_essay.txt  Up till that point YC had been controlled by the original LLC we four had started. But we wanted YC to last for a long time, and to do that it couldn't be controlled by the founders. So if Sam said yes, we'd let him reorganize YC. Robert and I would retire, and Jessica and Trevor would become ordinary partners.  When we asked Sam if he wanted to be president of YC, initially he said no. He wanted to start a startup to make nuclear reactors. But I kept at it, and in October 2013 he finally agreed. We decided he'd take over starting with the winter 2014 batch. For the rest of 2013 I left running YC more and more to Sam, partly so he could learn the job, and partly because I was focused on my mother, whose cancer had returned.  She died on January 15, 2014. We knew this was coming, but it was still hard when it did.  I kept working on YC till March, to help get that batch of startups through Demo Day, then I checked out pretty completely. (I still talk to alumni and to new startups working on things I'm interested in, but that only takes a few hours a week.)  What should I do next? Rtm's advice hadn't included anything about that. I wanted to do something completely different, so I decided I'd paint. I wanted to see how good I could get if I really focused on it. So the day after I stopped working on YC, I started painting. I was rusty and it took a while to get back into shape, but it was at least completely engaging. \[18\]  I spent most of the rest of 2014 painting. I'd never been able to work so uninterruptedly before, and I got to be better than I had been. Not good enough, but better. Then in November, right in the middle of a painting, I ran out of steam. Up till that point I'd always been curious to see how the painting I was working on would turn out, but suddenly finishing this one seemed like a chore. So I stopped working on it and cleaned my brushes and haven't painted since. So far anyway.  I realize that sounds rather wimpy. But attention is a zero sum game. If you can choose what to work on, and you choose a project that's not the best one (or at least a good one) for you, then it's getting in the way of another project that is. And at 50 there was some opportunity cost to screwing around.  I started writing essays again, and wrote a bunch of new ones over the next few months. I even wrote a couple that weren't about startups. Then in March 2015 I started working on Lisp again.  The distinctive thing about Lisp is that its core is a language defined by writing an interpreter in itself. It wasn't originally intended as a programming language in the ordinary sense. It was meant to be a formal model of computation, an alternative to the Turing machine. If you want to write an interpreter for a language in itself, what's the minimum set of predefined operators you need? The Lisp that John McCarthy invented, or more accurately discovered, is an answer to that question. \[19\]  McCarthy didn't realize this Lisp could even be used to program computers till his grad student Steve Russell suggested it. Russell translated McCarthy's interpreter into IBM 704 machine language, and from that point Lisp started also to be a programming language in the ordinary sense. But its origins as a model of computation gave it a power and elegance that other languages couldn't match. It was this that attracted me in college, though I didn't understand why at the time.  McCarthy's 1960 Lisp did nothing more than interpret Lisp expressions. It was missing a lot of things you'd want in a programming language. So these had to be added, and when they were, they weren't defined using McCarthy's original axiomatic approach. That wouldn't have been feasible at the time. McCarthy tested his interpreter by hand-simulating the execution of programs. But it was already getting close to the limit of interpreters you could test that way — indeed, there was a bug in it that McCarthy had overlooked. To test a more complicated interpreter, you'd have had to run it, and computers then weren't powerful enough.  Now they are, though. Now you could continue using McCarthy's axiomatic approach till you'd defined a complete programming language. And as long as every change you made to McCarthy's Lisp was a discoveredness-preserving transformation, you could, in principle, end up with a complete language that had this quality.", 'file\_path: data/paul\_graham/paul\_graham\_essay.txt  It was missing a lot of things you\\'d want in a programming language. So these had to be added, and when they were, they weren\\'t defined using McCarthy\\'s original axiomatic approach. That wouldn\\'t have been feasible at the time. McCarthy tested his interpreter by hand-simulating the execution of programs. But it was already getting close to the limit of interpreters you could test that way — indeed, there was a bug in it that McCarthy had overlooked. To test a more complicated interpreter, you\\'d have had to run it, and computers then weren\\'t powerful enough.  Now they are, though. Now you could continue using McCarthy\\'s axiomatic approach till you\\'d defined a complete programming language. And as long as every change you made to McCarthy\\'s Lisp was a discoveredness-preserving transformation, you could, in principle, end up with a complete language that had this quality. Harder to do than to talk about, of course, but if it was possible in principle, why not try? So I decided to take a shot at it. It took 4 years, from March 26, 2015 to October 12, 2019. It was fortunate that I had a precisely defined goal, or it would have been hard to keep at it for so long.  I wrote this new Lisp, called Bel, in itself in Arc. That may sound like a contradiction, but it\\'s an indication of the sort of trickery I had to engage in to make this work. By means of an egregious collection of hacks I managed to make something close enough to an interpreter written in itself that could actually run. Not fast, but fast enough to test.  I had to ban myself from writing essays during most of this time, or I\\'d never have finished. In late 2015 I spent 3 months writing essays, and when I went back to working on Bel I could barely understand the code. Not so much because it was badly written as because the problem is so convoluted. When you\\'re working on an interpreter written in itself, it\\'s hard to keep track of what\\'s happening at what level, and errors can be practically encrypted by the time you get them.  So I said no more essays till Bel was done. But I told few people about Bel while I was working on it. So for years it must have seemed that I was doing nothing, when in fact I was working harder than I\\'d ever worked on anything. Occasionally after wrestling for hours with some gruesome bug I\\'d check Twitter or HN and see someone asking "Does Paul Graham still code?"  Working on Bel was hard but satisfying. I worked on it so intensively that at any given time I had a decent chunk of the code in my head and could write more there. I remember taking the boys to the coast on a sunny day in 2015 and figuring out how to deal with some problem involving continuations while I watched them play in the tide pools. It felt like I was doing life right. I remember that because I was slightly dismayed at how novel it felt. The good news is that I had more moments like this over the next few years.  In the summer of 2016 we moved to England. We wanted our kids to see what it was like living in another country, and since I was a British citizen by birth, that seemed the obvious choice. We only meant to stay for a year, but we liked it so much that we still live there. So most of Bel was written in England.  In the fall of 2019, Bel was finally finished. Like McCarthy\\'s original Lisp, it\\'s a spec rather than an implementation, although like McCarthy\\'s Lisp it\\'s a spec expressed as code.  Now that I could write essays again, I wrote a bunch about topics I\\'d had stacked up. I kept writing essays through 2020, but I also started to think about other things I could work on. How should I choose what to do? Well, how had I chosen what to work on in the past? I wrote an essay for myself to answer that question, and I was surprised how long and messy the answer turned out to be. If this surprised me, who\\'d lived it, then I thought perhaps it would be interesting to other people, and encouraging to those with similarly messy lives. So I wrote a more detailed version for others to read, and this is the last sentence of it.          Notes  \[1\] My experience skipped a step in the evolution of computers: time-sharing machines with interactive OSes. I went straight from batch processing to microcomputers, which made microcomputers seem all the more exciting.', "file\_path: data/paul\_graham/paul\_graham\_essay.txt  Now that I could write essays again, I wrote a bunch about topics I'd had stacked up. I kept writing essays through 2020, but I also started to think about other things I could work on. How should I choose what to do? Well, how had I chosen what to work on in the past? I wrote an essay for myself to answer that question, and I was surprised how long and messy the answer turned out to be. If this surprised me, who'd lived it, then I thought perhaps it would be interesting to other people, and encouraging to those with similarly messy lives. So I wrote a more detailed version for others to read, and this is the last sentence of it.          Notes  \[1\] My experience skipped a step in the evolution of computers: time-sharing machines with interactive OSes. I went straight from batch processing to microcomputers, which made microcomputers seem all the more exciting.  \[2\] Italian words for abstract concepts can nearly always be predicted from their English cognates (except for occasional traps like polluzione). It's the everyday words that differ. So if you string together a lot of abstract concepts with a few simple verbs, you can make a little Italian go a long way.  \[3\] I lived at Piazza San Felice 4, so my walk to the Accademia went straight down the spine of old Florence: past the Pitti, across the bridge, past Orsanmichele, between the Duomo and the Baptistery, and then up Via Ricasoli to Piazza San Marco. I saw Florence at street level in every possible condition, from empty dark winter evenings to sweltering summer days when the streets were packed with tourists.  \[4\] You can of course paint people like still lives if you want to, and they're willing. That sort of portrait is arguably the apex of still life painting, though the long sitting does tend to produce pained expressions in the sitters.  \[5\] Interleaf was one of many companies that had smart people and built impressive technology, and yet got crushed by Moore's Law. In the 1990s the exponential growth in the power of commodity (i.e. Intel) processors rolled up high-end, special-purpose hardware and software companies like a bulldozer.  \[6\] The signature style seekers at RISD weren't specifically mercenary. In the art world, money and coolness are tightly coupled. Anything expensive comes to be seen as cool, and anything seen as cool will soon become equally expensive.  \[7\] Technically the apartment wasn't rent-controlled but rent-stabilized, but this is a refinement only New Yorkers would know or care about. The point is that it was really cheap, less than half market price.  \[8\] Most software you can launch as soon as it's done. But when the software is an online store builder and you're hosting the stores, if you don't have any users yet, that fact will be painfully obvious. So before we could launch publicly we had to launch privately, in the sense of recruiting an initial set of users and making sure they had decent-looking stores.  \[9\] We'd had a code editor in Viaweb for users to define their own page styles. They didn't know it, but they were editing Lisp expressions underneath. But this wasn't an app editor, because the code ran when the merchants' sites were generated, not when shoppers visited them.  \[10\] This was the first instance of what is now a familiar experience, and so was what happened next, when I read the comments and found they were full of angry people. How could I claim that Lisp was better than other languages? Weren't they all Turing complete? People who see the responses to essays I write sometimes tell me how sorry they feel for me, but I'm not exaggerating when I reply that it has always been like this, since the very beginning. It comes with the territory. An essay must tell readers things they don't already know, and some people dislike being told such things.  \[11\] People put plenty of stuff on the internet in the 90s of course, but putting something online is not the same as publishing it online. Publishing online means you treat the online version as the (or at least a) primary version.  \[12\] There is a general lesson here that our experience with Y Combinator also teaches: Customs continue to constrain you long after the restrictions that caused them have disappeared. Customary VC practice had once, like the customs about publishing essays, been based on real constraints. Startups had once been much more expensive to start, and proportionally rare."\] nomic-ai/nomic-embed-text-v1.5 {'dimensions': 128}
+show list of text \['file\_path: data/paul\_graham/paul\_graham\_essay.txt  People who see the responses to essays I write sometimes tell me how sorry they feel for me, but I\\'m not exaggerating when I reply that it has always been like this, since the very beginning. It comes with the territory. An essay must tell readers things they don\\'t already know, and some people dislike being told such things.  \[11\] People put plenty of stuff on the internet in the 90s of course, but putting something online is not the same as publishing it online. Publishing online means you treat the online version as the (or at least a) primary version.  \[12\] There is a general lesson here that our experience with Y Combinator also teaches: Customs continue to constrain you long after the restrictions that caused them have disappeared. Customary VC practice had once, like the customs about publishing essays, been based on real constraints. Startups had once been much more expensive to start, and proportionally rare. Now they could be cheap and common, but the VCs\\' customs still reflected the old world, just as customs about writing essays still reflected the constraints of the print era.  Which in turn implies that people who are independent-minded (i.e. less influenced by custom) will have an advantage in fields affected by rapid change (where customs are more likely to be obsolete).  Here\\'s an interesting point, though: you can\\'t always predict which fields will be affected by rapid change. Obviously software and venture capital will be, but who would have predicted that essay writing would be?  \[13\] Y Combinator was not the original name. At first we were called Cambridge Seed. But we didn\\'t want a regional name, in case someone copied us in Silicon Valley, so we renamed ourselves after one of the coolest tricks in the lambda calculus, the Y combinator.  I picked orange as our color partly because it\\'s the warmest, and partly because no VC used it. In 2005 all the VCs used staid colors like maroon, navy blue, and forest green, because they were trying to appeal to LPs, not founders. The YC logo itself is an inside joke: the Viaweb logo had been a white V on a red circle, so I made the YC logo a white Y on an orange square.  \[14\] YC did become a fund for a couple years starting in 2009, because it was getting so big I could no longer afford to fund it personally. But after Heroku got bought we had enough money to go back to being self-funded.  \[15\] I\\'ve never liked the term "deal flow," because it implies that the number of new startups at any given time is fixed. This is not only false, but it\\'s the purpose of YC to falsify it, by causing startups to be founded that would not otherwise have existed.  \[16\] She reports that they were all different shapes and sizes, because there was a run on air conditioners and she had to get whatever she could, but that they were all heavier than she could carry now.  \[17\] Another problem with HN was a bizarre edge case that occurs when you both write essays and run a forum. When you run a forum, you\\'re assumed to see if not every conversation, at least every conversation involving you. And when you write essays, people post highly imaginative misinterpretations of them on forums. Individually these two phenomena are tedious but bearable, but the combination is disastrous. You actually have to respond to the misinterpretations, because the assumption that you\\'re present in the conversation means that not responding to any sufficiently upvoted misinterpretation reads as a tacit admission that it\\'s correct. But that in turn encourages more; anyone who wants to pick a fight with you senses that now is their chance.  \[18\] The worst thing about leaving YC was not working with Jessica anymore. We\\'d been working on YC almost the whole time we\\'d known each other, and we\\'d neither tried nor wanted to separate it from our personal lives, so leaving was like pulling up a deeply rooted tree.  \[19\] One way to get more precise about the concept of invented vs discovered is to talk about space aliens. Any sufficiently advanced alien civilization would certainly know about the Pythagorean theorem, for example. I believe, though with less certainty, that they would also know about the Lisp in McCarthy\\'s 1960 paper.  But if so there\\'s no reason to suppose that this is the limit of the language that might be known to them. Presumably aliens need numbers and errors and I/O too. So it seems likely there exists at least one path out of McCarthy\\'s Lisp along which discoveredness is preserved.', "file\_path: data/paul\_graham/paul\_graham\_essay.txt  \[18\] The worst thing about leaving YC was not working with Jessica anymore. We'd been working on YC almost the whole time we'd known each other, and we'd neither tried nor wanted to separate it from our personal lives, so leaving was like pulling up a deeply rooted tree.  \[19\] One way to get more precise about the concept of invented vs discovered is to talk about space aliens. Any sufficiently advanced alien civilization would certainly know about the Pythagorean theorem, for example. I believe, though with less certainty, that they would also know about the Lisp in McCarthy's 1960 paper.  But if so there's no reason to suppose that this is the limit of the language that might be known to them. Presumably aliens need numbers and errors and I/O too. So it seems likely there exists at least one path out of McCarthy's Lisp along which discoveredness is preserved.    Thanks to Trevor Blackwell, John Collison, Patrick Collison, Daniel Gackle, Ralph Hazell, Jessica Livingston, Robert Morris, and Harj Taggar for reading drafts of this."\] nomic-ai/nomic-embed-text-v1.5 {'dimensions': 128}
+
+**The author, during their childhood and teenage years, worked on two main things outside of school: writing and programming. They started by writing short stories, which they describe as having hardly any plot, focusing more on characters with strong feelings. They began programming using an IBM 1401 computer in their junior high school's basement, where they wrote programs in an early version of Fortran, which were run using punch cards. However, they found it challenging due to the lack of input data and their limited mathematical knowledge. The advent of microcomputers significantly changed their experience with programming, making it more interactive and engaging. They received a TRS-80 microcomputer and wrote simple games, a program to predict model rocket flights, and a word processor. Despite their interest in programming, they initially planned to study philosophy in college, before switching to AI.**
+
+You can see that the results are the same across the two, so you can experiment with the dimension sizes and then experiment with the cost and quality trade-off yourself.
+
+Back to top
+
+[Previous Cassandra Vector Store](https://docs.llamaindex.ai/en/stable/examples/vector_stores/CassandraIndexDemo/)[Next Chroma](https://docs.llamaindex.ai/en/stable/examples/vector_stores/ChromaIndexDemo/)
