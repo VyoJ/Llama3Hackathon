@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_ret
 Markdown Content:
 Retrieval-Augmented OpenAI Agent - LlamaIndex
 ===============
-             
+                   
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_retrieval/#retrieval-augmented-openai-agent)
 
@@ -2116,3 +2118,7 @@ Response(response='212 added to 122 is 334.', source\_nodes=\[\], metadata=None)
 Back to top
 
 [Previous OpenAI Agent Query Planning](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_query_plan/)[Next OpenAI Agent with Tool Call Parser](https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_tool_call_parser/)
+
+Hi, how can I help you?
+
+🦙

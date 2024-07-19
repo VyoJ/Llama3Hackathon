@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/agent/coa_agent/
 Markdown Content:
 Chain-of-Abstraction LlamaPack - LlamaIndex
 ===============
-             
+                    
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/agent/coa_agent/#chain-of-abstraction-llamapack)
 
@@ -2332,3 +2334,7 @@ Response:
 Back to top
 
 [Previous Function Calling AWS Bedrock Converse Agent](https://docs.llamaindex.ai/en/stable/examples/agent/bedrock_converse_agent/)[Next Building a Custom Agent](https://docs.llamaindex.ai/en/stable/examples/agent/custom_agent/)
+
+Hi, how can I help you?
+
+🦙

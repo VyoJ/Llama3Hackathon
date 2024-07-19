@@ -5,7 +5,7 @@ URL Source: https://docs.llamaindex.ai/en/stable/use_cases/extraction/
 Markdown Content:
 Structured Data Extraction - LlamaIndex
 ===============
-             
+              
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/use_cases/extraction/#structured-data-extraction)
 
@@ -1972,3 +1972,7 @@ Some additional miscellaneous examples highlighting use cases:
 Back to top
 
 [Previous Chatbots](https://docs.llamaindex.ai/en/stable/use_cases/chatbots/)[Next Agents](https://docs.llamaindex.ai/en/stable/use_cases/agents/)
+
+Hi, how can I help you?
+
+🦙

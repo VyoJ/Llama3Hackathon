@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/agent/openai_retrieval
 Markdown Content:
 Benchmarking OpenAI Retrieval API (through Assistant Agent) - LlamaIndex
 ===============
-             
+                    
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/agent/openai_retrieval_benchmark/#benchmarking-openai-retrieval-api-through-assistant-agent)
 
@@ -2453,3 +2455,7 @@ Assistant Avg Time: 75.43605598536405
 Back to top
 
 [Previous OpenAI agent: specifying a forced function call](https://docs.llamaindex.ai/en/stable/examples/agent/openai_forced_function_call/)[Next ReAct Agent - A Simple Intro with Calculator Tools](https://docs.llamaindex.ai/en/stable/examples/agent/react_agent/)
+
+Hi, how can I help you?
+
+🦙

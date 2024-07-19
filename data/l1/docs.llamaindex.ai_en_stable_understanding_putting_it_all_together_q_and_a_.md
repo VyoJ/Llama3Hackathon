@@ -5,7 +5,7 @@ URL Source: https://docs.llamaindex.ai/en/stable/understanding/putting_it_all_to
 Markdown Content:
 Q&A patterns - LlamaIndex
 ===============
-             
+              
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/understanding/putting_it_all_together/q_and_a/#qa-patterns)
 
@@ -2156,3 +2156,7 @@ Additional Resources[#](https://docs.llamaindex.ai/en/stable/understanding/putti
 Back to top
 
 [Previous Full-Stack Web Application](https://docs.llamaindex.ai/en/stable/understanding/putting_it_all_together/apps/)[Next A Guide to Extracting Terms and Definitions](https://docs.llamaindex.ai/en/stable/understanding/putting_it_all_together/q_and_a/terms_definitions_tutorial/)
+
+Hi, how can I help you?
+
+🦙

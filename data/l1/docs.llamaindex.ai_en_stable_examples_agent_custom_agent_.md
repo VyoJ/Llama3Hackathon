@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/agent/custom_agent/
 Markdown Content:
 Building a Custom Agent - LlamaIndex
 ===============
-             
+                    
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/agent/custom_agent/#building-a-custom-agent)
 
@@ -2605,3 +2607,7 @@ llm = OpenAI(model="gpt-4") callback\_manager = llm.callback\_manager query\_eng
 Back to top
 
 [Previous Chain-of-Abstraction LlamaPack](https://docs.llamaindex.ai/en/stable/examples/agent/coa_agent/)[Next DashScope Agent Tutorial](https://docs.llamaindex.ai/en/stable/examples/agent/dashscope_agent/)
+
+Hi, how can I help you?
+
+🦙

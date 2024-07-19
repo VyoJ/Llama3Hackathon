@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/callbacks/OpenLLMetry/
 Markdown Content:
 Observability with OpenLLMetry - LlamaIndex
 ===============
-             
+                    
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/callbacks/OpenLLMetry/#observability-with-openllmetry)
 
@@ -2057,3 +2059,7 @@ Go to Traceloop or your favorite platform to view the results[¶](https://docs.l
 Back to top
 
 [Previous OpenInference Callback Handler + Arize Phoenix](https://docs.llamaindex.ai/en/stable/examples/callbacks/OpenInferenceCallback/)[Next PromptLayer Handler](https://docs.llamaindex.ai/en/stable/examples/callbacks/PromptLayerHandler/)
+
+Hi, how can I help you?
+
+🦙

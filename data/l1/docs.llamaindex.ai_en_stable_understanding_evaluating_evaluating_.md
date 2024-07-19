@@ -5,7 +5,7 @@ URL Source: https://docs.llamaindex.ai/en/stable/understanding/evaluating/evalua
 Markdown Content:
 Evaluating - LlamaIndex
 ===============
-             
+              
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/understanding/evaluating/evaluating/#evaluating)
 
@@ -2013,3 +2013,7 @@ You may be interested in [analyzing the cost of your application](https://docs.l
 Back to top
 
 [Previous Tracing and Debugging](https://docs.llamaindex.ai/en/stable/understanding/tracing_and_debugging/tracing_and_debugging/)[Next Cost Analysis](https://docs.llamaindex.ai/en/stable/understanding/evaluating/cost_analysis/)
+
+Hi, how can I help you?
+
+🦙

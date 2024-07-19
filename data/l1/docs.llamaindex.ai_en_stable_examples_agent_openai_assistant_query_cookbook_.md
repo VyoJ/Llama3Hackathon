@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/agent/openai_assistant
 Markdown Content:
 OpenAI Assistant Advanced Retrieval Cookbook - LlamaIndex
 ===============
-             
+                    
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/agent/openai_assistant_query_cookbook/#openai-assistant-advanced-retrieval-cookbook)
 
@@ -2810,3 +2812,7 @@ Here are the countries corresponding to each city:
 Back to top
 
 [Previous OpenAI Assistant Agent](https://docs.llamaindex.ai/en/stable/examples/agent/openai_assistant_agent/)[Next OpenAI agent: specifying a forced function call](https://docs.llamaindex.ai/en/stable/examples/agent/openai_forced_function_call/)
+
+Hi, how can I help you?
+
+🦙

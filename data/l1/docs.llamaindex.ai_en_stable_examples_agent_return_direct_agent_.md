@@ -5,7 +5,9 @@ URL Source: https://docs.llamaindex.ai/en/stable/examples/agent/return_direct_ag
 Markdown Content:
 Controlling Agent Reasoning Loop with Return Direct Tools - LlamaIndex
 ===============
-             
+                    
+
+ 
 
 [Skip to content](https://docs.llamaindex.ai/en/stable/examples/agent/return_direct_agent/#controlling-agent-reasoning-loop-with-return-direct-tools)
 
@@ -2199,3 +2201,7 @@ name='Logan' email='test@gmail.com' phone='1234567890' date='2023-04-05' time='1
 Back to top
 
 [Previous ReAct Agent with Query Engine (RAG) Tools](https://docs.llamaindex.ai/en/stable/examples/agent/react_agent_with_query_engine/)[Next Structured Planning Agent](https://docs.llamaindex.ai/en/stable/examples/agent/structured_planner/)
+
+Hi, how can I help you?
+
+🦙
